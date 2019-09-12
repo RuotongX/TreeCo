@@ -1,0 +1,48 @@
+.ProductIMG{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1%;
+    width: 80%;
+    height: 100px;
+    object-fit: cover;
+}
+.ProductName{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ProductDivider{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.ProductPriceButton{
+    height: 40px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-bottom: 5px;
+    width: 70%;
+}
+.ProductPrice{
+    font-size: 1.5em;
+}
+.PageArrow{
+    display: flex;
+    align-items: center;
+}
+.Pagination{
+    margin: 0 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.PageEndDivider{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.SearchBar{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    background-color: rgba(0,0,0,0);
+    animation-duration: 1s;
+    animation-name: antFadeIn;
+}
