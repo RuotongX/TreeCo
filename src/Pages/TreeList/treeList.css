@@ -39,6 +39,11 @@
     margin-bottom: 5px;
 }
 
+.ProductCard{
+    animation-duration: 1s;
+    animation-name: sli;
+}
+
 .SearchBar{
     margin-top: 5px;
     margin-bottom: 0px;

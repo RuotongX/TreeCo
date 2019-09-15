@@ -1,12 +1,12 @@
 import React, {Component, Fragment} from 'react';
 import 'antd/dist/antd.css';
 import 'antd-mobile/dist/antd-mobile.css';
-import './ProductList.css';
+import './treeList.css';
 import {Button, Icon, Divider} from 'antd';
 import {NavBar, Card, WingBlank, WhiteSpace, Pagination, SearchBar} from 'antd-mobile';
 import IMG from './testTree.jpg'
 
-class HomePage extends Component{
+class TreeList extends Component{
 
     constructor(props){
         super(props);
@@ -42,26 +42,26 @@ class HomePage extends Component{
                     {/*product list */}
                     <WingBlank size = "lg">
                         <WhiteSpace size = "lg"/>
-                            <Card>
-                                <Card.Body
-                                    extra={<span>this is extra</span>}>
-                                    <img className = "ProductIMG"
-                                         src = {IMG}
-                                         alt = "Tree"
-                                    />
-                                    <p className = "ProductName">Description: a tree.</p>
-                                    <Divider className = "ProductDivider" dashed/>
+                        <Card>
+                            <Card.Body
+                                extra={<span>this is extra</span>}>
+                                <img className = "ProductIMG"
+                                     src = {IMG}
+                                     alt = "Tree"
+                                />
+                                <p className = "ProductName">Description: a tree.</p>
+                                <Divider className = "ProductDivider" dashed/>
 
-                                    {/*style={{color: "#FB966E",marginTop: '2px'}}>$998.0*/}
-                                </Card.Body>
-                                <Card.Footer content= {
-                                    <Button className={"ProductPriceButton"}>
+                                {/*style={{color: "#FB966E",marginTop: '2px'}}>$998.0*/}
+                            </Card.Body>
+                            <Card.Footer content= {
+                                <Button className={"ProductPriceButton"}>
                                         <span className={"ProductPrice"}>
                                             $299
                                         </span>
-                                    </Button>
-                                }/>
-                            </Card>
+                                </Button>
+                            }/>
+                        </Card>
                     </WingBlank>
                 </div>
 
@@ -147,15 +147,15 @@ class HomePage extends Component{
         return(
             <Fragment>
                 <WingBlank size = 'lg'>
-                <SearchBar className={"SearchBar"}
-                           placeholder= "Search"
-                           maxLength={30}
-                           cancelText={"Cancel"}
-                />
+                    <SearchBar className={"SearchBar"}
+                               placeholder= "Search"
+                               maxLength={30}
+                               cancelText={"Cancel"}
+                    />
                 </WingBlank>
             </Fragment>
         )
     }
 }
 
-export default HomePage;
+export default TreeList;
