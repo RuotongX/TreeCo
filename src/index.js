@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './homepage/HomePage';
+import TreeCoPageRouter from "./Pages/TreeCoPageRouter/index";
 
-ReactDOM.render(<HomePage />,document.getElementById('root'));
+
+ReactDOM.render(<TreeCoPageRouter />,document.getElementById('root'));
 
 
