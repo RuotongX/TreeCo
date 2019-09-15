@@ -7,6 +7,9 @@
     height: 100px;
     object-fit: cover;
 }
+.returnButton{
+    color: white;
+}
 .ProductName{
     margin-top: 10px;
     margin-bottom: 10px;
