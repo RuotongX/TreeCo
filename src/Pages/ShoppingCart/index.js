@@ -8,9 +8,10 @@ class ShoppingCart extends Component{
     render() {
         return (
             <Fragment>
-                <div className={"NavigationBar"}>
+                <div>
                     <NavBar
                         mode = "dark"
+                        className={"NaviBar"}
                         leftContent= {<Link to = "/"><Icon className = "returnButton" type="left" /></Link>}
                     >
                         Shopping Cart
