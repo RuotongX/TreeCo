@@ -6,6 +6,9 @@
     width: 100%;
     min-width: 80px;
 }
+.NaviBar{
+    background-color: #6A8372;
+}
 
 .ProcessButton{
     margin-top: 20px;
