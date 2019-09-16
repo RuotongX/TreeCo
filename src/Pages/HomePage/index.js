@@ -56,6 +56,11 @@ class HomePage extends Component{
                             Promotion Detail
                         </Link>
                     </List.Item>
+                    <List.Item>
+                        <Link to = "/ShoppingCart" style = {{color:"black",fontSize:20}}>
+                            Shopping Cart
+                        </Link>
+                    </List.Item>
                 </List>
                 </Drawer>
                 <Card style={{position:"relative",float:"top"}}>
