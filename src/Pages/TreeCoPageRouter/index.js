@@ -6,6 +6,7 @@ import TreeList from "../TreeList";
 import HomePage from "../HomePage";
 import AccountLogin from "../AccountLogin";
 import PromotionDetail from "../PromotionDetail"
+import ShoppingCart from "../ShoppingCart";
 
 
 class TreeCoPageRouter extends Component{
@@ -18,6 +19,7 @@ class TreeCoPageRouter extends Component{
                     <Route path ='/treeList' exact component = {TreeList}></Route>
                     <Route path ='/AccountLogin' exact component = {AccountLogin}></Route>
                     <Route path ='/PromotionDetail' exact component = {PromotionDetail}></Route>
+                    <Route path ='/ShoppingCart' exact component = {ShoppingCart}></Route>
                 </BrowserRouter>
             </div>
         )

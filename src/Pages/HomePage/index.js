@@ -27,6 +27,12 @@ class HomePage extends Component{
                         Promotion Detail
                     </Link>
                 </Button>
+
+                <Button className={'button'}>
+                    <Link to = "/ShoppingCart">
+                        Shopping Cart
+                    </Link>
+                </Button>
             </div>
 
         )

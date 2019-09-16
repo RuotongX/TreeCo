@@ -1,0 +1,19 @@
+.RemoveButton{
+    margin-bottom: 4px;
+    margin-top: 3px;
+}
+.Stepper{
+    width: 100%;
+    min-width: 80px;
+}
+
+.ProcessButton{
+    margin-top: 20px;
+}
+.returnButton{
+    margin-top: 9px ;
+    color: white;
+}
+.deleteIcon{
+    margin-right: 3px;
+}
