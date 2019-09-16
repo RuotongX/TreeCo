@@ -4,6 +4,7 @@ import 'antd-mobile/dist/antd-mobile.css';
 import './treeList.css';
 import {Button, Icon, Divider} from 'antd';
 import {NavBar, Card, WingBlank, WhiteSpace, Pagination, SearchBar} from 'antd-mobile';
+import {Link} from 'react-router-dom'
 import IMG from './testTree.jpg'
 
 class TreeList extends Component{
@@ -24,7 +25,7 @@ class TreeList extends Component{
                 <div className={'NaviBar'}>
                     {/*product list navigation bar*/}
                     <NavBar mode = "dark"
-                            leftContent={<Icon type = "left"/>}
+                            leftContent={<Link to = "/"><Icon type = "left" className={'returnButton'}/></Link>}
                             rightContent={[
                                 <Icon type = "search" style={{fontSize: '18px', marginRight: '12px'}} onClick={this.handleSearchClick}/>,
                                 <Icon type = "control" style={{fontSize: '22px'}} />
@@ -142,6 +143,7 @@ class TreeList extends Component{
         newState.showSearchBar = !newState.showSearchBar;
         this.setState(newState)
     }
+
 
     getSearchBar(){
         return(
