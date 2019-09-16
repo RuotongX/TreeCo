@@ -82,25 +82,3 @@ class HomePage extends Component{
 }
 
 export default HomePage;
-
-{/*<div>*/}
-{/*    <div className={'description'}> this is home page, happy coding! </div>*/}
-{/*    <Button className={'button'}>*/}
-{/*        <Link to = "/treeList">*/}
-{/*            TreeList*/}
-{/*        </Link>*/}
-{/*    </Button>*/}
-
-{/*    <Button className={'button'}>*/}
-{/*        <Link to = "/AccountLogin">*/}
-{/*            Account Login*/}
-{/*        </Link>*/}
-{/*    </Button>*/}
-
-
-{/*    <Button className={'button'}>*/}
-{/*        <Link to = "/PromotionDetail">*/}
-{/*            Promotion Detail*/}
-{/*        </Link>*/}
-{/*    </Button>*/}
-{/*</div>*/}
