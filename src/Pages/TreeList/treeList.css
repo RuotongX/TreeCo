@@ -4,11 +4,14 @@
     margin-right: auto;
     border-radius: 1%;
     width: 80%;
-    height: 100px;
+    height: 150px;
     object-fit: cover;
 }
 .returnButton{
     color: white;
+}
+.NaviBar{
+    background-color: #6A8372;
 }
 .ProductName{
     margin-top: 10px;
@@ -45,6 +48,9 @@
 .ProductCard{
     animation-duration: 1s;
     animation-name: sli;
+}
+.Disclaimer{
+    margin-top: 20px;
 }
 
 .SearchBar{

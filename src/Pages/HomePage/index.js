@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import './HomePage.css';
 import { Card,Carousel } from 'antd';
 import {NavBar} from "antd-mobile";
+import ProductDetail from "../ProductDetail";
 
 class HomePage extends Component{
     state={visible:false};
@@ -21,9 +22,9 @@ class HomePage extends Component{
     render() {
         return(
             <Fragment>
-                <div className={'NaviBar'}>
-                    {/*product list navigation bar*/}
+                <div>
                     <NavBar mode = "dark"
+                            className={'NaviBar'}
                             leftContent={
                                 <Icon type = "menu" style={{fontSize: '22px'}}
                                      onClick={this.showDrawer}/>
@@ -59,6 +60,11 @@ class HomePage extends Component{
                     <List.Item>
                         <Link to = "/ShoppingCart" style = {{color:"black",fontSize:20}}>
                             Shopping Cart
+                        </Link>
+                    </List.Item>
+                    <List.Item>
+                        <Link to = "/ProductDetail" style = {{color:"black",fontSize:20}}>
+                            Product Detail (for test)
                         </Link>
                     </List.Item>
                 </List>
