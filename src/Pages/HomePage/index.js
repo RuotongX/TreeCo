@@ -1,11 +1,10 @@
 import React, {Component,Fragment} from 'react';
 import 'antd/dist/antd.css';
-import {Drawer,List,Button, Icon} from 'antd';
+import {Drawer,List, Icon} from 'antd';
 import {Link} from 'react-router-dom'
 import './HomePage.css';
 import { Card,Carousel } from 'antd';
 import {NavBar} from "antd-mobile";
-import ProductDetail from "../ProductDetail";
 
 class HomePage extends Component{
     state={visible:false};

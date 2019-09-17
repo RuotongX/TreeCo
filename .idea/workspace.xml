@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="Initial Commitments&#10;1. The product list UI is being designed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/testTree.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +34,6 @@
       </map>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="792" />
-    <option name="y" value="34" />
-    <option name="width" value="974" />
-    <option name="height" value="990" />
-  </component>
   <component name="ProjectId" id="1QcZrJzPztb6G7SYjEn363cCx71" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -71,7 +58,6 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Pages" />
-      <recent name="$PROJECT_DIR$/src/ProductImage" />
       <recent name="$PROJECT_DIR$/src/homepage" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
@@ -120,16 +106,6 @@
       <envs />
       <method v="2" />
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
