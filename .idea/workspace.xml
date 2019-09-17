@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="Initial Commitments&#10;1. The product list UI is being designed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/testTree.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +34,6 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="792" />
-    <option name="y" value="34" />
-    <option name="width" value="974" />
-    <option name="height" value="990" />
   </component>
   <component name="ProjectId" id="1QcZrJzPztb6G7SYjEn363cCx71" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -149,6 +137,7 @@
       <workItem from="1568520096210" duration="3471000" />
       <workItem from="1568578998693" duration="4631000" />
       <workItem from="1568601581199" duration="9108000" />
+      <workItem from="1568686225212" duration="2958000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>

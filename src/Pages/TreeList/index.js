@@ -68,11 +68,16 @@ class TreeList extends Component{
                                             {/*style={{color: "#FB966E",marginTop: '2px'}}>$998.0*/}
                                         </Card.Body>
                                         <Card.Footer content= {
-                                            <Button className={"ProductPriceButton"}>
-                                            <span className={"ProductPrice"}>
-                                                ${tree.price}
-                                            </span>
-                                            </Button>
+                                            <Link to = {{
+                                                pathname: "/ProductDetail",
+                                                treeState: {tree}
+                                            }}>
+                                                <Button className={"ProductPriceButton"}>
+                                                <span className={"ProductPrice"}>
+                                                    ${tree.price}
+                                                </span>
+                                                </Button>
+                                            </Link>
                                         }/>
                                     </Card>
                                 </WingBlank>
