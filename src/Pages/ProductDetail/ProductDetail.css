@@ -1,3 +1,25 @@
 .NaviBar{
     background-color: #6A8372;
 }
+.ProductImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1%;
+    width: 90%;
+    height: 180px;
+    object-fit: cover;
+}
+.Stepper{
+    width:900px;
+}
+.ProductCard{
+    margin-top: 20px;
+}
+.DetailList{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.PurchaseButton{
+    margin-top: 15px;
+}
