@@ -34,7 +34,6 @@ class HomePage extends Component{
                 </div>
                 <Drawer
                     title = "Menu"
-                    placement = "right"
                     closable = {false}
                     onClose = {this.onClose}
                     visible = {this.state.visible}
@@ -64,6 +63,11 @@ class HomePage extends Component{
                     <List.Item>
                         <Link to = "/ProductDetail" style = {{color:"black",fontSize:20}}>
                             Product Detail (for test)
+                        </Link>
+                    </List.Item>
+                    <List.Item>
+                        <Link to = "/PurchaseProcessing" style = {{color:"black",fontSize:20}}>
+                            Purchase Processing (for test)
                         </Link>
                     </List.Item>
                 </List>
