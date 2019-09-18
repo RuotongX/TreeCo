@@ -102,7 +102,7 @@ class PurchaseProcessing extends React.Component {
                     label={
                         <span>
                             Name&nbsp;
-                            <Tooltip title="What the recipient name?">
+                            <Tooltip title="What is the recipient name?">
                                 <Icon type="question-circle-o"/>
                             </Tooltip>
                         </span>
@@ -391,7 +391,7 @@ class PurchaseProcessing extends React.Component {
                     label={
                         <span>
                             Address&nbsp;
-                            <Tooltip title="What the receiving address?">
+                            <Tooltip title="What is the receiving address?">
                                 <Icon type="question-circle-o"/>
                             </Tooltip>
                         </span>
