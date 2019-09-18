@@ -56,8 +56,7 @@ class TreeList extends Component{
                                 <WingBlank size = "lg" key = {tree.id}>
                                     <WhiteSpace size = "lg"/>
                                     <Card>
-                                        <Card.Body
-                                            extra={<span>this is extra</span>}>
+                                        <Card.Body>
                                             <img className = "ProductIMG"
                                                  src = {IMG}
                                                  alt = {tree.productName}
