@@ -8,9 +8,9 @@ import './PurchaseProcessing.css';
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 
-function countryOnchange(value){
-    console.log('selected ${value}');
-}
+// function countryOnchange(value){
+//     console.log('selected ${value}');
+// }
 
 // eslint-disable-next-line no-unused-vars
 class PurchaseProcessing extends React.Component {
@@ -151,7 +151,7 @@ class PurchaseProcessing extends React.Component {
                             // onChange={onChange}
                             // onFocus={onFocus}
                             // onBlur={onBlur}
-                            countryOnchange = {countryOnchange}
+                            // countryOnchange = {countryOnchange}
                             filterOption={(input, option) =>
                                 option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                             }
