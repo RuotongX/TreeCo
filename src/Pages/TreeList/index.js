@@ -56,8 +56,7 @@ class TreeList extends Component{
                                 <WingBlank size = "lg" key = {tree.id}>
                                     <WhiteSpace size = "lg"/>
                                     <Card>
-                                        <Card.Body
-                                            extra={<span>this is extra</span>}>
+                                        <Card.Body>
                                             <img className = "ProductIMG"
                                                  src = {IMG}
                                                  alt = {tree.productName}
@@ -68,11 +67,16 @@ class TreeList extends Component{
                                             {/*style={{color: "#FB966E",marginTop: '2px'}}>$998.0*/}
                                         </Card.Body>
                                         <Card.Footer content= {
-                                            <Button className={"ProductPriceButton"}>
-                                            <span className={"ProductPrice"}>
-                                                ${tree.price}
-                                            </span>
-                                            </Button>
+                                            <Link to = {{
+                                                pathname: "/ProductDetail",
+                                                treeState: {tree}
+                                            }}>
+                                                <Button className={"ProductPriceButton"}>
+                                                <span className={"ProductPrice"}>
+                                                    ${tree.price}
+                                                </span>
+                                                </Button>
+                                            </Link>
                                         }/>
                                     </Card>
                                 </WingBlank>
