@@ -47,12 +47,12 @@ class PurchaseProcessing extends React.Component {
 
         const formItemLayout = {
             labelCol: {
-                xs: {span: 24},
-                sm: {span: 8},
+                xs: { span: 22 },
+                sm: { span: 7 },
             },
             wrapperCol: {
-                xs: {span: 24},
-                sm: {span: 16},
+                xs: { span: 22 },
+                sm: { span: 14 },
             },
         };
         const tailFormItemLayout = {
@@ -62,8 +62,8 @@ class PurchaseProcessing extends React.Component {
                     offset: 0,
                 },
                 sm: {
-                    span: 16,
-                    offset: 8,
+                    span: 12,
+                    offset: 6,
                 },
             },
         };
@@ -95,8 +95,9 @@ class PurchaseProcessing extends React.Component {
                         Purchasing Details
                     </NavBar>
                 </div>
+
             <Form {...formItemLayout} onSubmit={this.handleEmailSubmit}
-            style={{position:"relative",textAlign:'center'}}>
+                  style={{textAlign:'center',margin:'5% 5% 0 5%'}}>
                 <Form.Item
                     label={
                         <span>
@@ -401,7 +402,7 @@ class PurchaseProcessing extends React.Component {
                     })(<Input/>)}
                 </Form.Item>
 
-                <Form.Item {...tailFormItemLayout}>
+                <Form.Item {...tailFormItemLayout} style={{textAlign:'center',marginRight:'3%'}}>
                     {getFieldDecorator('Saving', {
                         valuePropName: 'checked',
                     })(
@@ -410,7 +411,7 @@ class PurchaseProcessing extends React.Component {
                         </Checkbox>,
                     )}
                 </Form.Item>
-                <Form.Item {...tailFormItemLayout}>
+                <Form.Item {...tailFormItemLayout} style={{textAlign:'center',marginRight:'3%'}}>
                     <Button type="primary" htmlType="submit">
                         Submit
                     </Button>
