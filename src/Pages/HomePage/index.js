@@ -70,6 +70,11 @@ class HomePage extends Component{
                             Purchase Processing (for test)
                         </Link>
                     </List.Item>
+                    <List.Item>
+                        <Link to = "/MapContainer" style = {{color:"black",fontSize:20}}>
+                            Map (for test)
+                        </Link>
+                    </List.Item>
                 </List>
                 </Drawer>
                 <Card style={{position:"relative",float:"top"}}>

@@ -8,6 +8,7 @@ import PromotionDetail from "../PromotionDetail"
 import ShoppingCart from "../ShoppingCart";
 import ProductDetail from "../ProductDetail";
 import PurchaseProcessing from "../PurchaseProcessing";
+import MapContainer from "../MapContainer"
 
 
 class TreeCoPageRouter extends Component{
@@ -23,6 +24,7 @@ class TreeCoPageRouter extends Component{
                     <Route path ='/ShoppingCart' exact component = {ShoppingCart}></Route>
                     <Route path ='/ProductDetail' exact component = {ProductDetail}></Route>
                     <Route path ='/PurchaseProcessing' exact component = {PurchaseProcessing}></Route>
+                    <Route path ='/MapContainer' exact component = {MapContainer}></Route>
                 </BrowserRouter>
             </div>
         )
