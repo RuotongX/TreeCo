@@ -1,11 +1,10 @@
 import React, {Component,Fragment} from 'react';
 import 'antd/dist/antd.css';
-import {Drawer,List,Button, Icon} from 'antd';
+import {Drawer,List, Icon} from 'antd';
 import {Link} from 'react-router-dom'
 import './HomePage.css';
 import { Card,Carousel } from 'antd';
 import {NavBar} from "antd-mobile";
-import ProductDetail from "../ProductDetail";
 
 class HomePage extends Component{
     state={visible:false};
@@ -35,7 +34,6 @@ class HomePage extends Component{
                 </div>
                 <Drawer
                     title = "Menu"
-                    placement = "right"
                     closable = {false}
                     onClose = {this.onClose}
                     visible = {this.state.visible}
@@ -65,6 +63,11 @@ class HomePage extends Component{
                     <List.Item>
                         <Link to = "/ProductDetail" style = {{color:"black",fontSize:20}}>
                             Product Detail (for test)
+                        </Link>
+                    </List.Item>
+                    <List.Item>
+                        <Link to = "/PurchaseProcessing" style = {{color:"black",fontSize:20}}>
+                            Purchase Processing (for test)
                         </Link>
                     </List.Item>
                 </List>
