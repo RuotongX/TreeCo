@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="Initial Commitments&#10;1. The product list UI is being designed">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

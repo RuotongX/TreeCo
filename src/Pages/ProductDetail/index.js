@@ -1,8 +1,10 @@
 import React, {Component, Fragment} from "react";
-import {NavBar, WingBlank, Card, List, Button, Stepper} from "antd-mobile";
+import {NavBar, WingBlank, Card, List, Button, Result} from "antd-mobile";
 import { Icon} from "antd";
 import {Link} from 'react-router-dom'
 import './ProductDetail.css'
+
+const myImg = src => <img src={src} className="resultIMG" alt="" />;
 
 class ProductDetail extends Component{
 
@@ -57,7 +59,38 @@ class ProductDetail extends Component{
                 </Fragment>
             )
         } else {
-            return <div> oops </div>;
+            return(
+                <div className={"errorPage"}>
+                    <NavBar
+                        mode = "dark"
+                        className={"NaviBar"}
+                        leftContent= {<Link to = "/treeList"><Icon className = "returnButton" type="left" /></Link>}
+                    >
+                        Error
+                    </NavBar>
+
+                    <Result
+                        img={myImg('https://gw.alipayobjects.com/zos/rmsportal/GIyMDJnuqmcqPLpHCSkj.svg')}
+                        title="Unable To Get Product Information"
+                        message="Please Do Not Refresh Page While Click The Tree From The Previous Page."
+                    />
+
+                    <WingBlank size={"lg"}>
+                        <Link to = "/treeList">
+                            <Button className={"ErrorReturnButton"}>
+                                Tree List
+                            </Button>
+                        </Link>
+
+                        <Link to = "/">
+                            <Button className={"ErrorReturnButton"}>
+                                Homepage
+                            </Button>
+                        </Link>
+                    </WingBlank>
+
+                </div>
+            )
         }
     }
 

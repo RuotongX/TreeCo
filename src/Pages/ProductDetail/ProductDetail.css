@@ -1,6 +1,10 @@
 .NaviBar{
     background-color: #6A8372;
 }
+.resultIMG{
+    width: 60px;
+    height: 60px;
+}
 .ProductImage{
     display: block;
     margin-left: auto;
@@ -21,5 +25,8 @@
     margin-bottom: 10px;
 }
 .PurchaseButton{
+    margin-top: 15px;
+}
+.ErrorReturnButton{
     margin-top: 15px;
 }
