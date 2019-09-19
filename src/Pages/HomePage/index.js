@@ -1,6 +1,6 @@
 import React, {Component,Fragment} from 'react';
 import 'antd/dist/antd.css';
-import {Drawer,List, Icon} from 'antd';
+import {Drawer,List, Icon,Avatar} from 'antd';
 import {Link} from 'react-router-dom'
 import './HomePage.css';
 import { Card,Carousel } from 'antd';
@@ -9,12 +9,12 @@ import {NavBar} from "antd-mobile";
 const listData = [];
     listData.push({
         href: 'https://www.almanac.com/plant/apples',
-        title: `How to plant an apple as beginner.`,
-        avatar: `../HomePage/hints.png`,
+        title: 'How to plant an apple as beginner.',
+        avatar: 'https://media.istockphoto.com/vectors/bulb-icon-stock-vector-illustration-flat-design-vector-id901337994?k=6&m=901337994&s=612x612&w=0&h=z39spN7UYe8IaF4cmO0g8XMcG96HUIMHLR_f1FV_F98=',
         description:
-            'Apples trees aren’t just for people with acres upon acres of land. Even in a small space, you can plant a hedge of dwarf apple trees or an apple espalier and yield a successful crop.',
+            'Apples trees aren’t just for people with acres upon acres of land. Even in a small space, you can plant an apple tree.',
         content:
-            'Dig a hole approximately twice the diameter of the root system and 2 feet deep. Place some of the loose soil back into the hole and loosen the soil on the walls of the planting hole so the roots can easily penetrate the soil. Spread the tree roots on the loose soil, making sure they are not twisted or crowded in the hole. Continue to replace soil around the roots. As you begin to cover the roots, firm the soil to be sure it surrounds the roots and to remove air pockets.',
+            'Dig a hole approximately twice the diameter of the root system and 2 feet deep. Place some of the loose soil back into the hole...',
     });
 
 const IconText = ({ type, text }) => (
@@ -128,6 +128,7 @@ class HomePage extends Component{
                             <b>Tree planting guide</b>
                         </div>
                     }
+                    style = {{margin:'0 5% 0 5%'}}
                     renderItem={item => (
                         <List.Item
                             key={item.title}
