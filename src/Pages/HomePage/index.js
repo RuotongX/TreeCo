@@ -6,6 +6,24 @@ import './HomePage.css';
 import { Card,Carousel } from 'antd';
 import {NavBar} from "antd-mobile";
 
+const listData = [];
+    listData.push({
+        href: 'https://www.almanac.com/plant/apples',
+        title: `How to plant an apple as beginner.`,
+        avatar: `../HomePage/hints.png`,
+        description:
+            'Apples trees aren’t just for people with acres upon acres of land. Even in a small space, you can plant a hedge of dwarf apple trees or an apple espalier and yield a successful crop.',
+        content:
+            'Dig a hole approximately twice the diameter of the root system and 2 feet deep. Place some of the loose soil back into the hole and loosen the soil on the walls of the planting hole so the roots can easily penetrate the soil. Spread the tree roots on the loose soil, making sure they are not twisted or crowded in the hole. Continue to replace soil around the roots. As you begin to cover the roots, firm the soil to be sure it surrounds the roots and to remove air pockets.',
+    });
+
+const IconText = ({ type, text }) => (
+    <span>
+    <Icon type={type} style={{ marginRight: 8 }} />
+        {text}
+  </span>
+);
+
 class HomePage extends Component{
     state={visible:false};
     showDrawer = () =>{
@@ -95,6 +113,46 @@ class HomePage extends Component{
                         <h3>Cheap Tree!!</h3>
                     </Card>
                 </Carousel>
+                <List
+                    itemLayout="vertical"
+                    size="large"
+                    pagination={{
+                        onChange: page => {
+                            console.log(page);
+                        },
+                        pageSize: 10,
+                    }}
+                    dataSource={listData}
+                    header={
+                        <div>
+                            <b>Tree planting guide</b>
+                        </div>
+                    }
+                    renderItem={item => (
+                        <List.Item
+                            key={item.title}
+                            actions={[
+                                //<IconText type="star-o" text="156" key="list-vertical-star-o" />,
+                                <IconText type="like-o" text="156" key="list-vertical-like-o" />,
+
+                            ]}
+                            extra={
+                                <img
+                                    width={272}
+                                    alt="logo"
+                                    src="https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/images/apple-tree.jpg?itok=yIKBkZnt"
+                                />
+                            }
+                        >
+                            <List.Item.Meta
+                                avatar={<Avatar src={item.avatar} />}
+                                title={<a href={item.href}>{item.title}</a>}
+                                description={item.description}
+                            />
+                            {item.content}
+                        </List.Item>
+                    )}
+                />
             </Fragment>
         )
     }
