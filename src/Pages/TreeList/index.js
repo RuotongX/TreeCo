@@ -2,12 +2,13 @@ import React, {Component, Fragment} from 'react';
 import 'antd/dist/antd.css';
 import 'antd-mobile/dist/antd-mobile.css';
 import './treeList.css';
-import {Button, Icon, Divider, Result} from 'antd';
+import {Button, Icon, Divider, Result, Drawer} from 'antd';
 import store from "../Store/index.js";
-import {NavBar, Card, WingBlank, WhiteSpace, SearchBar} from 'antd-mobile';
+import {NavBar, Card, WingBlank, WhiteSpace, SearchBar, List, RadioItem} from 'antd-mobile';
 import {Link} from 'react-router-dom'
 
 class TreeList extends Component{
+
 
     constructor(props){
         super(props);
@@ -16,13 +17,23 @@ class TreeList extends Component{
         this.handleValueChange = this.handleValueChange.bind(this);
         this.handleStoreChange = this.handleStoreChange.bind(this);
         this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
-        this.handleSearchCancle = this.handleSearchCancle.bind(this);
+        this.handleSearchCancel = this.handleSearchCancel.bind(this);
+        this.handleDrawCloseOn = this.handleDrawCloseOn.bind(this);
+        this.handleDrawerOpenChange = this.handleDrawerOpenChange.bind(this);
 
         store.subscribe(this.handleStoreChange);
     }
 
 
     render() {
+
+        const SoilFilter = [
+            { value : 0, text: "Fast", defaultV : false},
+            { value : 1, text: "Medium", defaultV : false},
+            { value : 2, text: "Fast", defaultV : false},
+            { value : 3, text: "Anything", defaultV : true}
+        ]
+
         return (
             <Fragment>
                 <div>
@@ -31,12 +42,24 @@ class TreeList extends Component{
                             className={'NaviBar'}
                             leftContent={<Link to="/"><Icon type="left" className={'returnButton'}/></Link>}
                             rightContent={[
-                                <Icon type="control" style={{fontSize: '22px'}}/>
+                                <Icon type="control"
+                                      style={{fontSize: '22px'}}
+                                      onClick={this.handleDrawerOpenChange}/>
                             ]}
                     >
                         Product List
                     </NavBar>
                 </div>
+
+                <Drawer title = "Product Filter"
+                        placement = 'right'
+                        closable = {false}
+                        visible={this.state.showDrawer}
+                        onClose={this.handleDrawCloseOn}
+                >
+
+
+                </Drawer>
 
                 <WingBlank size='lg'>
                     <SearchBar className={"SearchBar"}
@@ -46,8 +69,8 @@ class TreeList extends Component{
                                cancelText={"Cancel"}
                                onChange={(value) => this.handleValueChange(value)}
                                onSubmit={(value) => this.handleSearchSubmit(value)}
-                               onClear={() => this.handleSearchCancle()}
-                               onCancel={() => this.handleSearchCancle()}
+                               onClear={() => this.handleSearchCancel()}
+                               onCancel={() => this.handleSearchCancel()}
                     />
                 </WingBlank>
 
@@ -114,7 +137,7 @@ class TreeList extends Component{
     }
 
 
-    handleSearchCancle(){
+    handleSearchCancel(){
         const action = {
             type : "SearchCancelAction"
         }
@@ -141,6 +164,22 @@ class TreeList extends Component{
             type : "SearchBarValuechange",
             value : value
         }
+        store.dispatch(action);
+    }
+
+    handleDrawerOpenChange(){
+        const action = {
+            type : "DrawerChange"
+        }
+
+        store.dispatch(action);
+    }
+
+    handleDrawCloseOn(){
+        const action = {
+            type: "DrawerChange"
+        }
+
         store.dispatch(action);
     }
 

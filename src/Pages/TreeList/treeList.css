@@ -10,6 +10,20 @@
 .returnButton{
     color: white;
 }
+
+.productFilterDrawer{
+    position: relative;
+    overflow: auto;
+    background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+    width: 300px;
+    padding: 0;
+
+}
+
+
+
+
 .NaviBar{
     background-color: #6A8372;
 }
