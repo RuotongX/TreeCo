@@ -20,6 +20,17 @@
     padding: 0;
 
 }
+.FilterButtons{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.FilterConfirmButton{
+    width: 110px;
+    margin-right: 10px;
+}
+.FilterResetButton{
+    width: 110px;
+}
 
 .NaviBar{
     background-color: #6A8372;

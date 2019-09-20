@@ -55,7 +55,7 @@ class ProductDetail extends Component{
                         <Drawer title= "Purchase"
                                 placement = 'bottom'
                                 visible={true}
-                                height= {330}
+                                height= {360}
                                 closable = {true}
                         >
                             <div className={"ProductDetailPurchaseDetail"}>
@@ -85,6 +85,12 @@ class ProductDetail extends Component{
                                     }
                                 >
                                     Size
+                                </List.Item>
+
+                                <List.Item
+                                    extra={"$99.99"}
+                                >
+                                    Total Price
                                 </List.Item>
                             </List>
 

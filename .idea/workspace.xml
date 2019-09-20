@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
     </list>
@@ -172,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568974227634</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add drawer to the tree detail page">
+      <created>1568978534459</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1568978534459</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -219,6 +227,7 @@
     <MESSAGE value="1. add router feature, allow link to be switched&#10;2. add login page, home page, promotion details and treelist&#10;3. fix bug on treeList page&#10;4. add more dependency to the application" />
     <MESSAGE value="add search function to the treeList page" />
     <MESSAGE value="add drawer to the tree list page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add drawer to the tree list page" />
+    <MESSAGE value="add drawer to the tree detail page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add drawer to the tree detail page" />
   </component>
 </project>
