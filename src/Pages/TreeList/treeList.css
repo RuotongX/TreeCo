@@ -55,8 +55,6 @@
 
 .SearchBar{
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: -30px;
     background-color: rgba(0,0,0,0);
-    animation-duration: 1s;
-    animation-name: antFadeIn;
 }
