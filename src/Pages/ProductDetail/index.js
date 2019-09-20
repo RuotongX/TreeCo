@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from "react";
-import {NavBar, WingBlank, Card, List, Button, Result} from "antd-mobile";
-import { Icon} from "antd";
+import {NavBar, WingBlank, Card, List, Button, Result, Stepper} from "antd-mobile";
+import {Icon, Drawer, Radio} from "antd";
 import {Link} from 'react-router-dom'
 import './ProductDetail.css'
 
@@ -52,10 +52,49 @@ class ProductDetail extends Component{
                             Add To Cart
                         </Button>
 
+                        <Drawer title= "Purchase"
+                                placement = 'bottom'
+                                visible={true}
+                                height= {330}
+                                closable = {true}
+                        >
+                            <div className={"ProductDetailPurchaseDetail"}>
+                                {this.state.tree.productName}
+                            </div>
 
+                            <List>
+                                <List.Item
+                                    wrap
+                                    extra={<Stepper
+                                        style={{ width: '100%', minWidth: '100px' }}
+                                        size = "small"
+                                        showNumber
+                                        min = {1}
+                                        value = {1}
+                                    />}
+                                >
+                                    Quantity
+                                </List.Item>
+                                <List.Item
+                                    extra={
+                                        <Radio.Group defaultValue = "a" size = "small">
+                                            <Radio.Button value = "a">S</Radio.Button>
+                                            <Radio.Button value = "b">M</Radio.Button>
+                                            <Radio.Button value = "c">L</Radio.Button>
+                                        </Radio.Group>
+                                    }
+                                >
+                                    Size
+                                </List.Item>
+                            </List>
+
+                            <Button type = "primary"
+                                    className={"CartButton"}
+                            >
+                                Add To Cart
+                            </Button>
+                        </Drawer>
                     </WingBlank>
-
-
                 </Fragment>
             )
         } else {

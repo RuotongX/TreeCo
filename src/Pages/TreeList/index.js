@@ -52,6 +52,7 @@ class TreeList extends Component{
                 </div>
 
                 <Drawer title = "Product Filter"
+                        className={"ProductDetailDrawer"}
                         placement = 'right'
                         closable = {false}
                         visible={this.state.showDrawer}
