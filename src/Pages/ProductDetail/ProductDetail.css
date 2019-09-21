@@ -5,6 +5,7 @@
     width: 60px;
     height: 60px;
 }
+
 .ProductImage{
     display: block;
     margin-left: auto;
@@ -14,8 +15,14 @@
     height: 180px;
     object-fit: cover;
 }
+.ProductDetailPurchaseDetail{
+    font-size: 15px;
+}
 .Stepper{
     width:900px;
+}
+.CartButton{
+    margin-top: 20px;
 }
 .ProductCard{
     margin-top: 20px;
@@ -25,7 +32,7 @@
     margin-bottom: 10px;
 }
 .PurchaseButton{
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .ErrorReturnButton{
     margin-top: 15px;
