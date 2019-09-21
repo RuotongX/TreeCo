@@ -8,15 +8,16 @@ const defaultState = {
     treeFilter : 'Any',
     showDrawer : false,
     searchContent : '',
-    treeList : [{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'low', height : 6, rate : 'fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree'},
-        {id:2, productName : 'Apple Tree', drain : 'Fast', sun : 'Any', maintain : 'med', height : 5, rate : 'fast', price: 23.99, img: 'apple_tree.jpg', type: 'Fruit Tree'},
-        {id:3, productName : 'Pear Tree', drain : 'Medium', sun : 'Sunny', maintain : 'high', height : 5, rate : 'slow', price: 42.99, img: 'pear_tree.jpg', type: 'Fruit Tree'},
-        {id:4, productName : 'Hedge', drain : 'Slow', sun : 'Any', maintain : 'low', height : 3, rate : 'slow', price: 17.87, img: 'henge_tree.jpg', type: 'Hedge'},
-        {id:5, productName : 'Evergreen', drain : 'Any', sun : 'Medium', maintain : 'low', height : 18, rate : 'fast', price: 42.99, img: 'evergreen.jpg', type: 'Evergreen'},
-        {id:6, productName : 'Puriri', drain : 'Slow', sun : 'Any', maintain : 'low', height : 20, rate : 'fast', price: 69.99, img: 'nz_native_trees.jpg', type: 'NZ Native'},
-        {id:7, productName : 'Gum Tree', drain : 'Slow', sun : 'Shade', maintain : 'low', height : 15, rate : 'fast', price: 32.99, img: 'gum_tree.jpg', type: 'Gum Tree'},
-        {id:8, productName : 'Palm Tree', drain : 'Medium', sun : 'Shade', maintain : 'med', height : 30, rate : 'slow', price: 22.99, img: 'palm_tree.jpg', type: 'Palm Tree'},
-        {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'high', height : 7, rate : 'med', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood'}]
+    priceFilter : [0,100],
+    treeList : [{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},
+        {id:2, productName : 'Apple Tree', drain : 'Fast', sun : 'Any', maintain : 'Medium', height : 5, rate : 'Fast', price: 23.99, img: 'apple_tree.jpg', type: 'Fruit Tree', filterRemove:false},
+        {id:3, productName : 'Pear Tree', drain : 'Medium', sun : 'Sunny', maintain : 'High', height : 5, rate : 'Slow', price: 42.99, img: 'pear_tree.jpg', type: 'Fruit Tree', filterRemove:false},
+        {id:4, productName : 'Hedge', drain : 'Slow', sun : 'Any', maintain : 'Low', height : 3, rate : 'Slow', price: 17.87, img: 'henge_tree.jpg', type: 'Hedge', filterRemove:false},
+        {id:5, productName : 'Evergreen', drain : 'Any', sun : 'Medium', maintain : 'Low', height : 18, rate : 'Fast', price: 42.99, img: 'evergreen.jpg', type: 'Evergreen', filterRemove:false},
+        {id:6, productName : 'Puriri', drain : 'Slow', sun : 'Any', maintain : 'Low', height : 20, rate : 'Fast', price: 69.99, img: 'nz_native_trees.jpg', type: 'NZ Native', filterRemove:false},
+        {id:7, productName : 'Gum Tree', drain : 'Slow', sun : 'Shade', maintain : 'Low', height : 15, rate : 'Fast', price: 32.99, img: 'gum_tree.jpg', type: 'Gum Tree', filterRemove:false},
+        {id:8, productName : 'Palm Tree', drain : 'Medium', sun : 'Shade', maintain : 'Medium', height : 30, rate : 'Slow', price: 22.99, img: 'palm_tree.jpg', type: 'Palm Tree', filterRemove:false},
+        {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false}]
 }
 
 export default (state = defaultState, action) => {
@@ -52,9 +53,9 @@ export default (state = defaultState, action) => {
                 newState.treeList = defaultState.treeList
                 return newState
             }
-    } else if (action.type === "SearchCancelAction" || action.type === "resetButtonClick"){
+    } else if (action.type === "SearchCancelAction" || action.type === "resetAction"){
 
-        const newState = defaultState
+        const newState = JSON.parse(JSON.stringify(defaultState))
 
         return newState
 
@@ -101,10 +102,98 @@ export default (state = defaultState, action) => {
         newState.treeFilter = action.value
 
         return newState
+    } else if (action.type === "PriceFilterChange"){
+
+        const newState = JSON.parse(JSON.stringify(state))
+        newState.priceFilter = action.value
+
+        return newState
     } else if (action.type === "ApplyButtonClick"){
 
         const newState = JSON.parse(JSON.stringify(state))
 
+        const filterTreeList = JSON.parse(JSON.stringify(defaultState.treeList))
+
+        filterTreeList.map((tree) => {
+
+            // SOIL CONDITION FILTER
+
+            if(newState.SoilFilter !== 'Any'){
+                if(tree.drain !== 'Any' && tree.drain !== newState.SoilFilter){
+                    tree.filterRemove = true
+                }
+            }
+
+
+            // SUN CONDITION FILTER
+
+            if(newState.SunFilter !== 'Any'){
+                if(tree.sun !== 'Any' && tree.sun !== newState.SunFilter){
+                    tree.filterRemove = true
+                }
+            }
+
+            // MAINTAIN CONDITION FILTER
+
+            if(newState.MaintenanceFilter !== 'Any'){
+                if(tree.maintain !== 'Any' && tree.maintain !== newState.MaintenanceFilter){
+                    tree.filterRemove = true
+                }
+            }
+
+
+            // Max Height CONDITION FILTER
+
+            if(newState.MaxHeightFilter !== 'Any'){
+                console.log("yes")
+                if((newState.MaxHeightFilter === '<1m' && !tree.height <= 1)){
+                    tree.filterRemove = true
+                } else if ((newState.MaxHeightFilter === '1-2m' && !(tree.height > 1 && tree.height <= 2))){
+                    tree.filterRemove = true
+                } else if ((newState.MaxHeightFilter === '2-3m' && !(tree.height > 2 && tree.height <= 3))){
+                    tree.filterRemove = true
+                } else if ((newState.MaxHeightFilter === '>3m' && !tree.height > 3)){
+                    console.log("3")
+                    tree.filterRemove = true
+                }
+            }
+
+            // GROWTH CONDITION FILTER
+
+            if(newState.GrowthFilter !== 'Any'){
+                if(tree.rate !== 'Any' && tree.rate !== newState.GrowthFilter){
+                    tree.filterRemove = true
+                }
+            }
+
+
+            // TYPE  FILTER
+
+            if(newState.treeFilter !== 'Any'){
+                if(tree.type !== 'Any' && tree.type !== newState.treeFilter){
+                    tree.filterRemove = true
+                }
+            }
+
+            // Price Range
+            if(tree.price < newState.priceFilter[0] || tree.price > newState.priceFilter[1]){
+                tree.filterRemove = true
+            }
+
+        })
+
+        const filterAfterList = []
+
+        filterTreeList.map((tree) => {
+            if(tree.filterRemove == false){
+                filterAfterList.push(tree)
+            }
+        })
+
+
+
+
+        newState.treeList = filterAfterList
 
         return newState
     }

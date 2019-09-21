@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
@@ -40,11 +38,6 @@
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="818" />
-    <option name="width" value="1109" />
-    <option name="height" value="1047" />
   </component>
   <component name="ProjectId" id="1QcZrJzPztb6G7SYjEn363cCx71" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -90,7 +83,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.index.js (4)">
+  <component name="RunManager" selected="Node.js.reducer.js">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -112,6 +105,9 @@
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountLogin">
       <method v="2" />
     </configuration>
+    <configuration name="reducer.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/Pages/Store/reducer.js" working-dir="$PROJECT_DIR$/src/Pages/Store">
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -122,6 +118,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.reducer.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -144,6 +145,9 @@
       <workItem from="1568686225212" duration="2958000" />
       <workItem from="1568859540948" duration="3424000" />
       <workItem from="1568867551627" duration="1353000" />
+      <workItem from="1568992258899" duration="46000" />
+      <workItem from="1569034703853" duration="103000" />
+      <workItem from="1569034811539" duration="9158000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
@@ -180,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568978534459</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add information to drawer, for product list page">
+      <created>1568992250999</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1568992250999</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -228,6 +239,7 @@
     <MESSAGE value="add search function to the treeList page" />
     <MESSAGE value="add drawer to the tree list page" />
     <MESSAGE value="add drawer to the tree detail page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add drawer to the tree detail page" />
+    <MESSAGE value="add information to drawer, for product list page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add information to drawer, for product list page" />
   </component>
 </project>

@@ -11,6 +11,11 @@
     color: white;
 }
 
+.PriceRange{
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
 .productFilterDrawer{
     position: relative;
     overflow: auto;

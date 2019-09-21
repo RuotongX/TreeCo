@@ -4,7 +4,7 @@ import 'antd-mobile/dist/antd-mobile.css';
 import './treeList.css';
 import {Button, Icon, Divider, Result, Drawer} from 'antd';
 import store from "../Store/index.js";
-import {NavBar, Card, WingBlank, WhiteSpace, SearchBar, List, Radio,Toast} from 'antd-mobile';
+import {NavBar, Card, WingBlank, WhiteSpace, SearchBar, List, Radio,Toast, Range} from 'antd-mobile';
 import {Link} from 'react-router-dom'
 
 class TreeList extends Component{
@@ -27,6 +27,7 @@ class TreeList extends Component{
         this.handleTreeCatChange = this.handleTreeCatChange.bind(this);
         this.handleResetAction = this.handleResetAction.bind(this);
         this.handleApplyAction = this.handleApplyAction.bind(this);
+        this.handleFilterPriceChange = this.handleFilterPriceChange.bind(this);
 
         store.subscribe(this.handleStoreChange);
     }
@@ -76,7 +77,11 @@ class TreeList extends Component{
                     {/*product list navigation bar*/}
                     <NavBar mode="dark"
                             className={'NaviBar'}
-                            leftContent={<Link to="/"><Icon type="left" className={'returnButton'}/></Link>}
+                            leftContent={<Link to="/"><Icon type="left"
+                                                            className={'returnButton'}
+                                                            onClick={this.handleResetAction}
+
+                                                    /></Link>}
                             rightContent={[
                                 <Icon type="control"
                                       style={{fontSize: '22px'}}
@@ -108,6 +113,33 @@ class TreeList extends Component{
                             Reset
                         </Button>
                     </div>
+
+
+                    <List renderHeader={"Price Range"}
+                          wrap = {true}
+                          multi
+                    >
+
+                        <List.Item>
+                            <div style={{ padding: 7 }}>
+                                <Range
+                                    min = {0}
+                                    max = {100}
+                                    step= {10}
+                                    defaultValue={[0,100]}
+                                    value = {this.state.priceFilter}
+                                    allowCross = {false}
+                                    className = {"PriceRange"}
+                                    onChange={(value) =>(this.handleFilterPriceChange(value))}
+                                />
+                            </div>
+                        </List.Item>
+
+                        <List.Item extra={String.prototype.concat(this.state.priceFilter[0], ' - ',this.state.priceFilter[1])}>
+                            Price Range
+                        </List.Item>
+                    </List>
+
                     <List renderHeader={"Soil Drainage"}>
                         {
                             SoilorGrowthFilter.map(item => (
@@ -289,6 +321,15 @@ class TreeList extends Component{
 
         store.dispatch(action);
     }
+    handleFilterPriceChange(value){
+
+        const action = {
+            type : "PriceFilterChange",
+            value : value
+        }
+
+        store.dispatch(action)
+    }
 
     handleValueChange(value){
 
@@ -375,7 +416,7 @@ class TreeList extends Component{
 
     handleResetAction(){
         const action = {
-            type : "resetButtonClick"
+            type : "resetAction"
         }
         store.dispatch(action)
     }
