@@ -1,5 +1,6 @@
 const defaultState = {
 
+    // tree list page
     SunFilter : 'Any',
     SoilFilter : 'Any',
     MaintenanceFilter : 'Any',
@@ -17,7 +18,14 @@ const defaultState = {
         {id:6, productName : 'Puriri', drain : 'Slow', sun : 'Any', maintain : 'Low', height : 20, rate : 'Fast', price: 69.99, img: 'nz_native_trees.jpg', type: 'NZ Native', filterRemove:false},
         {id:7, productName : 'Gum Tree', drain : 'Slow', sun : 'Shade', maintain : 'Low', height : 15, rate : 'Fast', price: 32.99, img: 'gum_tree.jpg', type: 'Gum Tree', filterRemove:false},
         {id:8, productName : 'Palm Tree', drain : 'Medium', sun : 'Shade', maintain : 'Medium', height : 30, rate : 'Slow', price: 22.99, img: 'palm_tree.jpg', type: 'Palm Tree', filterRemove:false},
-        {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false}]
+        {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false}],
+
+    //Shopping Cart
+
+
+    //tree detail
+    selectedTree : null,
+    totalPrice : 0.00
 }
 
 export default (state = defaultState, action) => {
@@ -25,6 +33,14 @@ export default (state = defaultState, action) => {
     if(action.type === "SearchBarValuechange") {
         const newState = JSON.parse(JSON.stringify(state))
         newState.searchContent = action.value;
+
+        return newState
+
+    } else if(action.type === "TreeSelected"){
+
+        const newState = JSON.parse(JSON.stringify(state))
+
+        newState.selectedTree = action.value;
 
         return newState
 
@@ -145,7 +161,6 @@ export default (state = defaultState, action) => {
             // Max Height CONDITION FILTER
 
             if(newState.MaxHeightFilter !== 'Any'){
-                console.log("yes")
                 if((newState.MaxHeightFilter === '<1m' && !tree.height <= 1)){
                     tree.filterRemove = true
                 } else if ((newState.MaxHeightFilter === '1-2m' && !(tree.height > 1 && tree.height <= 2))){
@@ -153,7 +168,6 @@ export default (state = defaultState, action) => {
                 } else if ((newState.MaxHeightFilter === '2-3m' && !(tree.height > 2 && tree.height <= 3))){
                     tree.filterRemove = true
                 } else if ((newState.MaxHeightFilter === '>3m' && !tree.height > 3)){
-                    console.log("3")
                     tree.filterRemove = true
                 }
             }
@@ -194,6 +208,18 @@ export default (state = defaultState, action) => {
 
 
         newState.treeList = filterAfterList
+
+        return newState
+    } else if (action.type === "calculatePrice"){
+
+        const newState = JSON.parse(JSON.stringify(state))
+
+        const price = action.value.multiplier * action.value.quantity * newState.selectedTree.price
+
+        newState.totalPrice = price
+
+        console.log("price")
+        console.log(price)
 
         return newState
     }

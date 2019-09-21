@@ -32,6 +32,10 @@ class TreeList extends Component{
         store.subscribe(this.handleStoreChange);
     }
 
+    componentWillUnmount() {
+
+    }
+
 
     render() {
 
@@ -283,7 +287,7 @@ class TreeList extends Component{
                             <Card.Footer content={
                                 <Link to={{
                                     pathname: "/ProductDetail",
-                                    treeState: {tree}
+                                    query: tree
                                 }}>
                                     <Button className={"ProductPriceButton"}>
                                             <span className={"ProductPrice"}>
@@ -299,6 +303,7 @@ class TreeList extends Component{
 
         )
     }
+
 
 
     handleSearchCancel(){
