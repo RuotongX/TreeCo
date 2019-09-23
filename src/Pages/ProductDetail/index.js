@@ -4,19 +4,40 @@ import {Icon, Drawer, Radio} from "antd";
 import {Link} from 'react-router-dom'
 import './ProductDetail.css'
 
+
 const myImg = src => <img src={src} className="resultIMG" alt="" />;
 
 class ProductDetail extends Component{
 
     constructor(props){
         super(props)
-        this.state = this.props.location.treeState;
+        this.state = {
+            selectedTree : this.props.location.query,
+            drawerStatus : false,
+            quantity : 1,
+            sizeOfTree : 'a',
+            totalPrice : 0.00
+        };
+
+        this.handleDrawerChange = this.handleDrawerChange.bind(this)
+        this.handleStepperChange = this.handleStepperChange.bind(this)
+        this.handleSizeChange = this.handleSizeChange.bind(this)
 
     }
+    UNSAFE_componentWillMount(){
+
+        if(this.state.selectedTree){
+            this.state.totalPrice = this.state.selectedTree.price
+        }
+    }
+
+
 
     render() {
 
-        if(this.state){
+
+
+        if(this.state.selectedTree){
             return(
                 <Fragment>
                     <NavBar
@@ -24,42 +45,46 @@ class ProductDetail extends Component{
                         className={"NaviBar"}
                         leftContent= {<Link to = "/treeList"><Icon className = "returnButton" type="left" /></Link>}
                     >
-                        {this.props.location.treeState.tree.productName}
+                        {this.state.selectedTree.productName}
                     </NavBar>
 
                     <WingBlank size={"lg"}>
                         <Card className={"ProductCard"}>
                             <Card.Body>
                                 <img className={'ProductImage'}
-                                     src = {require('../ProductImage/' + this.state.tree.img)}
-                                     alt = {this.state.tree.id}
+                                     src = {require('../ProductImage/' + this.state.selectedTree.img)}
+                                     alt = {this.state.selectedTree.id}
                                 />
 
                                 <List className={"DetailList"}>
-                                    <List.Item extra={this.state.tree.productName}>Product Name</List.Item>
-                                    <List.Item extra={this.state.tree.drain}>Drain Speed</List.Item>
-                                    <List.Item extra={this.state.tree.sun}>Sun Condition</List.Item>
-                                    <List.Item extra={this.state.tree.maintain}>Maintenance</List.Item>
-                                    <List.Item extra={this.state.tree.height}>Maximum Height</List.Item>
-                                    <List.Item extra={this.state.tree.rate}>Grow Speed</List.Item>
-                                    <List.Item extra={this.state.tree.type}>Tree Category</List.Item>
+                                    <List.Item extra={this.state.selectedTree.productName}>Product Name</List.Item>
+                                    <List.Item extra={this.state.selectedTree.drain}>Drain Speed</List.Item>
+                                    <List.Item extra={this.state.selectedTree.sun}>Sun Condition</List.Item>
+                                    <List.Item extra={this.state.selectedTree.maintain}>Maintenance</List.Item>
+                                    <List.Item extra={this.state.selectedTree.height}>Maximum Height</List.Item>
+                                    <List.Item extra={this.state.selectedTree.rate}>Grow Speed</List.Item>
+                                    <List.Item extra={this.state.selectedTree.type}>Tree Category</List.Item>
                                 </List>
                             </Card.Body>
                         </Card>
 
                         <Button type = "primary"
-                                className={"PurchaseButton"}>
+                                className={"PurchaseButton"}
+                                onClick={this.handleDrawerChange}
+                        >
+
                             Add To Cart
                         </Button>
 
                         <Drawer title= "Purchase"
                                 placement = 'bottom'
-                                visible={true}
+                                visible={this.state.drawerStatus}
                                 height= {360}
                                 closable = {true}
+                                onClose={this.handleDrawerChange}
                         >
                             <div className={"ProductDetailPurchaseDetail"}>
-                                {this.state.tree.productName}
+                                {this.state.selectedTree.productName}
                             </div>
 
                             <List>
@@ -70,14 +95,15 @@ class ProductDetail extends Component{
                                         size = "small"
                                         showNumber
                                         min = {1}
-                                        value = {1}
+                                        value = {this.state.quantity}
+                                        onChange={(value) => {this.handleStepperChange(value);}}
                                     />}
                                 >
                                     Quantity
                                 </List.Item>
                                 <List.Item
                                     extra={
-                                        <Radio.Group defaultValue = "a" size = "small">
+                                        <Radio.Group defaultValue = "a" size = "small" onChange={(e) => {this.handleSizeChange(e)}}>
                                             <Radio.Button value = "a">S</Radio.Button>
                                             <Radio.Button value = "b">M</Radio.Button>
                                             <Radio.Button value = "c">L</Radio.Button>
@@ -88,7 +114,7 @@ class ProductDetail extends Component{
                                 </List.Item>
 
                                 <List.Item
-                                    extra={"$99.99"}
+                                    extra={String.prototype.concat('$',this.state.totalPrice)}
                                 >
                                     Total Price
                                 </List.Item>
@@ -137,10 +163,59 @@ class ProductDetail extends Component{
                 </div>
             )
         }
+
+
     }
 
 
+    handleStepperChange(value){
 
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.quantity = value
+
+        let multiplier = 1.0
+
+        if (newState.sizeOfTree === 'a'){
+            multiplier = 1.0
+        } else if (newState.sizeOfTree === 'b'){
+            multiplier = 2.5
+        } else if (newState.sizeOfTree === 'c'){
+            multiplier = 5.6
+        }
+
+        newState.totalPrice = (newState.selectedTree.price * newState.quantity * multiplier).toFixed(2)
+
+        this.setState(newState)
+    }
+
+
+    handleDrawerChange(){
+
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.drawerStatus = !newState.drawerStatus
+
+        this.setState(newState)
+    }
+
+    handleSizeChange(e){
+
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.sizeOfTree = e.target.value
+
+        let multiplier = 1.0
+
+        if (newState.sizeOfTree === 'a'){
+            multiplier = 1.0
+        } else if (newState.sizeOfTree === 'b'){
+            multiplier = 2.5
+        } else if (newState.sizeOfTree === 'c'){
+            multiplier = 5.6
+        }
+
+        newState.totalPrice = (newState.selectedTree.price * newState.quantity * multiplier).toFixed(2)
+
+        this.setState(newState)
+    }
 }
 
 export default ProductDetail;
