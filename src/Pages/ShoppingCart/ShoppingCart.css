@@ -20,3 +20,24 @@
 .deleteIcon{
     margin-right: 3px;
 }
+.cartIMG{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    margin-right: 20px;
+    border-radius: 3%;
+    float: left;
+}
+.CartQuantity{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.CartProductName{
+    font-size: 18px;
+    margin-top: 22px;
+}
+.CartProductDescription{
+    margin-top: 5px;
+    color: gray;
+}

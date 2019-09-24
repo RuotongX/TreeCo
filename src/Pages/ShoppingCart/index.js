@@ -1,8 +1,10 @@
 import React, {Component, Fragment} from "react";
-import {NavBar, Card, Stepper, WhiteSpace,Button, WingBlank} from 'antd-mobile';
+import {NavBar, Card, WhiteSpace,Button, WingBlank} from 'antd-mobile';
 import {Icon} from 'antd'
 import './ShoppingCart.css';
 import {Link} from 'react-router-dom'
+
+const myImg = src => <img src={src} className="cartIMG" alt="" />;
 
 class ShoppingCart extends Component{
     render() {
@@ -23,12 +25,23 @@ class ShoppingCart extends Component{
                     <WhiteSpace size = "lg" />
                     <Card full>
                         <Card.Body>
-                            <div> description </div>
+                            <div className={"CartRightContent"}>
+                                <img className={'cartIMG'}
+                                     src = {require('../ProductImage/' + 'lemon_tree.jpg')}
+                                     alt = {'lemon_tree'}
+                                />
+                            </div>
+                            <div className={"CartLeftContent"}>
+                                <div className={'CartProductName'}>
+                                    Lemon Tree
+                                </div>
+                                <div className={'CartProductDescription'}>
+                                    Size: Large
+                                </div>
+                            </div>
+
                         </Card.Body>
-                        <Card.Footer content={<Stepper showNumber max = {10}
-                                                       min = {1}
-                                                       value={2}
-                                                       className={"Stepper"}/>}
+                        <Card.Footer content={<div className={"CartQuantity"}>Quantity: 10</div>}
                                      extra={<Button type = "warning" size = "small" inline className={"RemoveButton"}>
                                          <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
                                      </Button>}
