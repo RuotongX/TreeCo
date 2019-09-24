@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom'
 import {NavBar} from "antd-mobile";
-import {Form, Input, Tooltip, Icon, Select, Checkbox, Button, AutoComplete,Modal,Result} from 'antd';
+import {Form, Input, Tooltip, Icon, Select, Button, AutoComplete,Modal,Result} from 'antd';
 import './PurchaseProcessing.css';
 
 
@@ -25,9 +25,13 @@ class PurchaseProcessing extends React.Component {
     }
 
     showModal = () =>{
-        this.setState({
-            visible:true,
-        });
+        if(this.props.form.getFieldValue('Name') !== undefined && this.props.form.getFieldValue('email') !== undefined &&
+            this.props.form.getFieldValue('phone') !== undefined &&this.props.form.getFieldValue('country') !== undefined &&
+            this.props.form.getFieldValue('Address') !== undefined) {
+            this.setState({
+                visible: true,
+            });
+        }
     };
 
     handleEmailSubmit = e => {
@@ -48,12 +52,11 @@ class PurchaseProcessing extends React.Component {
         this.setState({autoCompleteResult});
     };
     handleOk= e =>{
-        if(this.props.form.confirmDirty){
 
-        }
-        this.setState({
-            visible:false,
-        });
+            this.setState({
+                visible:false,
+            });
+
     };
 
     render() {
@@ -419,17 +422,17 @@ class PurchaseProcessing extends React.Component {
                         })(<Input/>)}
                     </Form.Item>
 
+                    {/*<Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>*/}
+                    {/*    {getFieldDecorator('Saving', {*/}
+                    {/*        valuePropName: 'checked',*/}
+                    {/*    })(*/}
+                    {/*        <Checkbox>*/}
+                    {/*            Save this details*/}
+                    {/*        </Checkbox>,*/}
+                    {/*    )}*/}
+                    {/*</Form.Item>*/}
                     <Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>
-                        {getFieldDecorator('Saving', {
-                            valuePropName: 'checked',
-                        })(
-                            <Checkbox>
-                                Save this details
-                            </Checkbox>,
-                        )}
-                    </Form.Item>
-                    <Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>
-                        <Button type="primary" htmlType="submit" onClick={this.showModal}>
+                        <Button type="primary" htmlType="submit" onClick={this.showModal} style = {{backgroundColor:'#6A8372',fontSize:30,blockSize:60,marginTop:30}}>
                             Submit
                         </Button>
                         <Modal title="Successed"
