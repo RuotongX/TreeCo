@@ -40,15 +40,16 @@ class HomePage extends Component {
     render() {
         return (
             <Fragment>
-                <div>
+                <div >
                     <NavBar mode="dark"
                             className={'NaviBar'}
+                            style = {{fontFamily:'Brush Script Std'}}
                             leftContent={
                                 <Icon type="menu" style={{fontSize: '22px'}}
                                       onClick={this.showDrawer}/>
                             }
                     >
-                        Home
+                        Tree Co
                     </NavBar>
                 </div>
                 <Drawer
@@ -96,10 +97,11 @@ class HomePage extends Component {
                         </List.Item>
                     </List>
                 </Drawer>
-                <Card style={{position: "relative", float: "top"}}>
-                    <p style={{fontSize: 30}}>Hi</p>
-                    <p style={{fontSize: 20}}>Customer</p>
-                </Card>
+                <Card style={{height:200,margin:'0 0 0 0'}}
+                      cover={<img alt="ProductImage"
+                    src = {require('../HomePage/cover.jpg')}
+                    />}>
+                    </Card>
                 <Carousel autoplay dots={true} style={{height: 180, position: "relative", float: "top"}}>
                     <Card bodyStyle={{backgroundColor: "#94b8b8", height: 180}}>
                         <h3>Promotion!!!</h3>
@@ -117,12 +119,12 @@ class HomePage extends Component {
                 <List
                     itemLayout="vertical"
                     size="large"
-                    pagination={{
-                        onChange: page => {
-                            console.log(page);
-                        },
-                        pageSize: 10,
-                    }}
+                    // pagination={{
+                    //     onChange: page => {
+                    //         console.log(page);
+                    //     },
+                    //     pageSize: 10,
+                    // }}
                     dataSource={listData}
                     header={
                         <div>

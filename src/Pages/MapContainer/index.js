@@ -2,12 +2,13 @@ import React, {Fragment} from 'react';
 import {Map, GoogleApiWrapper,Marker} from 'google-maps-react';
 import {NavBar} from "antd-mobile";
 import {Link} from "react-router-dom";
-import {Icon} from "antd";
+import {Icon,Card} from "antd";
 
 const mapStyles = {
     width: '100%',
     height: '100%',
 };
+
 
 class MapContainer extends React.Component{
     render() {
@@ -24,14 +25,16 @@ class MapContainer extends React.Component{
                     Map
                 </NavBar>
             </div>
+                <Card>
+                    <p style={{fontSize:15,marginLeft:'10%',marginRight:'10%'}}>Your dont have any product on road currently, you could go to Tree Co store to visit trees</p>
+                </Card>
             <Map
                 google={this.props.google}
-                zoom={8}
+                zoom={11}
                 style={mapStyles}
                 initialCenter={{ lat: -36.8485, lng: 174.7633}}
             >
-            <Marker position={{ lat: -36.692221, lng: 174.670541}} >
-                TreeCo
+            <Marker position={{ lat: -36.692221, lng: 174.670541}}>
             </Marker>
             </Map>
             </Fragment>
