@@ -21,6 +21,8 @@ const defaultState = {
         {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false}],
 
     //Shopping Cart
+    shoopingCartElement: [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
+        {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
 
 
     //tree detail
@@ -71,7 +73,12 @@ export default (state = defaultState, action) => {
             }
     } else if (action.type === "SearchCancelAction" || action.type === "resetAction"){
 
+        // at this point, the cart information will be keeped, but all other information
+        // will be reset and removed.
+        const prevState = JSON.parse(JSON.stringify(state))
+        const shoopingCartItem = prevState.shoopingCartElement
         const newState = JSON.parse(JSON.stringify(defaultState))
+        newState.shoopingCartElement = shoopingCartItem
 
         return newState
 
@@ -222,6 +229,8 @@ export default (state = defaultState, action) => {
         console.log(price)
 
         return newState
+    } else if (action.type === "addToCartAction"){
+        state.shoopingCartElement.push(action.value)
     }
 
 

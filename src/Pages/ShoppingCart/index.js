@@ -1,12 +1,25 @@
 import React, {Component, Fragment} from "react";
 import {NavBar, Card, WhiteSpace,Button, WingBlank} from 'antd-mobile';
 import {Icon} from 'antd'
+import store from "../Store/index.js";
 import './ShoppingCart.css';
 import {Link} from 'react-router-dom'
 
 const myImg = src => <img src={src} className="cartIMG" alt="" />;
 
 class ShoppingCart extends Component{
+
+    constructor(props){
+        super(props);
+        this.state = store.getState();
+
+        this.handleStoreChange = this.handleStoreChange.bind(this)
+        store.subscribe(this.handleStoreChange)
+    }
+
+
+
+
     render() {
         return (
             <Fragment>
@@ -22,32 +35,52 @@ class ShoppingCart extends Component{
 
 
                 <div className={"CartItem"}>
-                    <WhiteSpace size = "lg" />
-                    <Card full>
-                        <Card.Body>
-                            <div className={"CartRightContent"}>
-                                <img className={'cartIMG'}
-                                     src = {require('../ProductImage/' + 'lemon_tree.jpg')}
-                                     alt = {'lemon_tree'}
-                                />
-                            </div>
-                            <div className={"CartLeftContent"}>
-                                <div className={'CartProductName'}>
-                                    Lemon Tree
-                                </div>
-                                <div className={'CartProductDescription'}>
-                                    Size: Large
-                                </div>
-                            </div>
+                    {
+                        this.state.shoopingCartElement.map((info) => {
+                            return(
+                                <Fragment>
+                                    <WhiteSpace size = "lg" />
 
-                        </Card.Body>
-                        <Card.Footer content={<div className={"CartQuantity"}>Quantity: 10</div>}
-                                     extra={<Button type = "warning" size = "small" inline className={"RemoveButton"}>
-                                         <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
-                                     </Button>}
-                        />
+                                    <Card full>
+                                        <Card.Body>
+                                            <div className={"CartRightContent"}>
+                                                <img className={'cartIMG'}
+                                                src = {require('../ProductImage/' + info.tree.img)}
+                                                alt = {info.tree.productName}
+                                                />
+                                            </div>
 
-                    </Card>
+                                            <div className={"CartLeftContent"}>
+                                                <div className={'CartProductName'}>
+                                                    {info.tree.productName}
+                                                </div>
+                                                <div className={'CartProductDescription'}>
+                                                    {String.prototype.concat('Size: ',info.size)}
+                                                </div>
+                                                <div className={"CartQuantity"}>
+                                                    {String.prototype.concat('Quantity: ',info.quantity)}
+                                                </div>
+                                            </div>
+
+                                        </Card.Body>
+
+                                    <Card.Footer content={<div className={"CartPrice"}>{String.prototype.concat('Price: ',info.price)}</div>}
+                                        extra={<Button type = "warning" size = "small" inline className={"RemoveButton"}>
+                                                <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
+                                                </Button>
+                                        }
+                                    />
+
+                                    </Card>
+                                </Fragment>
+                            )
+                        })
+
+
+
+
+                    }
+
                 </div>
 
                 <WingBlank size = "lg">
@@ -59,6 +92,12 @@ class ShoppingCart extends Component{
             </Fragment>
         );
     }
+
+    handleStoreChange(){
+        this.setState(store.getState())
+    }
 }
+
+
 
 export default ShoppingCart;

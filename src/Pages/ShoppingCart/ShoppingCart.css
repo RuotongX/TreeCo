@@ -30,14 +30,17 @@
     float: left;
 }
 .CartQuantity{
-    margin-top: 5px;
-    margin-left: 10px;
+    color: gray;
 }
 .CartProductName{
     font-size: 18px;
-    margin-top: 22px;
+    margin-top: 13px;
 }
 .CartProductDescription{
     margin-top: 5px;
     color: gray;
+}
+.CartPrice{
+    margin-top: 7px;
+    margin-left: 7px;
 }

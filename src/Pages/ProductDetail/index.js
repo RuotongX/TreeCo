@@ -1,7 +1,8 @@
 import React, {Component, Fragment} from "react";
-import {NavBar, WingBlank, Card, List, Button, Result, Stepper} from "antd-mobile";
+import {NavBar, WingBlank, Card, List, Button, Result, Stepper,Toast} from "antd-mobile";
 import {Icon, Drawer, Radio} from "antd";
 import {Link} from 'react-router-dom'
+import store from "../Store/index.js";
 import './ProductDetail.css'
 
 
@@ -19,6 +20,7 @@ class ProductDetail extends Component{
             totalPrice : 0.00
         };
 
+        this.handleAddToCartAction = this.handleAddToCartAction.bind(this)
         this.handleDrawerChange = this.handleDrawerChange.bind(this)
         this.handleStepperChange = this.handleStepperChange.bind(this)
         this.handleSizeChange = this.handleSizeChange.bind(this)
@@ -120,11 +122,14 @@ class ProductDetail extends Component{
                                 </List.Item>
                             </List>
 
-                            <Button type = "primary"
-                                    className={"CartButton"}
-                            >
-                                Add To Cart
-                            </Button>
+                            <Link to = '/ShoppingCart'>
+                                <Button type = "primary"
+                                        className={"CartButton"}
+                                        onClick={this.handleAddToCartAction}
+                                >
+                                    Add To Cart
+                                </Button>
+                            </Link>
                         </Drawer>
                     </WingBlank>
                 </Fragment>
@@ -165,6 +170,27 @@ class ProductDetail extends Component{
         }
 
 
+    }
+
+    handleAddToCartAction(){
+
+        let size = ''
+        if(this.state.size == 'a'){
+            size = 'Small'
+        } else if (this.state.size == 'b'){
+            size = 'Medium'
+        } else if (this.state.size == 'c'){
+            size = 'Large'
+        }
+
+
+        const action = {
+            type: "addToCartAction",
+            value: {tree: this.state.selectedTree, quantity:this.state.quantity, size:size, price: this.state.totalPrice}
+        }
+
+        store.dispatch(action)
+        Toast.success('Item added', 1);
     }
 
 
