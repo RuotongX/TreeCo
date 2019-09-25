@@ -19,8 +19,20 @@ class PurchaseProcessing extends React.Component {
         this.state = {
             confirmDirty: false,
             autoCompleteResult: [],
+            visible:false,
+            submit:false,
         };
     }
+
+    showModal = () =>{
+        if(this.props.form.getFieldValue('Name') !== undefined && this.props.form.getFieldValue('email') !== undefined &&
+            this.props.form.getFieldValue('phone') !== undefined &&this.props.form.getFieldValue('country') !== undefined &&
+            this.props.form.getFieldValue('Address') !== undefined) {
+            this.setState({
+                visible: true,
+            });
+        }
+    };
 
     handleEmailSubmit = e => {
         e.preventDefault();
