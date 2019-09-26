@@ -174,19 +174,20 @@ class ProductDetail extends Component{
 
     handleAddToCartAction(){
 
-        let size = ''
-        if(this.state.size == 'a'){
-            size = 'Small'
-        } else if (this.state.size == 'b'){
-            size = 'Medium'
-        } else if (this.state.size == 'c'){
-            size = 'Large'
+        var treeSize = ''
+        if(this.state.sizeOfTree === 'a'){
+            treeSize = 'Small'
+        } else if (this.state.sizeOfTree === 'b'){
+            treeSize = 'Medium'
+        } else if (this.state.sizeOfTree === 'c'){
+            treeSize = 'Large'
         }
 
+        console.log(treeSize)
 
         const action = {
             type: "addToCartAction",
-            value: {tree: this.state.selectedTree, quantity:this.state.quantity, size:size, price: this.state.totalPrice}
+            value: {tree: this.state.selectedTree, quantity:this.state.quantity, size:treeSize, price: this.state.totalPrice}
         }
 
         store.dispatch(action)
