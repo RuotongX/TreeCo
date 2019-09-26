@@ -97,11 +97,13 @@ class HomePage extends Component {
                         </List.Item>
                     </List>
                 </Drawer>
-                <Card style={{height:200,margin:'0 0 0 0'}}
+
+                <Card style={{height:200,margin:'0 0 0 0',position: "relative", float: "top"}}
                       cover={<img alt="ProductImage"
                     src = {require('../HomePage/cover.jpg')}
                     />}>
-                    </Card>
+                </Card>
+                
                 <Carousel autoplay dots={true} style={{height: 180, position: "relative", float: "top"}}>
                     <Card bodyStyle={{backgroundColor: "#94b8b8", height: 180}}>
                         <h3>Promotion!!!</h3>

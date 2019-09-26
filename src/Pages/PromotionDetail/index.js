@@ -1,5 +1,7 @@
 import React, {Component,Fragment} from 'react'
 import { Card, WingBlank, WhiteSpace,NavBar,Icon } from 'antd-mobile';
+import {Link} from "react-router-dom";
+import './PromotionDetail.css'
 
 
 class PromotionDetail extends Component{
@@ -8,8 +10,11 @@ class PromotionDetail extends Component{
             <Fragment>
                 <div className={'NavBar'}>
                     {/*product list navigation bar*/}
-                    <NavBar mode = "dark"
-                            leftContent={<Icon type = "left"/>}>
+                    <NavBar mode="dark"
+                            className={'NavBar'}
+                            leftContent={<Link to="/"><Icon type="left" className={'returnButton'}/></Link>}
+                            rightContent={[]}
+                    >
                         Promotion Details
                     </NavBar>
                 </div>
