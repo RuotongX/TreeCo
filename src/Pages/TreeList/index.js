@@ -82,10 +82,10 @@ class TreeList extends Component{
                     <NavBar mode="dark"
                             className={'NaviBar'}
                             leftContent={<Link to="/"><Icon type="left"
-                                                            className={'returnButton'}
-                                                            onClick={this.handleResetAction}
+                                className={'returnButton'}
+                                onClick={this.handleResetAction}
 
-                                                    /></Link>}
+                                /></Link>}
                             rightContent={[
                                 <Icon type="control"
                                       style={{fontSize: '22px'}}
