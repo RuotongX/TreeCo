@@ -5,14 +5,13 @@ import store from "../Store/index.js";
 import './ShoppingCart.css';
 import {Link} from 'react-router-dom'
 
-const myImg = src => <img src={src} className="cartIMG" alt="" />;
-
 class ShoppingCart extends Component{
 
     constructor(props){
         super(props);
         this.state = store.getState();
 
+        this.handleDeleteAction = this.handleDeleteAction.bind(this)
         this.handleStoreChange = this.handleStoreChange.bind(this)
         store.subscribe(this.handleStoreChange)
     }
@@ -36,7 +35,7 @@ class ShoppingCart extends Component{
 
                 <div className={"CartItem"}>
                     {
-                        this.state.shoopingCartElement.map((info) => {
+                        this.state.shoopingCartElement.map((info,index) => {
                             return(
                                 <Fragment>
                                     <WhiteSpace size = "lg" />
@@ -64,21 +63,21 @@ class ShoppingCart extends Component{
 
                                         </Card.Body>
 
-                                    <Card.Footer content={<div className={"CartPrice"}>{String.prototype.concat('Price: ',info.price)}</div>}
-                                        extra={<Button type = "warning" size = "small" inline className={"RemoveButton"}>
-                                                <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
-                                                </Button>
-                                        }
-                                    />
+                                        <Card.Footer content={<div className={"CartPrice"}>{String.prototype.concat('Price: ',info.price)}</div>}
+                                            extra={<Button type = "warning"
+                                                           size = "small"
+                                                           inline
+                                                           className={"RemoveButton"}
+                                                           onClick={() => (this.handleDeleteAction(index))}>
+                                                    <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
+                                                    </Button>
+                                            }
+                                        />
 
                                     </Card>
                                 </Fragment>
                             )
                         })
-
-
-
-
                     }
 
                 </div>
@@ -95,6 +94,14 @@ class ShoppingCart extends Component{
 
     handleStoreChange(){
         this.setState(store.getState())
+    }
+
+    handleDeleteAction(index){
+        const action = {
+            type : "deleteShoppingCartElement",
+            value : index
+        }
+        store.dispatch(action)
     }
 }
 

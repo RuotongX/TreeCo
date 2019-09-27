@@ -231,9 +231,16 @@ export default (state = defaultState, action) => {
         return newState
     } else if (action.type === "addToCartAction"){
         state.shoopingCartElement.push(action.value)
+    } else if (action.type === "deleteShoppingCartElement"){
+
+        const list = JSON.parse(JSON.stringify(state.shoopingCartElement))
+        const newState = JSON.parse(JSON.stringify(state))
+
+        newState.shoopingCartElement = list.splice(action.value, 1);
+        console.log(newState.shoopingCartElement)
+
+        return newState
     }
-
-
 
     return state;
 }
