@@ -69,6 +69,11 @@ class HomePage extends Component{
                         </Link>
                     </List.Item>
                     <List.Item>
+                        <Link to="/AccountPage" style = {{color:"black", fontSize:20}}>
+                            Account Page
+                        </Link>
+                    </List.Item>
+                    <List.Item>
                         <Link to = "/PromotionDetail" style = {{color:"black",fontSize:20}}>
                             Promotion Detail
                         </Link>

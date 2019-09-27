@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,12 +15,15 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="TreeCo" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -50,15 +55,18 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/MapContainer" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="ts.external.directory.path" value="D:\software\WebStorm 2018.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,7 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.reducer.js">
+  <component name="RunManager" selected="Node.js.index.js (5)">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -100,6 +108,9 @@
       <method v="2" />
     </configuration>
     <configuration name="index.js (4)" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/TreeList">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js (5)" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountPage">
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountLogin">
@@ -150,6 +161,7 @@
       <workItem from="1569034811539" duration="16644000" />
       <workItem from="1569074832067" duration="1903000" />
       <workItem from="1569078034990" duration="1952000" />
+      <workItem from="1569215088499" duration="20738000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
