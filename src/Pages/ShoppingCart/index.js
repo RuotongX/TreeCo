@@ -11,8 +11,8 @@ class ShoppingCart extends Component{
         super(props);
         this.state = store.getState();
 
-        this.handleDeleteAction = this.handleDeleteAction.bind(this)
         this.handleStoreChange = this.handleStoreChange.bind(this)
+        this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this)
         store.subscribe(this.handleStoreChange)
     }
 
@@ -40,7 +40,7 @@ class ShoppingCart extends Component{
                                 <Fragment>
                                     <WhiteSpace size = "lg" />
 
-                                    <Card full>
+                                    <Card full key={index}>
                                         <Card.Body>
                                             <div className={"CartRightContent"}>
                                                 <img className={'cartIMG'}
@@ -63,21 +63,25 @@ class ShoppingCart extends Component{
 
                                         </Card.Body>
 
-                                        <Card.Footer content={<div className={"CartPrice"}>{String.prototype.concat('Price: ',info.price)}</div>}
-                                            extra={<Button type = "warning"
-                                                           size = "small"
-                                                           inline
-                                                           className={"RemoveButton"}
-                                                           onClick={() => (this.handleDeleteAction(index))}>
-                                                    <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
-                                                    </Button>
-                                            }
-                                        />
+                                    <Card.Footer content={<div className={"CartPrice"}>{String.prototype.concat('Price: ',info.price)}</div>}
+                                        extra={<Button type = "warning"
+                                                       size = "small"
+                                                       inline
+                                                       onClick={() => this.handleDeleteButtonClick(index)}
+                                                       className={"RemoveButton"}>
+                                                <Icon type = "delete" theme = "filled" className={"deleteIcon"}/>Remove
+                                                </Button>
+                                        }
+                                    />
 
                                     </Card>
                                 </Fragment>
                             )
                         })
+
+
+
+
                     }
 
                 </div>
@@ -87,6 +91,12 @@ class ShoppingCart extends Component{
                             type = "primary">
                         Place Order
                     </Button>
+
+                    <Link to={"/treeList"}>
+                        <Button className={"TreeListButton"}>
+                            Keep Shopping
+                        </Button>
+                    </Link>
                 </WingBlank>
             </Fragment>
         );
@@ -96,12 +106,14 @@ class ShoppingCart extends Component{
         this.setState(store.getState())
     }
 
-    handleDeleteAction(index){
+    handleDeleteButtonClick(index){
+
         const action = {
-            type : "deleteShoppingCartElement",
-            value : index
+            type: "deleteItemFromCart",
+            value: index
         }
-        store.dispatch(action)
+
+        store.dispatch(action);
     }
 }
 

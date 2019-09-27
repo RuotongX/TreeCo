@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/cover1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/PromotionDetail/PromotionDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PromotionDetail/PromotionDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/PurchaseProcessing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/PurchaseProcessing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,12 +36,12 @@
         <option value="daltonchen &lt;31174316+daltonchen@users.noreply.github.com&gt;" />
       </list>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -46,7 +54,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/MapContainer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -61,10 +69,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
       <recent name="C:\Users\Administrator\Documents\GitHub\TreeCo\src\Pages\MapContainer" />
       <recent name="C:\Users\Administrator\Documents\GitHub\TreeCo\src\Pages\PurchaseProcessing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
       <recent name="$PROJECT_DIR$/src/Pages" />
       <recent name="$PROJECT_DIR$/src/homepage" />
       <recent name="$PROJECT_DIR$/public" />
@@ -82,7 +92,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.index.js (5)">
+  <component name="RunManager" selected="Node.js.reducer.js">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -99,9 +109,6 @@
       <method v="2" />
     </configuration>
     <configuration name="index.js (4)" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/TreeList">
-      <method v="2" />
-    </configuration>
-    <configuration name="index.js (5)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/ShoppingCart">
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountLogin">
@@ -122,10 +129,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.index.js (5)" />
         <item itemvalue="Node.js.reducer.js" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -153,8 +169,9 @@
       <workItem from="1569034811539" duration="16644000" />
       <workItem from="1569074832067" duration="1903000" />
       <workItem from="1569078034990" duration="1952000" />
-      <workItem from="1569374966738" duration="4160000" />
-      <workItem from="1569583279645" duration="37000" />
+      <workItem from="1569510630035" duration="761000" />
+      <workItem from="1569515014957" duration="553000" />
+      <workItem from="1569559191074" duration="1820000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
