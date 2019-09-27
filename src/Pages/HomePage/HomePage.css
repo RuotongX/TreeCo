@@ -3,7 +3,19 @@
     margin-top: 10px;
 }
 .NaviBar{
-    background-color: #6A8372;
+    background-color: #1C1C1C;
+}
+.HomepagePoster{
+    max-width: 100%;
+    max-height: 100%;
+}
+.HomepageLogo{
+    max-width: 60%;
+    max-height: 60%;
+}
+.HomepagePromotionPoster{
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .description{

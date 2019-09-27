@@ -17,12 +17,6 @@ listData.push({
         'Dig a hole approximately twice the diameter of the root system and 2 feet deep. Place some of the loose soil back into the hole...',
 });
 
-const IconText = ({type, text}) => (
-    <span>
-    <Icon type={type} style={{marginRight: 8}}/>
-        {text}
-  </span>
-);
 
 class HomePage extends Component {
     state = {visible: false};
@@ -49,7 +43,9 @@ class HomePage extends Component {
                                       onClick={this.showDrawer}/>
                             }
                     >
-                        Tree Co
+                        <img alt="HomepageLogo"
+                             className={"HomepageLogo"}
+                             src = {require('../CompanyMaterials/homepageLogo.png')}/>
                     </NavBar>
                 </div>
                 <Drawer
@@ -98,23 +94,24 @@ class HomePage extends Component {
                     </List>
                 </Drawer>
 
-                <Card style={{height:200,margin:'0 0 0 0',position: "relative", float: "top"}}
-                      cover={<img alt="ProductImage"
-                    src = {require('../HomePage/cover.jpg')}
-                    />}>
-                </Card>
+                <img alt="HomepagePoster"
+                     className={"HomepagePoster"}
+                     src = {require('../CompanyMaterials/homepagePoster.png')}/>
+
                 
-                <Carousel autoplay dots={true} style={{height: 180, position: "relative", float: "top"}}>
-                    <Card bodyStyle={{backgroundColor: "#94b8b8", height: 180}}>
-                        <h3>Promotion!!!</h3>
-                    </Card>
-                    <Card bodyStyle={{backgroundColor: "#94b7b7", height: 180}}>
+                <Carousel autoplay dots={true} >
+
+                    <img alt="HomepagePosterInternationalPayment"
+                         className={"HomepagePromotionPoster"}
+                         src = {require('../CompanyMaterials/promotionIMG1.png')}/>
+
+                    <Card bodyStyle={{backgroundColor: "#94b7b7"}}>
                         <h3>Huge Deal!!</h3>
                     </Card>
-                    <Card bodyStyle={{backgroundColor: "#94b6b6", height: 180}}>
+                    <Card bodyStyle={{backgroundColor: "#94b6b6"}}>
                         <h3>Seller sell their underwear just because they are poor!!</h3>
                     </Card>
-                    <Card bodyStyle={{backgroundColor: "#94b5b5", height: 180}}>
+                    <Card bodyStyle={{backgroundColor: "#94b5b5"}}>
                         <h3>Cheap Tree!!</h3>
                     </Card>
                 </Carousel>
