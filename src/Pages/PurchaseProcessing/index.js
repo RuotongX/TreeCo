@@ -432,7 +432,7 @@ class PurchaseProcessing extends React.Component {
                     {/*    )}*/}
                     {/*</Form.Item>*/}
                     <Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>
-                        <Button type="primary" htmlType="submit" onClick={this.showModal} style = {{backgroundColor:'#6A8372',fontSize:30,blockSize:60,marginTop:30}}>
+                        <Button type="primary" htmlType="submit" onClick={this.showModal} style = {{backgroundColor:'#1C1C1C',fontSize:30,blockSize:60,marginTop:30}}>
                             Submit
                         </Button>
                         <Modal title="Successed"
