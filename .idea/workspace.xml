@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/cover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/cover1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PromotionDetail/PromotionDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PromotionDetail/PromotionDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/PurchaseProcessing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/PurchaseProcessing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
-    </list>
+    <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
