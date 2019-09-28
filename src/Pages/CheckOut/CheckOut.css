@@ -1,0 +1,12 @@
+.NaviBar{
+    background-color: #1C1C1C;
+}
+.card{
+    margin-top: 15px;
+}
+.cardHeader{
+    font-size: 20px;
+}
+.discountNote{
+    color: gray;
+}
