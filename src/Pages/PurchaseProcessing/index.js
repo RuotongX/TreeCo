@@ -58,6 +58,9 @@ class PurchaseProcessing extends React.Component {
             });
 
     };
+    getFormItem = () =>{
+        return 5;
+    }
 
     render() {
         const {getFieldDecorator} = this.props.form;
