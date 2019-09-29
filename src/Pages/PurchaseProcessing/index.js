@@ -58,6 +58,9 @@ class PurchaseProcessing extends React.Component {
             });
 
     };
+    getFormItem = () =>{
+        return 5;
+    }
 
     render() {
         const {getFieldDecorator} = this.props.form;
@@ -87,11 +90,12 @@ class PurchaseProcessing extends React.Component {
             },
         };
         const prefixSelector = getFieldDecorator('prefix', {
-            initialValue: '021',
+            initialValue: '+64',
         })(
             <Select style={{width: 70}}>
-                <Option value="021">+021</Option>
-                <Option value="027">+027</Option>
+                <Option value="21">+86</Option>
+                <Option value="27">+1</Option>
+                <Option value="27">+20</Option>
             </Select>,
         );
 
@@ -118,11 +122,8 @@ class PurchaseProcessing extends React.Component {
                     <Form.Item
                         label={
                             <span>
-                            Name&nbsp;
-                                <Tooltip title="What is the recipient name?">
-                                <Icon type="question-circle-o"/>
-                            </Tooltip>
-                        </span>
+                                Name
+                            </span>
                         }
                     >
                         {getFieldDecorator('Name', {
@@ -145,7 +146,7 @@ class PurchaseProcessing extends React.Component {
                         })(<AutoComplete
                             dataSource={websiteOptions}
                             onChange={this.handleEmailChange}
-                            placeholder="website"
+                            placeholder="Email address"
                         >
                             <Input/>
                         </AutoComplete>,)}
@@ -410,11 +411,8 @@ class PurchaseProcessing extends React.Component {
                     <Form.Item
                         label={
                             <span>
-                            Address&nbsp;
-                                <Tooltip title="What is the receiving address?">
-                                <Icon type="question-circle-o"/>
-                            </Tooltip>
-                        </span>
+                                Address
+                            </span>
                         }
                     >
                         {getFieldDecorator('Address', {
@@ -432,7 +430,7 @@ class PurchaseProcessing extends React.Component {
                     {/*    )}*/}
                     {/*</Form.Item>*/}
                     <Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>
-                        <Button type="primary" htmlType="submit" onClick={this.showModal} style = {{backgroundColor:'#6A8372',fontSize:30,blockSize:60,marginTop:30}}>
+                        <Button type="primary" htmlType="submit" onClick={this.showModal} style = {{backgroundColor:'#1C1C1C',fontSize:30,blockSize:60,marginTop:30}}>
                             Submit
                         </Button>
                         <Modal title="Successed"
@@ -441,14 +439,20 @@ class PurchaseProcessing extends React.Component {
                                footer={[
 
                                    <Button key="submit" type="primary" onClick={this.handleOk}>
-                                       <Link to="/">Ok</Link>
+                                       <Link to={{
+                                           pathname: "/CheckOut",
+                                           pickuper: this.props.form.getFieldValue('Name'),
+                                           pickupPlace: this.props.form.getFieldValue('Address')+', '+this.props.form.getFieldValue('country'),
+                                           pickupPhone: this.props.form.getFieldValue('prefix')+this.props.form.getFieldValue('phone'),
+                                           pickupEmail: this.props.form.getFieldValue('email'),
+                                       }} >Ok</Link>
 
                                    </Button>,
                                ]}>
                             <Result
                                 status="success"
                                 title="Successfully Purchased Your tree!"
-                                subTitle="You can check your personal purchase on your profile, you will jump to home page now."
+                                subTitle="You can check your personal purchase on your profile, you will jump to check out page now."
 
                             />
 

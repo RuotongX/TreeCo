@@ -11,6 +11,11 @@ import PurchaseProcessing from "../PurchaseProcessing";
 import MapContainer from "../MapContainer"
 import AccountPage from "../AccountPage";
 import AccountRegisterPage from "../AccountRegisterPage"
+import MapContainer from "../MapContainer";
+import CheckOut from "../CheckOut";
+import CardPayment from "../CardPayment";
+import PaymentResultPage from "../PaymentResultPage"
+import Account from "../Account";
 
 
 class TreeCoPageRouter extends Component{
@@ -29,6 +34,10 @@ class TreeCoPageRouter extends Component{
                     <Route path ='/MapContainer' exact component = {MapContainer}></Route>
                     <Route path = '/AccountPage' exact component = {AccountPage}></Route>
                     <Route path = '/AccountRegisterPage' exact component = {AccountRegisterPage}></Route>
+                    <Route path ='/CheckOut' exact component = {CheckOut}></Route>
+                    <Route path ='/CardPayment' exact component = {CardPayment}></Route>
+                    <Route path = '/PaymentResultPage' exact component = {PaymentResultPage}></Route>
+                    <Route path = '/Account' exact component = {Account}></Route>
                 </BrowserRouter>
             </div>
         )
