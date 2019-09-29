@@ -90,11 +90,12 @@ class PurchaseProcessing extends React.Component {
             },
         };
         const prefixSelector = getFieldDecorator('prefix', {
-            initialValue: '21',
+            initialValue: '+64',
         })(
             <Select style={{width: 70}}>
-                <Option value="21">+21</Option>
-                <Option value="27">+27</Option>
+                <Option value="21">+86</Option>
+                <Option value="27">+1</Option>
+                <Option value="27">+20</Option>
             </Select>,
         );
 
@@ -438,14 +439,20 @@ class PurchaseProcessing extends React.Component {
                                footer={[
 
                                    <Button key="submit" type="primary" onClick={this.handleOk}>
-                                       <Link to="/">Ok</Link>
+                                       <Link to={{
+                                           pathname: "/CheckOut",
+                                           pickuper: this.props.form.getFieldValue('Name'),
+                                           pickupPlace: this.props.form.getFieldValue('country')+' '+this.props.form.getFieldValue('Address'),
+                                           pickupPhone: this.props.form.getFieldValue('prefix')+this.props.form.getFieldValue('phone'),
+                                           pickupEmail: this.props.form.getFieldValue('email'),
+                                       }} >Ok</Link>
 
                                    </Button>,
                                ]}>
                             <Result
                                 status="success"
                                 title="Successfully Purchased Your tree!"
-                                subTitle="You can check your personal purchase on your profile, you will jump to home page now."
+                                subTitle="You can check your personal purchase on your profile, you will jump to check out page now."
 
                             />
 

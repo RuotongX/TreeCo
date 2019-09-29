@@ -20,7 +20,10 @@ class CheckOut extends Component{
             handOverMethod : 'Shipping',
             pickupLocation : 'NONE',
             shoopingCartElement : store.getState().shoopingCartElement,
-
+            pickuper: this.props.location.pickuper,
+            pickupPlace: this.props.location.pickupPlace,
+            pickupPhone: this.props.location.pickupPhone,
+            pickupEmail: this.props.location.pickupEmail
         };
         store.subscribe(this.handleStoreChange)
     }
@@ -32,7 +35,7 @@ class CheckOut extends Component{
                 <NavBar
                     mode = "dark"
                     className={"NaviBar"}
-                    leftContent= {<Link to = "/ShoppingCart"><Icon className = "returnButton" type="left" /></Link>}
+                    leftContent= {<Link to = "/PurchaseProcessing"><Icon className = "returnButton" type="left" /></Link>}
                 >
                     Check Out
                 </NavBar>
@@ -179,10 +182,10 @@ class CheckOut extends Component{
                     <List className={"AddressList"}>
                         <List.Item>
                             <List.Item.Meta
-                                title = {"Dalton Chen"}
-                                description = {"145 Nelson Street"}
+                                title = {this.state.pickuper}
+                                description = {this.state.pickupPlace}
                             />
-                            {273795733}
+                            {this.state.pickupPhone}
                         </List.Item>
                     </List>
                     <Button>Change Address</Button>
