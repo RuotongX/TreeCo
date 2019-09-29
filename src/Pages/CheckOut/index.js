@@ -103,7 +103,6 @@ class CheckOut extends Component{
 
                     <Card className = {"card"}>
                         <Card.Header title={"Total Price"}
-                                     className = {"cardHeader"}
                                      extra={String.prototype.concat("$",999)}/>
                         <Card.Body>
                             {
@@ -115,7 +114,6 @@ class CheckOut extends Component{
                         </Card.Body>
 
                         <Card.Header title={"Membership Discount"}
-                                     className = {"cardHeader"}
                                      extra={String.prototype.concat("-$",10)}/>
                         <Card.Body>
 
@@ -151,8 +149,7 @@ class CheckOut extends Component{
 
         return(
             <Fragment>
-                <Card.Header title={"Pickup Locations"}
-                />
+                <Card.Header title={"Pickup Locations"}/>
                 <Card.Body>
                     <List split={false} className={"PickupLocationList"}>
                         {
@@ -179,7 +176,16 @@ class CheckOut extends Component{
                     title={"Address"}
                 />
                 <Card.Body>
-
+                    <List className={"AddressList"}>
+                        <List.Item>
+                            <List.Item.Meta
+                                title = {"Dalton Chen"}
+                                description = {"145 Nelson Street"}
+                            />
+                            {273795733}
+                        </List.Item>
+                    </List>
+                    <Button>Change Address</Button>
                 </Card.Body>
             </Fragment>
         )

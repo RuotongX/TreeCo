@@ -96,6 +96,11 @@ class HomePage extends Component {
                                 CheckOut
                             </Link>
                         </List.Item>
+                        <List.Item>
+                            <Link to="/CardPayment" style={{color: "black", fontSize: 20}}>
+                                CardPayment
+                            </Link>
+                        </List.Item>
                     </List>
                 </Drawer>
 

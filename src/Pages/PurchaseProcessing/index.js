@@ -87,11 +87,11 @@ class PurchaseProcessing extends React.Component {
             },
         };
         const prefixSelector = getFieldDecorator('prefix', {
-            initialValue: '021',
+            initialValue: '21',
         })(
             <Select style={{width: 70}}>
-                <Option value="021">+021</Option>
-                <Option value="027">+027</Option>
+                <Option value="21">+21</Option>
+                <Option value="27">+27</Option>
             </Select>,
         );
 
@@ -118,11 +118,8 @@ class PurchaseProcessing extends React.Component {
                     <Form.Item
                         label={
                             <span>
-                            Name&nbsp;
-                                <Tooltip title="What is the recipient name?">
-                                <Icon type="question-circle-o"/>
-                            </Tooltip>
-                        </span>
+                                Name
+                            </span>
                         }
                     >
                         {getFieldDecorator('Name', {
@@ -145,7 +142,7 @@ class PurchaseProcessing extends React.Component {
                         })(<AutoComplete
                             dataSource={websiteOptions}
                             onChange={this.handleEmailChange}
-                            placeholder="website"
+                            placeholder="Email address"
                         >
                             <Input/>
                         </AutoComplete>,)}
@@ -410,11 +407,8 @@ class PurchaseProcessing extends React.Component {
                     <Form.Item
                         label={
                             <span>
-                            Address&nbsp;
-                                <Tooltip title="What is the receiving address?">
-                                <Icon type="question-circle-o"/>
-                            </Tooltip>
-                        </span>
+                                Address
+                            </span>
                         }
                     >
                         {getFieldDecorator('Address', {
