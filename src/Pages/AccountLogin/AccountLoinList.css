@@ -1,5 +1,5 @@
-.NavigationBar{
-    background-color: #6A8372;
+.NaviBar{
+    background-color: #1C1C1C;
 }
 
 .ReturnButton{
@@ -7,6 +7,9 @@
     margin-top: 5px;
 }
 
-.LoginList{
-    margin-top: 25%;
+.loginCard{
+     margin-top: 15px;
+ }
+.LoginButton{
+    margin-top: 15px;
 }

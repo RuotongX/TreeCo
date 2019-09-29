@@ -1,8 +1,8 @@
 import React, {Component, Fragment} from 'react'
-import {NavBar, Icon, WingBlank} from 'antd-mobile'
+import {List} from 'antd'
 import './AccountLoinList.css'
 import {Link} from 'react-router-dom'
-import {List, InputItem, Button, WhiteSpace} from "antd-mobile";
+import {InputItem, Button, WhiteSpace, Card, NavBar, Icon, WingBlank} from "antd-mobile";
 
 class AccountLogin extends Component{
 
@@ -27,7 +27,7 @@ class AccountLogin extends Component{
             //Group all the component and return to render
             <Fragment>
                 <NavBar
-                    className={"NavigationBar"}
+                    className= "NaviBar"
                     mode={"dark"}
                     leftContent={<Link to={"/"}>
                         <Icon className={"ReturnButton"} type = "left"/>
@@ -36,35 +36,38 @@ class AccountLogin extends Component{
                     Account Login
                 </NavBar>
 
-                <div>
-                    <List renderHeader={() => 'Account Sign in'} className={"LoginList"}>
-                        <InputItem
 
-                            //Clear function, used to delete inputs contents
-                            clear
-                            placeholder = "    Only Number Available"
-                            labelNumber={15}
-                            type={"number"}
-                            maxLength={10}
+                <WingBlank size={"lg"}>
+                    <Card className={"loginCard"}>
+                        <Card.Header title={"Sign in"}/>
 
-                            onChange={(value) => (this.handleAccountInputChange(value))}
-                        >Account</InputItem>
+                            <Card.Body>
 
-                        <InputItem
+                                    <List className={"LoginList"}>
+                                        <InputItem
 
-                            clear
-                            placeholder={"  Input Password"}
-                            type =  "password"
-                            labelNumber={15}
-                            maxLength={20}
+                                            //Clear function, used to delete inputs contents
+                                            clear
+                                            placeholder = "    Only Number Available"
+                                            labelNumber={15}
+                                            type={"number"}
+                                            maxLength={10}
 
-                            onChange={(value) => (this.handlePasswordInputChange(value))}
-                        >Password</InputItem>
+                                            onChange={(value) => (this.handleAccountInputChange(value))}
+                                        >Account</InputItem>
 
-                        <WhiteSpace size={"lg"}/>
+                                        <InputItem
 
-                        <List.Item>
-                            <WingBlank size={"lg"}>
+                                            clear
+                                            placeholder={"  Input Password"}
+                                            type =  "password"
+                                            labelNumber={15}
+                                            maxLength={20}
+
+                                            onChange={(value) => (this.handlePasswordInputChange(value))}
+                                        >Password</InputItem>
+                                    </List>
+
                                 <Link to={(this.state.account.length !== 0) && (this.state.password.length !== 0) ? "/AccountPage" : "/AccountLogin"}>
                                     <Button
                                         Icon className={"LoginButton"}
@@ -72,21 +75,26 @@ class AccountLogin extends Component{
                                         type={"primary"}
                                     >Account Login</Button>
                                 </Link>
-                            </WingBlank>
-                        </List.Item>
 
-                        <List.Item>
-                            <WingBlank size={"lg"}>
-                                <Link to={"/AccountRegisterPage"}>
-                                    <Button
-                                        Icon className={"RegisterButton"}
-                                        type={"primary"}
-                                    >Account Register</Button>
-                                </Link>
-                            </WingBlank>
-                        </List.Item>
-                    </List>
-                </div>
+                            </Card.Body>
+
+                    </Card>
+                </WingBlank>
+
+                <WingBlank size={"lg"}>
+                    <Card className={"loginCard"}>
+                        <Card.Header title={"Register"}/>
+
+                        <Card.Body>
+                            <Link to={"/AccountRegisterPage"}>
+                                <Button
+                                    Icon className={"RegisterButton"}
+                                >Account Register</Button>
+                            </Link>
+                        </Card.Body>
+
+                    </Card>
+                </WingBlank>
             </Fragment>
 
         )

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="Add account login function and link to account page">
+    <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/AccountLoinList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/AccountLoinList.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/AccountRegisterList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/AccountRegisterList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,7 +161,7 @@
       <workItem from="1569034811539" duration="16644000" />
       <workItem from="1569074832067" duration="1903000" />
       <workItem from="1569078034990" duration="1952000" />
-      <workItem from="1569215088499" duration="28215000" />
+      <workItem from="1569215088499" duration="33410000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
@@ -216,17 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1569545465910</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Set the data structure for account login page, and create the frame of account register function">
+      <created>1569760708093</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1569760708093</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -267,6 +268,7 @@
     <MESSAGE value="add information to drawer, for product list page" />
     <MESSAGE value="add range selector to the treeList page&#10;upgrade logic of processing filter items" />
     <MESSAGE value="Add account login function and link to account page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add account login function and link to account page" />
+    <MESSAGE value="Set the data structure for account login page, and create the frame of account register function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set the data structure for account login page, and create the frame of account register function" />
   </component>
 </project>

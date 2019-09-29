@@ -11,7 +11,6 @@ import PurchaseProcessing from "../PurchaseProcessing";
 import MapContainer from "../MapContainer"
 import AccountPage from "../AccountPage";
 import AccountRegisterPage from "../AccountRegisterPage"
-import MapContainer from "../MapContainer";
 import CheckOut from "../CheckOut";
 import CardPayment from "../CardPayment";
 import PaymentResultPage from "../PaymentResultPage"

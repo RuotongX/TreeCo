@@ -1,6 +1,16 @@
 import React, {Component, Fragment} from 'react'
-import {List, WingBlank, Icon, Button, ListItem, NavBar, InputItem} from "antd-mobile";
+import {WingBlank, WhiteSpace, Icon, Button, ListItem, NavBar, Card,InputItem} from "antd-mobile";
 import {Link} from "react-router-dom";
+import {List} from 'antd'
+import {Select} from "antd";
+import {Picker} from "antd-mobile";
+import "./AccountRegisterList.css"
+
+const { Option } = Select;
+
+function onChange(Value){
+    console.log('Selected ${value}');
+}
 
 class AccountRegisterPage extends Component{
 
@@ -20,27 +30,58 @@ class AccountRegisterPage extends Component{
                     </Link>}
                 >Register Account</NavBar>
 
-                <div>
-                    <List renderHeader={() => 'Personal Information'} className={"AccountInfo"}>
-                        <InputItem
-                            clear
-                            placeholder={"Input Your Name"}
-                            maxLength={15}
-                        >Name</InputItem>
+                <WingBlank size={"lg"}>
+                    <Card className={"InfoCard"}>
+                        <Card.Header title={"Personal Information:"}/>
 
-                        <InputItem
-                            clear
-                            placeholder={"Input Your Email Address"}
-                            type={"email"}
-                        >Email</InputItem>
+                        <Card.Body>
 
-                        <InputItem
-                            clear
-                            placeholder={"Input Your Email Address"}
-                            type={"email"}
-                        >Type</InputItem>
-                    </List>
-                </div>
+                            <List className={"AccountInfo"}>
+
+                                <InputItem
+                                    clear
+                                    placeholder={"Input Your Name"}
+                                    maxLength={15}
+                                >Name</InputItem>
+
+                                <InputItem
+                                    clear
+                                    placeholder={"Input Your Email Address"}
+                                    type={"email"}
+                                >Email</InputItem>
+
+                            </List>
+
+                        </Card.Body>
+                    </Card>
+                </WingBlank>
+
+                <WingBlank>
+                    <Card className={"InfoCard"}>
+                        <Card.Header title={"Account Information"}/>
+
+                        <Card.Body>
+
+                            <List className={"AccountInfo"}>
+
+                                <Select
+                                    style={{ width: "100%"}}
+                                    placeholder={"Select Account Type"}
+                                    optionFilterProp={onChange}
+                                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) > 0}
+
+                                >
+                                    <option value={"Landscape"} >Landscape Gardeners</option>
+                                    <option value={"Housing"}>Housing Developers</option>
+                                    <option value={"Local"}>Local Councils</option>
+                                    <option value={"General"}>General Public</option>
+                                </Select>
+
+                            </List>
+
+                        </Card.Body>
+                    </Card>
+                </WingBlank>
             </Fragment>
         )
     }
