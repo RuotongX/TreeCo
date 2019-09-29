@@ -14,15 +14,16 @@ class CheckOut extends Component{
 
         this.handleStoreChange = this.handleStoreChange.bind(this);
         this.handleHandOverMethodChange = this.handleHandOverMethodChange.bind(this);
+        this.handlePickupLocationChange = this.handlePickupLocationChange.bind(this);
 
         this.state = {
             handOverMethod : 'Shipping',
+            pickupLocation : 'NONE',
             shoopingCartElement : store.getState().shoopingCartElement,
 
         };
         store.subscribe(this.handleStoreChange)
     }
-
 
     render() {
 
@@ -91,6 +92,15 @@ class CheckOut extends Component{
                         </Card.Body>
                     </Card>
 
+                    <Card className={"card"}>
+                        {
+
+                            this.state.handOverMethod === "pickup"? this.getPickUpLocations() : this.getShippingAddress()
+
+
+                        }
+                    </Card>
+
                     <Card className = {"card"}>
                         <Card.Header title={"Total Price"}
                                      className = {"cardHeader"}
@@ -108,9 +118,9 @@ class CheckOut extends Component{
                                      className = {"cardHeader"}
                                      extra={String.prototype.concat("-$",10)}/>
                         <Card.Body>
-                            {
-                                <div className={"discountNote"}>Super Membership Plan</div>
-                            }
+
+                            <div className={"discountNote"}>Super Membership Plan</div>
+
                         </Card.Body>
 
                         <Card.Body>
@@ -125,13 +135,68 @@ class CheckOut extends Component{
 
     }
 
+    getPickUpLocations(){
 
+        const pickLocations = [{key: 'AUCKLAND_NORTH', name: 'Auckland North Shore'},
+                                {key: 'AUCKLAND_SOUTH', name: 'Auckland South'},
+                                {key: 'AUCKLAND_WEST', name: 'Auckland West'},
+                                {key: 'HAMILTON', name: 'Hamilton'},
+                                {key: 'ROTORUA', name: 'Rotorua'},
+                                {key: 'TAURANGA', name: 'Tauranga'},
+                                {key: 'WELLINGTON', name: 'Wellington'},
+                                {key: 'CHRISTCHURCH', name: 'Christchurch'},
+                                {key: 'DUNEDIN', name: 'Dunedin'},
+                                {key: 'PALMERSTON_NORTH', name: 'Palmerston North'}]
+
+
+        return(
+            <Fragment>
+                <Card.Header title={"Pickup Locations"}
+                />
+                <Card.Body>
+                    <List split={false} className={"PickupLocationList"}>
+                        {
+                            pickLocations.map((location) => {
+                                return(
+                                    <RadioItem key = {location.key}
+                                               checked={this.state.pickupLocation === location.key}
+                                               onClick={() => (this.handlePickupLocationChange(location.key))}>
+                                        {location.name}
+                                    </RadioItem>
+                                )
+                            })
+                        }
+                    </List>
+                </Card.Body>
+            </Fragment>
+        )
+    }
+
+    getShippingAddress(){
+        return(
+            <Fragment>
+                <Card.Header
+                    title={"Address"}
+                />
+                <Card.Body>
+
+                </Card.Body>
+            </Fragment>
+        )
+    }
 
 
     handleHandOverMethodChange(value){
 
         const newState = JSON.parse(JSON.stringify(this.state))
         newState.handOverMethod = value;
+
+        if(newState.handOverMethod !== 'pickup'){
+            newState.pickupLocation = 'NONE'
+        } else {
+            newState.pickupLocation = 'AUCKLAND_NORTH'
+        }
+
         this.setState(newState)
     }
 
@@ -139,6 +204,14 @@ class CheckOut extends Component{
 
         const newState = JSON.parse(JSON.stringify(this.state))
         newState.shoopingCartElement = store.getState().shoopingCartElement
+
+        this.setState(newState)
+    }
+
+    handlePickupLocationChange(keyValue){
+
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.pickupLocation = keyValue;
 
         this.setState(newState)
     }
