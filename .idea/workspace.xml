@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/HomePage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/cover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/cover1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/ProductDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PromotionDetail/PromotionDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PromotionDetail/PromotionDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/PurchaseProcessing.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/PurchaseProcessing.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeList/treeList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,16 +75,17 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="DaltonChen &lt;daltonchen2014@gmail.com&gt;" />
         <option value="Dalton Chen &lt;daltonchen2014@gmail.com&gt;" />
         <option value="daltonchen &lt;31174316+daltonchen@users.noreply.github.com&gt;" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -175,7 +170,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/PaymentCardSupportIMG" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -184,21 +179,22 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="D:\software\WebStorm 2018.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pages" />
+      <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
+      <recent name="$PROJECT_DIR$/src/homepage" />
+      <recent name="$PROJECT_DIR$/public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pages/PaymentCardSupportIMG" />
       <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
       <recent name="C:\Users\Administrator\Documents\GitHub\TreeCo\src\Pages\MapContainer" />
       <recent name="C:\Users\Administrator\Documents\GitHub\TreeCo\src\Pages\PurchaseProcessing" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
-      <recent name="$PROJECT_DIR$/src/Pages" />
-      <recent name="$PROJECT_DIR$/src/homepage" />
-      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -345,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569047864706</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add pickup location selector, which allow user to select their pickup location, also update the pickup location to 10">
+      <created>1569731038346</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1569731038346</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -384,42 +387,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commitments&#10;1. The product list UI is being designed" />
     <MESSAGE value="1. add router feature, allow link to be switched&#10;2. add login page, home page, promotion details and treelist&#10;3. fix bug on treeList page&#10;4. add more dependency to the application" />
@@ -428,7 +395,8 @@
     <MESSAGE value="add drawer to the tree detail page" />
     <MESSAGE value="add information to drawer, for product list page" />
     <MESSAGE value="add range selector to the treeList page&#10;upgrade logic of processing filter items" />
-    <option name="LAST_COMMIT_MESSAGE" value="add range selector to the treeList page&#10;upgrade logic of processing filter items" />
+    <MESSAGE value="add pickup location selector, which allow user to select their pickup location, also update the pickup location to 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pickup location selector, which allow user to select their pickup location, also update the pickup location to 10" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node_modules/eslint-config-react-app/index.js">

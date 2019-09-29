@@ -91,6 +91,16 @@ class HomePage extends Component {
                                 Map (for test)
                             </Link>
                         </List.Item>
+                        <List.Item>
+                            <Link to="/CheckOut" style={{color: "black", fontSize: 20}}>
+                                CheckOut
+                            </Link>
+                        </List.Item>
+                        <List.Item>
+                            <Link to="/CardPayment" style={{color: "black", fontSize: 20}}>
+                                CardPayment
+                            </Link>
+                        </List.Item>
                     </List>
                 </Drawer>
 
