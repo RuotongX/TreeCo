@@ -120,7 +120,7 @@ class HomePage extends Component {
                      className={"HomepagePoster"}
                      src = {require('../CompanyMaterials/homepagePoster.png')}/>
 
-                
+
                 <Carousel autoplay dots={true} >
 
                     <img alt="HomepagePosterInternationalPayment"
