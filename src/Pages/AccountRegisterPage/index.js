@@ -1,9 +1,9 @@
 import React, {Component, Fragment} from 'react'
-import {WingBlank, WhiteSpace, Icon, Button, ListItem, NavBar, Card,InputItem} from "antd-mobile";
+import {WingBlank, WhiteSpace, Icon, ListItem, NavBar, Card,InputItem} from "antd-mobile";
 import {Link} from "react-router-dom";
 import {List} from 'antd'
 import {Select} from "antd";
-import {Picker} from "antd-mobile";
+import {Button} from "antd";
 import "./AccountRegisterList.css"
 
 const { Option } = Select;
@@ -16,6 +16,11 @@ class AccountRegisterPage extends Component{
 
     constructor(props){
         super(props)
+
+        this.state={
+            name : '',
+            email : '',
+        }
     }
 
     render() {
@@ -58,7 +63,7 @@ class AccountRegisterPage extends Component{
 
                 <WingBlank>
                     <Card className={"InfoCard"}>
-                        <Card.Header title={"Account Information"}/>
+                        <Card.Header title={"Account Type"}/>
 
                         <Card.Body>
 
@@ -81,6 +86,46 @@ class AccountRegisterPage extends Component{
 
                         </Card.Body>
                     </Card>
+                </WingBlank>
+
+                <WingBlank>
+                    <Card className={"InfoCard"}>
+                        <Card.Header title={"Account Information"}/>
+
+                        <Card.Body>
+
+                            <List className={"AccountInfo"}>
+
+                                <InputItem
+                                    clear
+                                    placeholder={"Only Number Available"}
+                                    type={"number"}
+                                    maxLength={15}
+                                >Account</InputItem>
+
+                                <InputItem
+                                    clear
+                                    placeholder={"Input Password"}
+                                    type={"password"}
+                                >Password</InputItem>
+
+                            </List>
+
+                        </Card.Body>
+                    </Card>
+                </WingBlank>
+
+                <WingBlank size={"lg"}>
+
+                            <List className={"RegisterButton"}>
+
+                                <Link to={"./Account"}>
+                                    <Button type={"primary"} style={{width: "100%", height: 40}} ghost>
+                                        Register
+                                    </Button>
+                                </Link>
+                            </List>
+
                 </WingBlank>
             </Fragment>
         )

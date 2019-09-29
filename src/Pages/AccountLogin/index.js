@@ -44,12 +44,11 @@ class AccountLogin extends Component{
                             <Card.Body>
 
                                     <List className={"LoginList"}>
-                                        <InputItem
 
+                                        <InputItem
                                             //Clear function, used to delete inputs contents
                                             clear
-                                            placeholder = "    Only Number Available"
-                                            labelNumber={15}
+                                            placeholder = "Only Number Available"
                                             type={"number"}
                                             maxLength={10}
 
@@ -59,16 +58,15 @@ class AccountLogin extends Component{
                                         <InputItem
 
                                             clear
-                                            placeholder={"  Input Password"}
+                                            placeholder={"sInput Password"}
                                             type =  "password"
-                                            labelNumber={15}
                                             maxLength={20}
 
                                             onChange={(value) => (this.handlePasswordInputChange(value))}
                                         >Password</InputItem>
                                     </List>
 
-                                <Link to={(this.state.account.length !== 0) && (this.state.password.length !== 0) ? "/AccountPage" : "/AccountLogin"}>
+                                <Link to={(this.state.account.length !== 0) && (this.state.password.length !== 0) ? "/Account" : "/AccountLogin"}>
                                     <Button
                                         Icon className={"LoginButton"}
                                         disabled={(this.state.account.length !== 0) && (this.state.password.length !== 0) ? false:true}
