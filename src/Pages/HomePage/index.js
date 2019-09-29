@@ -101,6 +101,18 @@ class HomePage extends Component {
                                 CardPayment
                             </Link>
                         </List.Item>
+
+                        <List.Item>
+                            <Link to="/PaymentResultPage" style={{color: "black", fontSize: 20}}>
+                                Payment Result
+                            </Link>
+                        </List.Item>
+
+                        <List.Item>
+                            <Link to="/Account" style={{color: "black", fontSize: 20}}>
+                                Account
+                            </Link>
+                        </List.Item>
                     </List>
                 </Drawer>
 
@@ -115,15 +127,20 @@ class HomePage extends Component {
                          className={"HomepagePromotionPoster"}
                          src = {require('../CompanyMaterials/promotionIMG1.png')}/>
 
-                    <Card bodyStyle={{backgroundColor: "#94b7b7"}}>
-                        <h3>Huge Deal!!</h3>
-                    </Card>
-                    <Card bodyStyle={{backgroundColor: "#94b6b6"}}>
-                        <h3>Seller sell their underwear just because they are poor!!</h3>
-                    </Card>
-                    <Card bodyStyle={{backgroundColor: "#94b5b5"}}>
-                        <h3>Cheap Tree!!</h3>
-                    </Card>
+                    <img alt="HomepagePosterInternationalPayment"
+                         className={"HomepagePromotionPoster"}
+                         src = {require('../CompanyMaterials/promotionIMG2.png')}/>
+
+                    <img alt="HomepagePosterInternationalPayment"
+                         className={"HomepagePromotionPoster"}
+                         src = {require('../CompanyMaterials/promotionIMG3.png')}/>
+
+                         <Link to={"/PromotionDetail"}>
+                            <img alt="HomepagePosterInternationalPayment"
+                                 className={"HomepagePromotionPoster"}
+                                 src = {require('../CompanyMaterials/promotionIMG4.png')}/>
+                        </Link>
+
                 </Carousel>
                 <List
                     itemLayout="vertical"
