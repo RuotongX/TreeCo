@@ -185,7 +185,11 @@ class CheckOut extends Component{
                                 title = {this.state.pickuper}
                                 description = {this.state.pickupPlace}
                             />
+                            <List.Item.Meta
+                                description = {this.state.pickupEmail}
+                            />
                             {this.state.pickupPhone}
+
                         </List.Item>
                     </List>
                     <Button>Change Address</Button>

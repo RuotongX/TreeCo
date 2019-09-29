@@ -442,7 +442,7 @@ class PurchaseProcessing extends React.Component {
                                        <Link to={{
                                            pathname: "/CheckOut",
                                            pickuper: this.props.form.getFieldValue('Name'),
-                                           pickupPlace: this.props.form.getFieldValue('country')+' '+this.props.form.getFieldValue('Address'),
+                                           pickupPlace: this.props.form.getFieldValue('Address')+', '+this.props.form.getFieldValue('country'),
                                            pickupPhone: this.props.form.getFieldValue('prefix')+this.props.form.getFieldValue('phone'),
                                            pickupEmail: this.props.form.getFieldValue('email'),
                                        }} >Ok</Link>
