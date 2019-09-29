@@ -24,28 +24,6 @@ class CardPayment extends Component{
 
                 <WingBlank size={"lg"}>
                     <Card className={"paymentCard"}>
-                        <Card.Body>
-                            <List>
-                                <InputItem placeholder={"Name On Card"}>
-                                </InputItem>
-
-                                <InputItem placeholder={"Card Number"}>
-                                </InputItem>
-
-                                <InputItem placeholder={"Exprire Date"}>
-                                </InputItem>
-
-                                <InputItem placeholder={"CVV"}>
-                                </InputItem>
-                            </List>
-                        </Card.Body>
-
-                        <Card.Body>
-                            <Button>Confirm</Button>
-                        </Card.Body>
-                    </Card>
-
-                    <Card className={"paymentCard"}>
                         <Card.Header
                             title={"Card Support"}
                         />
@@ -69,6 +47,28 @@ class CardPayment extends Component{
                             <img className={"cardIMG"}
                                  src = {require('../PaymentCardSupportIMG/American_Express_logo_(2018).svg')}
                             />
+                        </Card.Body>
+                    </Card>
+
+                    <Card className={"paymentCard"}>
+                        <Card.Body>
+                            <List>
+                                <InputItem placeholder={"Name On Card"}>
+                                </InputItem>
+
+                                <InputItem placeholder={"Card Number"}>
+                                </InputItem>
+
+                                <InputItem placeholder={"Exprire Date"}>
+                                </InputItem>
+
+                                <InputItem placeholder={"CVV"}>
+                                </InputItem>
+                            </List>
+                        </Card.Body>
+
+                        <Card.Body>
+                            <Button>Confirm</Button>
                         </Card.Body>
                     </Card>
 
