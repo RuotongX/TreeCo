@@ -8,7 +8,8 @@ import PromotionDetail from "../PromotionDetail"
 import ShoppingCart from "../ShoppingCart";
 import ProductDetail from "../ProductDetail";
 import PurchaseProcessing from "../PurchaseProcessing";
-import MapContainer from "../MapContainer";
+import MapContainer from "../MapContainer"
+import AccountRegisterPage from "../AccountRegisterPage"
 import CheckOut from "../CheckOut";
 import CardPayment from "../CardPayment";
 import PaymentResultPage from "../PaymentResultPage"
@@ -29,6 +30,7 @@ class TreeCoPageRouter extends Component{
                     <Route path ='/ProductDetail' exact component = {ProductDetail}></Route>
                     <Route path ='/PurchaseProcessing' exact component = {PurchaseProcessing}></Route>
                     <Route path ='/MapContainer' exact component = {MapContainer}></Route>
+                    <Route path = '/AccountRegisterPage' exact component = {AccountRegisterPage}></Route>
                     <Route path ='/CheckOut' exact component = {CheckOut}></Route>
                     <Route path ='/CardPayment' exact component = {CardPayment}></Route>
                     <Route path = '/PaymentResultPage' exact component = {PaymentResultPage}></Route>
