@@ -161,11 +161,6 @@ class HomePage extends Component {
                     renderItem={item => (
                         <List.Item
                             key={item.title}
-                            actions={[
-                                //<IconText type="star-o" text="156" key="list-vertical-star-o" />,
-                                //<IconText type="like-o" text="156" key="list-vertical-like-o"/>,
-
-                            ]}
                             extra={
                                 <img
                                     width={272}

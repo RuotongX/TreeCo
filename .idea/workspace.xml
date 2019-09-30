@@ -5,21 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Account/Account.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/Account.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountPage/AccoutList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountPage/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/AccountRegisterList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/AccountRegisterList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="TreeCo" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,6 +28,7 @@
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="Dalton Chen &lt;daltonchen2014@gmail.com&gt;" />
+        <option value="DaltonChen &lt;daltonchen2014@gmail.com&gt;" />
         <option value="daltonchen &lt;31174316+daltonchen@users.noreply.github.com&gt;" />
       </list>
     </option>
@@ -55,31 +50,31 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/MapContainer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="D:\software\WebStorm 2018.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Pages" />
-      <recent name="$PROJECT_DIR$/src/homepage" />
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
+      <recent name="$PROJECT_DIR$/src/Pages/PaymentCardSupportIMG" />
       <recent name="C:\Users\Administrator\Documents\GitHub\TreeCo\src\Pages\MapContainer" />
       <recent name="C:\Users\Administrator\Documents\GitHub\TreeCo\src\Pages\PurchaseProcessing" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Pages" />
+      <recent name="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
+      <recent name="$PROJECT_DIR$/src/homepage" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -94,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.index.js (5)">
+  <component name="RunManager" selected="Node.js.reducer.js">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -111,9 +106,6 @@
       <method v="2" />
     </configuration>
     <configuration name="index.js (4)" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/TreeList">
-      <method v="2" />
-    </configuration>
-    <configuration name="index.js (5)" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountPage">
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountLogin">
@@ -137,6 +129,16 @@
         <item itemvalue="Node.js.reducer.js" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -164,8 +166,14 @@
       <workItem from="1569034811539" duration="16644000" />
       <workItem from="1569074832067" duration="1903000" />
       <workItem from="1569078034990" duration="1952000" />
-      <workItem from="1569215088499" duration="35864000" />
-      <workItem from="1569794933053" duration="1715000" />
+
+      <workItem from="1569510630035" duration="761000" />
+      <workItem from="1569515014957" duration="553000" />
+      <workItem from="1569559191074" duration="1820000" />
+      <workItem from="1569600020024" duration="2516000" />
+      <workItem from="1569639967086" duration="2452000" />
+      <workItem from="1569791769725" duration="257000" />
+
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
@@ -216,29 +224,38 @@
       <option name="project" value="LOCAL" />
       <updated>1569047864706</updated>
     </task>
-    <task id="LOCAL-00008" summary="Add account login function and link to account page">
-      <created>1569545465910</created>
+    <task id="LOCAL-00008" summary="add pickup location selector, which allow user to select their pickup location, also update the pickup location to 10">
+      <created>1569731038346</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1569545465910</updated>
+      <updated>1569731038346</updated>
     </task>
-    <task id="LOCAL-00009" summary="Set the data structure for account login page, and create the frame of account register function">
-      <created>1569760708093</created>
+    <task id="LOCAL-00009" summary="1. add more promotion images to the homepage&#10;2. minor outlook fix on the payment page">
+      <created>1569759675949</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1569760708093</updated>
+      <updated>1569759675949</updated>
     </task>
-    <task id="LOCAL-00010" summary="Finish the account type selecter funciton by using picker component in antd HTML. Solve the return value problems of picker function and set the onChange function of picker component.">
-      <created>1569771602464</created>
+    <task id="LOCAL-00010" summary="fix sync problem">
+      <created>1569759709524</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1569771602464</updated>
+      <updated>1569759709524</updated>
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -278,9 +295,9 @@
     <MESSAGE value="add drawer to the tree detail page" />
     <MESSAGE value="add information to drawer, for product list page" />
     <MESSAGE value="add range selector to the treeList page&#10;upgrade logic of processing filter items" />
-    <MESSAGE value="Add account login function and link to account page" />
-    <MESSAGE value="Set the data structure for account login page, and create the frame of account register function" />
-    <MESSAGE value="Finish the account type selecter funciton by using picker component in antd HTML. Solve the return value problems of picker function and set the onChange function of picker component." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the account type selecter funciton by using picker component in antd HTML. Solve the return value problems of picker function and set the onChange function of picker component." />
+    <MESSAGE value="add pickup location selector, which allow user to select their pickup location, also update the pickup location to 10" />
+    <MESSAGE value="1. add more promotion images to the homepage&#10;2. minor outlook fix on the payment page" />
+    <MESSAGE value="fix sync problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix sync problem" />
   </component>
 </project>
