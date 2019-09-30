@@ -34,7 +34,7 @@ class PurchaseProcessing extends React.Component {
         }
     };
 
-    handleEmailSubmit = e => {
+    handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
@@ -117,7 +117,7 @@ class PurchaseProcessing extends React.Component {
                     </NavBar>
                 </div>
 
-                <Form {...formItemLayout} onSubmit={this.handleEmailSubmit}
+                <Form {...formItemLayout} onSubmit={this.handleSubmit}
                       style={{textAlign: 'center', margin: '5% 5% 0 5%'}}>
                     <Form.Item
                         label={
