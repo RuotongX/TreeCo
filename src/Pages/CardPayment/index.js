@@ -88,7 +88,7 @@ class CardPayment extends Component{
 
                                 <Form.Item label="Card Number">
                                     {getFieldDecorator('CardNumber', {
-                                        rules: [{type: 'number',message:'You must input number'},{ required: true, message: 'Please input your Card Number!' },
+                                        rules: [{pattern: /^[0-9]+$/,message:'You must input number'},{ required: true, message: 'Please input your Card Number!' },
                                             {
                                                 validator: this.handleConfirmCardNumber
                                             }],
@@ -127,7 +127,7 @@ class CardPayment extends Component{
 
                                 <Form.Item label="CVV">
                                     {getFieldDecorator('CVV', {
-                                        rules: [{type: 'number',message:'You must input number'},{ required: true, message: 'Please input your CVV!' },
+                                        rules: [{pattern: /^[0-9]+$/,message:'You must input number'},{ required: true, message: 'Please input your CVV!' },
                                             {
                                                 validator: this.handleConfirmCVV
                                             }],
