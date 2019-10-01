@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import {NavBar, WingBlank, Card, WhiteSpace, Button, Radio} from "antd-mobile";
+import {NavBar, WingBlank, Card, WhiteSpace, Button} from "antd-mobile";
 import {Link} from "react-router-dom";
 import {Icon, List} from "antd";
 import "./CheckOut.css"
@@ -15,15 +15,18 @@ class CheckOut extends Component{
         this.handleStoreChange = this.handleStoreChange.bind(this);
         this.handleHandOverMethodChange = this.handleHandOverMethodChange.bind(this);
         this.handlePickupLocationChange = this.handlePickupLocationChange.bind(this);
+        this.hanleTotalPriceCalculation = this.hanleTotalPriceCalculation.bind(this);
+        this.generatePassingInfo = this.generatePassingInfo.bind(this);
 
         this.state = {
             handOverMethod : 'Shipping',
             pickupLocation : 'NONE',
-            shoopingCartElement : store.getState().shoopingCartElement,
+            shoopingCartElement : store.getState().accountInformation.shoppingCart,
             pickuper: this.props.location.pickuper,
             pickupPlace: this.props.location.pickupPlace,
             pickupPhone: this.props.location.pickupPhone,
-            pickupEmail: this.props.location.pickupEmail
+            pickupEmail: this.props.location.pickupEmail,
+            totalPrice : 0
         };
         store.subscribe(this.handleStoreChange)
     }
@@ -48,6 +51,7 @@ class CheckOut extends Component{
                             <List>
                                 {
                                     this.state.shoopingCartElement.map((item) => {
+
                                         return(
                                             <Fragment>
                                                 <List.Item>
@@ -57,7 +61,7 @@ class CheckOut extends Component{
                                                     />
                                                     {item.quantity}
                                                 </List.Item>
-                                                <List.Item extra={String.prototype.concat(" $",item.price)}>
+                                                <List.Item extra={String.prototype.concat(" $",item.price.toFixed(2))}>
                                                     Subtotal:
                                                 </List.Item>
                                                 <WhiteSpace size={"15px"}/>
@@ -106,7 +110,7 @@ class CheckOut extends Component{
 
                     <Card className = {"card"}>
                         <Card.Header title={"Total Price"}
-                                     extra={String.prototype.concat("$",999)}/>
+                                     extra={this.hanleTotalPriceCalculation()}/>
                         <Card.Body>
                             {
                                 this.state.handOverMethod === "Shipping" || this.state.handOverMethod === "FastShipping"?
@@ -125,7 +129,10 @@ class CheckOut extends Component{
                         </Card.Body>
 
                         <Card.Body>
-                            <Link to = {"CardPayment"}>
+                            <Link to = {{
+                                pathname : "/",
+                                query: this.generatePassingInfo()
+                            }}>
                                 <Button>Pay With Card</Button>
                             </Link>
                         </Card.Body>
@@ -199,6 +206,26 @@ class CheckOut extends Component{
         )
     }
 
+    hanleTotalPriceCalculation = () =>{
+        let price = 0;
+
+        //get individual price added
+        this.state.shoopingCartElement.map((item) => {
+            price += item.price
+        })
+
+        //shipping fee
+        if(this.state.handOverMethod === 'Shipping'){
+            price += 9.99
+        } else if (this.state.handOverMethod === 'FastShipping'){
+            price += 29.99
+        }
+
+        this.state.totalPrice = price;
+        return String.prototype.concat("$",price.toFixed(2));
+    }
+
+
 
     handleHandOverMethodChange(value){
 
@@ -214,10 +241,24 @@ class CheckOut extends Component{
         this.setState(newState)
     }
 
+    generatePassingInfo(){
+        const purchasingDetails = {
+            handOverMethod : this.state.handOverMethod,
+            pickupLocation : this.state.pickupLocation,
+            shoopingCartElement : this.state.shoopingCartElement,
+            pickuper: this.state.pickuper,
+            pickupPhone: this.state.pickupPhone,
+            pickupEmail: this.state.pickupEmail,
+            totalPrice: this.state.totalPrice
+        }
+
+        return purchasingDetails;
+    }
+
     handleStoreChange(){
 
         const newState = JSON.parse(JSON.stringify(this.state))
-        newState.shoopingCartElement = store.getState().shoopingCartElement
+        newState.shoopingCartElement = store.getState().accountInformation.shoppingCart
 
         this.setState(newState)
     }

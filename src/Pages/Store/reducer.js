@@ -21,16 +21,26 @@ const defaultState = {
         {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false}],
 
     //Shopping Cart
-    shoopingCartElement: [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
-        {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
+    // shoopingCartElement: [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
+    //     {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
 
     //Account Information
     accountInformation:{
         accountID: '123456',
         password : 'admin',
-        type : 'Landscape',
+        type : 'General',
         name : 'Basco',
-        orderList : [],
+        orderList : [{
+            handOverMethod : 'Shipping',
+            pickupLocation : 'NONE',
+            shoopingCartElement : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:18, size:'Large',price: 999.99},
+                {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
+            pickuper: 'Dalton',
+            pickupPhone: 111111111,
+            pickupEmail: 'dalton123',
+            totalPrice: 999.99
+            }
+        ],
         email : '123@autuni.ac.nz',
         shoppingCart : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
             {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}]},
@@ -87,9 +97,9 @@ export default (state = defaultState, action) => {
         // at this point, the cart information will be keeped, but all other information
         // will be reset and removed.
         const prevState = JSON.parse(JSON.stringify(state))
-        const shoopingCartItem = prevState.shoopingCartElement
+        const shoopingCartItem = prevState.accountInformation.shoppingCart
         const newState = JSON.parse(JSON.stringify(defaultState))
-        newState.shoopingCartElement = shoopingCartItem
+        newState.accountInformation.shoppingCart = shoopingCartItem
 
         return newState
 
@@ -236,22 +246,22 @@ export default (state = defaultState, action) => {
 
         newState.totalPrice = price
 
-        console.log("price")
-        console.log(price)
-
         return newState
     } else if (action.type === "addToCartAction"){
-        state.shoopingCartElement.push(action.value)
+        state.accountInformation.shoppingCart.push(action.value)
+        console.log(action.value)
     } else if (action.type === "deleteItemFromCart"){
         console.log(action.value)
 
         const newState = JSON.parse(JSON.stringify(state))
-        newState.shoopingCartElement.splice(action.value, 1);
+        newState.accountInformation.shoppingCart.splice(action.value, 1);
 
         return newState;
     } else if (action.type === 'accountLoginAction'){
         const newState = JSON.parse(JSON.stringify(state))
         newState.accountInformation = action.value
+    } else if (action.type === 'paymentReceive'){
+        console.log("yes")
     }
 
     return state;

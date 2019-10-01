@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/CardPayment/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CardPayment/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PaymentResultPage/PaymentResultPage.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PaymentResultPage/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PurchaseProcessing/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569759709524</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="On behalf of Sam:&#10;Fix the pending process in the address filling page&#10;Fix the pending process in the card payment page&#10;Fix unnecessary pop-up window&#10;&#10;On behalf of dalton:&#10;Link two pages together, remove payment result page.">
+      <created>1569899894093</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1569899894093</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -298,6 +305,7 @@
     <MESSAGE value="add pickup location selector, which allow user to select their pickup location, also update the pickup location to 10" />
     <MESSAGE value="1. add more promotion images to the homepage&#10;2. minor outlook fix on the payment page" />
     <MESSAGE value="fix sync problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix sync problem" />
+    <MESSAGE value="On behalf of Sam:&#10;Fix the pending process in the address filling page&#10;Fix the pending process in the card payment page&#10;Fix unnecessary pop-up window&#10;&#10;On behalf of dalton:&#10;Link two pages together, remove payment result page." />
+    <option name="LAST_COMMIT_MESSAGE" value="On behalf of Sam:&#10;Fix the pending process in the address filling page&#10;Fix the pending process in the card payment page&#10;Fix unnecessary pop-up window&#10;&#10;On behalf of dalton:&#10;Link two pages together, remove payment result page." />
   </component>
 </project>

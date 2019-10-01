@@ -1,8 +1,9 @@
 import React, {Component, Fragment} from "react";
 import './CardPayment.css'
 import {Link} from "react-router-dom";
-import {Icon, Form,Input,Select,Modal,Result} from "antd";
-import {NavBar, Card, WingBlank, InputItem, Button} from "antd-mobile";
+import {Form,Input,Select,Modal,Result} from "antd";
+import {NavBar, Card, WingBlank, Button} from "antd-mobile";
+import store from "../Store/index.js";
 const { Option } = Select;
 
 class CardPayment extends Component{
@@ -12,6 +13,8 @@ class CardPayment extends Component{
         this.state = {
             visible:false,
         }
+
+        this.handleOKButtonClick = this.handleOKButtonClick.bind(this)
 
     }
     handleSubmit = e => {
@@ -154,18 +157,16 @@ class CardPayment extends Component{
                                         Submit
                                     </Button>
                                     <Modal title="Successed"
+                                           closable={false}
                                            visible = {this.state.visible}
-
                                            footer={[
-
-
-                                                   <Link to={"/Account"} >
-                                                       <Button key="submit" type="primary" >
-                                                   OK
+                                               <Link to={"/Account"} >
+                                                   <Button key="submit"
+                                                           type="primary"
+                                                           onClick={this.handleOKButtonClick}>
+                                                        OK
                                                    </Button>
-                                                   </Link>
-
-                                               ,
+                                               </Link>
                                            ]}>
                                     <Result
                                         status="success"
@@ -183,6 +184,15 @@ class CardPayment extends Component{
 
             </Fragment>
         )
+    }
+
+    handleOKButtonClick(){
+        const action = {
+            type: "paymentReceive",
+            value : this.props.location.query
+        }
+
+        store.dispatch(action)
     }
 }
 

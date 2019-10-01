@@ -14,7 +14,9 @@ class Account extends Component{
 
         }
 
-        this.handleStoreUpdate = this.handleStoreUpdate.bind();
+        this.getAccountType = this.getAccountType.bind(this)
+        this.handleStoreUpdate = this.handleStoreUpdate.bind(this);
+        this.countTreeQuantity = this.countTreeQuantity.bind(this);
 
         store.subscribe(this.handleStoreUpdate)
     }
@@ -36,7 +38,12 @@ class Account extends Component{
                             <div className={"progressDashboard"}>
                                 <Progress type = "circle"
                                           width={150}
-                                          percent={0}/>
+                                          strokeColor={{
+                                              '0%': '#108ee9',
+                                              '100%': '#87d068',
+                                          }}
+                                          format={percent => percent >= 100? <Icon type="trophy"/>:`${percent.toFixed(2)} %`}
+                                          percent={(this.countTreeQuantity() / 20) * 100}/>
                             </div>
 
                             <List className={"accountProgressList"}
@@ -45,14 +52,14 @@ class Account extends Component{
                                     <List.Item.Meta
                                         title = {"Membership Class"}
                                     />
-                                    <div>Normal Customer</div>
+                                    <div>{this.countTreeQuantity() >= 20? "VIP Customer" : "Normal Customer"}</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Tree Purchased"}
                                     />
-                                    <div>0</div>
+                                    <div>{this.countTreeQuantity()}</div>
                                 </List.Item>
                             </List>
                         </Card.Body>
@@ -80,7 +87,7 @@ class Account extends Component{
                                     <List.Item.Meta
                                         title = {"Account Type"}
                                     />
-                                    <div>{this.state.accountInfo.type}</div>
+                                    <div>{this.getAccountType()}</div>
                                 </List.Item>
                             </List>
                         </Card.Body>
@@ -106,6 +113,32 @@ class Account extends Component{
                 </WingBlank>
             </Fragment>
         )
+    }
+
+    countTreeQuantity(){
+
+        let treeQuantity = 0;
+
+
+        this.state.accountInfo.orderList.map((orders) => {
+            orders.shoopingCartElement.map((tree) => {
+                treeQuantity += tree.quantity
+            })
+        })
+
+        return treeQuantity
+    }
+
+    getAccountType(){
+        if(this.state.accountInfo.type === 'Landscape'){
+            return('Landscape Gardeners')
+        } else if (this.state.accountInfo.type === 'Housing'){
+            return('Housing Developers')
+        } else if (this.state.accountInfo.type === 'Local'){
+            return('Local Councils')
+        }
+
+        return('General Public')
     }
 
     handleStoreUpdate(){

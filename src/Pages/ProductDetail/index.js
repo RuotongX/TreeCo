@@ -116,7 +116,7 @@ class ProductDetail extends Component{
                                 </List.Item>
 
                                 <List.Item
-                                    extra={String.prototype.concat('$',this.state.totalPrice)}
+                                    extra={String.prototype.concat('$',(this.state.totalPrice).toFixed(2))}
                                 >
                                     Total Price
                                 </List.Item>
@@ -210,7 +210,7 @@ class ProductDetail extends Component{
             multiplier = 5.6
         }
 
-        newState.totalPrice = (newState.selectedTree.price * newState.quantity * multiplier).toFixed(2)
+        newState.totalPrice = newState.selectedTree.price * newState.quantity * multiplier
 
         this.setState(newState)
     }
@@ -239,7 +239,7 @@ class ProductDetail extends Component{
             multiplier = 5.6
         }
 
-        newState.totalPrice = (newState.selectedTree.price * newState.quantity * multiplier).toFixed(2)
+        newState.totalPrice = newState.selectedTree.price * newState.quantity * multiplier
 
         this.setState(newState)
     }
