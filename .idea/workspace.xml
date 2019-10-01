@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Account/Account.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/Account.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountPage/AccoutList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountPage/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/AccountRegisterList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/AccountRegisterList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +159,10 @@
       <workItem from="1569034811539" duration="16644000" />
       <workItem from="1569074832067" duration="1903000" />
       <workItem from="1569078034990" duration="1952000" />
-      <workItem from="1569215088499" duration="35864000" />
+      <workItem from="1569215088499" duration="37258000" />
+      <workItem from="1569813934506" duration="2506000" />
+      <workItem from="1569825765779" duration="273000" />
+      <workItem from="1569893520961" duration="3063000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
@@ -236,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569771602464</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finish the frame of Register page and account page, in next step will change the structor to Redux constructor.">
+      <created>1569774063941</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1569774063941</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +285,7 @@
     <MESSAGE value="Add account login function and link to account page" />
     <MESSAGE value="Set the data structure for account login page, and create the frame of account register function" />
     <MESSAGE value="Finish the account type selecter funciton by using picker component in antd HTML. Solve the return value problems of picker function and set the onChange function of picker component." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the account type selecter funciton by using picker component in antd HTML. Solve the return value problems of picker function and set the onChange function of picker component." />
+    <MESSAGE value="Finish the frame of Register page and account page, in next step will change the structor to Redux constructor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish the frame of Register page and account page, in next step will change the structor to Redux constructor." />
   </component>
 </project>

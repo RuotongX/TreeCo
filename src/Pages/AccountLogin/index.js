@@ -2,7 +2,8 @@ import React, {Component, Fragment} from 'react'
 import {List} from 'antd'
 import './AccountLoinList.css'
 import {Link} from 'react-router-dom'
-import {InputItem, Button, WhiteSpace, Card, NavBar, Icon, WingBlank} from "antd-mobile";
+import {InputItem, Button, WhiteSpace, Card, NavBar, Icon, WingBlank, Toast} from "antd-mobile";
+import store from "../Store/index.js"
 
 class AccountLogin extends Component{
 
@@ -16,12 +17,17 @@ class AccountLogin extends Component{
 
         //绑定
         this.handleAccountInputChange = this.handleAccountInputChange.bind(this);
+        this.handleLoginClick = this.handleLoginClick.bind(this);
+        this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this);
+    }
+
+    getFileProps = () =>{
+
     }
 
     //Return render component
     render() {
 
-        // const {getFieldProps} = this.props.form;
         return(
 
             //Group all the component and return to render
@@ -58,7 +64,7 @@ class AccountLogin extends Component{
                                         <InputItem
 
                                             clear
-                                            placeholder={"sInput Password"}
+                                            placeholder={"Input Password"}
                                             type =  "password"
                                             maxLength={20}
 
@@ -66,11 +72,12 @@ class AccountLogin extends Component{
                                         >Password</InputItem>
                                     </List>
 
-                                <Link to={(this.state.account.length !== 0) && (this.state.password.length !== 0) ? "/Account" : "/AccountLogin"}>
+                                <Link to={(this.state.account === '123456' && this.state.password === 'admin') ? "/Account" : "/AccountLogin"}>
                                     <Button
                                         Icon className={"LoginButton"}
                                         disabled={(this.state.account.length !== 0) && (this.state.password.length !== 0) ? false:true}
                                         type={"primary"}
+                                        onClick={this.handleLoginClick}
                                     >Account Login</Button>
                                 </Link>
 
@@ -85,9 +92,10 @@ class AccountLogin extends Component{
 
                         <Card.Body>
                             <Link to={"/AccountRegisterPage"}>
-                                <Button
-                                    Icon className={"RegisterButton"}
-                                >Account Register</Button>
+                                <Button className={"RegisterButton"} >
+                                    Account Register
+                                </Button>
+
                             </Link>
                         </Card.Body>
 
@@ -96,6 +104,30 @@ class AccountLogin extends Component{
             </Fragment>
 
         )
+    }
+
+    handleLoginClick() {
+        if(this.state.account === '123456' && this.state.password === 'admin'){
+            const accountInformation={
+                accountID: '123456',
+                password : 'admin',
+                type : 'Landscape',
+                name : 'Basco',
+                orderList : [],
+                email : '123@autuni.ac.nz',
+                shoppingCart : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
+                    {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}]
+            }
+
+            const accountAction={
+                type : 'accountLoginAction',
+                value : accountInformation
+            }
+
+            store.dispatch(accountAction)
+        } else {
+            Toast.fail('Account or Password is incorrect!', 1);
+        }
     }
 
     handleAccountInputChange(value){
