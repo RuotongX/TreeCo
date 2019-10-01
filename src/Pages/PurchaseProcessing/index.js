@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom'
-import {NavBar} from "antd-mobile";
-import {Form, Input, Tooltip, Icon, Select, Button, AutoComplete,Modal,Result} from 'antd';
+import {NavBar,Button} from "antd-mobile";
+import {Form, Input, Tooltip, Icon, Select, AutoComplete,Modal,Result} from 'antd';
 import './PurchaseProcessing.css';
 
 
@@ -34,7 +34,7 @@ class PurchaseProcessing extends React.Component {
         }
     };
 
-    handleEmailSubmit = e => {
+    handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
@@ -113,11 +113,11 @@ class PurchaseProcessing extends React.Component {
                             leftContent={<Link to="/"><Icon type="left" className={'returnButton'}/></Link>}
                             rightContent={[]}
                     >
-                        Purchasing Details
+                        Personal Information
                     </NavBar>
                 </div>
 
-                <Form {...formItemLayout} onSubmit={this.handleEmailSubmit}
+                <Form {...formItemLayout} onSubmit={this.handleSubmit}
                       style={{textAlign: 'center', margin: '5% 5% 0 5%'}}>
                     <Form.Item
                         label={
@@ -430,7 +430,7 @@ class PurchaseProcessing extends React.Component {
                     {/*    )}*/}
                     {/*</Form.Item>*/}
                     <Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>
-                        <Button type="primary" htmlType="submit" onClick={this.showModal} style = {{backgroundColor:'#1C1C1C',fontSize:30,blockSize:60,marginTop:30}}>
+                        <Button htmlType="submit" onClick={this.showModal}>
                             Submit
                         </Button>
                         <Modal title="Successed"

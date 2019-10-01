@@ -192,7 +192,6 @@ class CheckOut extends Component{
 
                         </List.Item>
                     </List>
-                    <Button>Change Address</Button>
                 </Card.Body>
             </Fragment>
         )
