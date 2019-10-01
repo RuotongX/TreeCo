@@ -24,6 +24,17 @@ const defaultState = {
     shoopingCartElement: [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
         {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
 
+    //Account Information
+    accountInformation:{
+        accountID: '123456',
+        password : 'admin',
+        type : 'Landscape',
+        name : 'Basco',
+        orderList : [],
+        email : '123@autuni.ac.nz',
+        shoppingCart : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
+            {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}]},
+
 
     //tree detail
     selectedTree : null,
@@ -238,6 +249,9 @@ export default (state = defaultState, action) => {
         newState.shoopingCartElement.splice(action.value, 1);
 
         return newState;
+    } else if (action.type === 'accountLoginAction'){
+        const newState = JSON.parse(JSON.stringify(state))
+        newState.accountInformation = action.value
     }
 
     return state;

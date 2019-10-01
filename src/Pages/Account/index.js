@@ -3,10 +3,20 @@ import {Button, Card, NavBar, WingBlank} from "antd-mobile";
 import {Link} from "react-router-dom";
 import {Icon, Progress, List} from "antd";
 import './Account.css'
+import store from "../Store/index.js"
 
 class Account extends Component{
     constructor(props){
         super(props)
+
+        this.state = {
+            accountInfo : store.getState().accountInformation
+
+        }
+
+        this.handleStoreUpdate = this.handleStoreUpdate.bind();
+
+        store.subscribe(this.handleStoreUpdate)
     }
 
     render() {
@@ -26,7 +36,7 @@ class Account extends Component{
                             <div className={"progressDashboard"}>
                                 <Progress type = "circle"
                                           width={150}
-                                          percent={75}/>
+                                          percent={0}/>
                             </div>
 
                             <List className={"accountProgressList"}
@@ -35,14 +45,14 @@ class Account extends Component{
                                     <List.Item.Meta
                                         title = {"Membership Class"}
                                     />
-                                    <div>VIP Customer</div>
+                                    <div>Normal Customer</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Tree Purchased"}
                                     />
-                                    <div>35</div>
+                                    <div>0</div>
                                 </List.Item>
                             </List>
                         </Card.Body>
@@ -56,21 +66,21 @@ class Account extends Component{
                                     <List.Item.Meta
                                         title = {"Account ID"}
                                     />
-                                    <div>12354392</div>
+                                    <div>{this.state.accountInfo.accountID}</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Account Name"}
                                     />
-                                    <div>Basco_Wang</div>
+                                    <div>{this.state.accountInfo.name}</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Account Type"}
                                     />
-                                    <div>DIY User</div>
+                                    <div>{this.state.accountInfo.type}</div>
                                 </List.Item>
                             </List>
                         </Card.Body>
@@ -96,6 +106,13 @@ class Account extends Component{
                 </WingBlank>
             </Fragment>
         )
+    }
+
+    handleStoreUpdate(){
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.accountInfo = store.getState().accountInformation
+
+        this.setState(newState)
     }
 }
 
