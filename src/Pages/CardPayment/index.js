@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import './CardPayment.css'
 import {Link} from "react-router-dom";
-import {Icon, Form,Input,Select} from "antd";
+import {Icon, Form,Input,Select,Modal,Result} from "antd";
 import {NavBar, Card, WingBlank, InputItem, Button} from "antd-mobile";
 const { Option } = Select;
 
@@ -9,6 +9,9 @@ class CardPayment extends Component{
 
     constructor(props){
         super(props)
+        this.state = {
+            visible:false,
+        }
 
     }
     handleSubmit = e => {
@@ -34,6 +37,18 @@ class CardPayment extends Component{
             callback('Card Number form is not correct!');
         } else {
             callback();
+        }
+    }
+    handleOk = e =>{
+        if(this.props.form.getFieldValue('Name') !== undefined &&
+            this.props.form.getFieldValue('CardNumber') !== undefined &&
+            this.props.form.getFieldValue('CVV') !== undefined&&
+            this.props.form.getFieldValue('CardNumber').length === 16 &&
+            this.props.form.getFieldValue('CVV').length === 3
+        ){
+            this.setState({
+                visible: true,
+            });
         }
     }
 
@@ -95,7 +110,7 @@ class CardPayment extends Component{
                                     })(<Input type = 'CardNumber'/>)}
                                 </Form.Item>
 
-                                <Form.Item label = 'Expire'>
+                                <Form.Item label = 'Expire Date'>
                                     <Select defaultValue="01" style={{ width: 120 }}>
                                         <Option value="01">01</Option>
                                         <Option value="02">02</Option>
@@ -110,7 +125,7 @@ class CardPayment extends Component{
                                         <Option value="11">11</Option>
                                         <Option value="12">12</Option>
                                     </Select>
-                                    <Select defaultValue="19" style={{ width: 120 }}>
+                                    <Select defaultValue="19" style={{ width: 120, marginLeft : "10px"}}>
                                         <Option value="19">19</Option>
                                         <Option value="20">20</Option>
                                         <Option value="21">21</Option>
@@ -134,10 +149,31 @@ class CardPayment extends Component{
                                     })(<Input type = 'CVV'/>)}
                                 </Form.Item>
 
-                                <Form.Item wrapperCol={{ span: 12, offset: 5 }}>
-                                    <Button type="primary" htmlType="submit">
+                                <Form.Item >
+                                    <Button htmlType="submit" onClick={this.handleOk}>
                                         Submit
                                     </Button>
+                                    <Modal title="Successed"
+                                           visible = {this.state.visible}
+
+                                           footer={[
+
+
+                                                   <Link to={"/Account"} >
+                                                       <Button key="submit" type="primary" >
+                                                   OK
+                                                   </Button>
+                                                   </Link>
+
+                                               ,
+                                           ]}>
+                                    <Result
+                                        status="success"
+                                        title="Successfully Purchased Your tree!"
+                                        subTitle="You can check your personal purchase under your account, you will jump to account page now."
+
+                                    />
+                                    </Modal>
                                 </Form.Item>
                             </Form>
                         </Card.Body>

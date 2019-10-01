@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom'
-import {NavBar,Button} from "antd-mobile";
+import {NavBar,Button,Toast} from "antd-mobile";
 import {Form, Input, Tooltip, Icon, Select, AutoComplete,Modal,Result} from 'antd';
 import './PurchaseProcessing.css';
 
@@ -21,18 +21,11 @@ class PurchaseProcessing extends React.Component {
             autoCompleteResult: [],
             visible:false,
             submit:false,
+            checkout:false,
         };
     }
 
-    showModal = () =>{
-        if(this.props.form.getFieldValue('Name') !== undefined && this.props.form.getFieldValue('email') !== undefined &&
-            this.props.form.getFieldValue('phone') !== undefined &&this.props.form.getFieldValue('country') !== undefined &&
-            this.props.form.getFieldValue('Address') !== undefined) {
-            this.setState({
-                visible: true,
-            });
-        }
-    };
+
 
     handleSubmit = e => {
         e.preventDefault();
@@ -52,12 +45,29 @@ class PurchaseProcessing extends React.Component {
         this.setState({autoCompleteResult});
     };
     handleOk= e =>{
+        if(this.props.form.getFieldValue('Name') !== undefined && this.props.form.getFieldValue('email') !== undefined &&
+            this.props.form.getFieldValue('phone') !== undefined &&this.props.form.getFieldValue('country') !== undefined &&
+            this.props.form.getFieldValue('Address') !== undefined) {
 
-            this.setState({
-                visible:false,
-            });
+            this.state.checkout = true;
+        }else {
+            this.state.checkout=false;
+            Toast.fail("Please fill your details",1)
+
+        }
 
     };
+    stateCheck = e =>{
+        if(this.props.form.getFieldValue('Name') !== undefined && this.props.form.getFieldValue('email') !== undefined &&
+            this.props.form.getFieldValue('phone') !== undefined &&this.props.form.getFieldValue('country') !== undefined &&
+            this.props.form.getFieldValue('Address') !== undefined) {
+
+            this.state.checkout = true;
+        }else {
+            this.state.checkout=false;
+
+        }
+    }
     getFormItem = () =>{
         return 5;
     }
@@ -117,18 +127,18 @@ class PurchaseProcessing extends React.Component {
                     </NavBar>
                 </div>
 
-                <Form {...formItemLayout} onSubmit={this.handleSubmit}
+                <Form {...formItemLayout} onSubmit={e => { this.handleSubmit(); this.stateCheck() }}
                       style={{textAlign: 'center', margin: '5% 5% 0 5%'}}>
                     <Form.Item
                         label={
-                            <span>
+                            <span >
                                 Name
                             </span>
                         }
                     >
                         {getFieldDecorator('Name', {
                             rules: [{required: true, message: 'Please input your name!', whitespace: true}],
-                        })(<Input/>)}
+                        })(<Input onChange={this.stateCheck}/>)}
                     </Form.Item>
 
                     <Form.Item label="E-mail">
@@ -155,7 +165,7 @@ class PurchaseProcessing extends React.Component {
                     <Form.Item label="Phone Number">
                         {getFieldDecorator('phone', {
                             rules: [{required: true, message: 'Please input your phone number!'}],
-                        })(<Input addonBefore={prefixSelector} style={{width: '100%'}}/>)}
+                        })(<Input addonBefore={prefixSelector} style={{width: '100%'}} onChange={this.stateCheck}/>)}
                     </Form.Item>
 
 
@@ -166,7 +176,7 @@ class PurchaseProcessing extends React.Component {
                                 showSearch
                                 placeholder="Select your receiving country"
                                 optionFilterProp="children"
-                                // onChange={onChange}
+                                onChange={this.stateCheck}
                                 // onFocus={onFocus}
                                 // onBlur={onBlur}
                                 // countryOnchange = {countryOnchange}
@@ -417,7 +427,7 @@ class PurchaseProcessing extends React.Component {
                     >
                         {getFieldDecorator('Address', {
                             rules: [{required: true, message: 'Please input your address!', whitespace: true}],
-                        })(<Input/>)}
+                        })(<Input onChange={this.stateCheck}/>)}
                     </Form.Item>
 
                     {/*<Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>*/}
@@ -430,33 +440,19 @@ class PurchaseProcessing extends React.Component {
                     {/*    )}*/}
                     {/*</Form.Item>*/}
                     <Form.Item {...tailFormItemLayout} style={{textAlign: 'center', marginRight: '3%'}}>
-                        <Button htmlType="submit" onClick={this.showModal}>
-                            Submit
-                        </Button>
-                        <Modal title="Successed"
-                        visible = {this.state.visible}
-                        onOk={this.handleOk}
-                               footer={[
 
-                                   <Button key="submit" type="primary" onClick={this.handleOk}>
-                                       <Link to={{
-                                           pathname: "/CheckOut",
-                                           pickuper: this.props.form.getFieldValue('Name'),
-                                           pickupPlace: this.props.form.getFieldValue('Address')+', '+this.props.form.getFieldValue('country'),
-                                           pickupPhone: this.props.form.getFieldValue('prefix')+this.props.form.getFieldValue('phone'),
-                                           pickupEmail: this.props.form.getFieldValue('email'),
-                                       }} >Ok</Link>
+                            <Link to={{
+                                pathname: this.state.checkout? "/CheckOut" : "/PurchaseProcessing",
+                                pickuper: this.props.form.getFieldValue('Name'),
+                                pickupPlace: this.props.form.getFieldValue('Address') + ', ' + this.props.form.getFieldValue('country'),
+                                pickupPhone: this.props.form.getFieldValue('prefix') + this.props.form.getFieldValue('phone'),
+                                pickupEmail: this.props.form.getFieldValue('email'),
+                            }} >
+                                <Button htmlType="submit" onClick={this.handleOk}>
+                                    Submit
+                                </Button>
+                            </Link>
 
-                                   </Button>,
-                               ]}>
-                            <Result
-                                status="success"
-                                title="Successfully Purchased Your tree!"
-                                subTitle="You can check your personal purchase on your profile, you will jump to check out page now."
-
-                            />
-
-                        </Modal>
                     </Form.Item>
                 </Form>
             </Fragment>

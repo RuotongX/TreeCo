@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import {Drawer, List, Icon, Avatar} from 'antd';
 import {Link} from 'react-router-dom'
 import './HomePage.css';
-import {Card, Carousel} from 'antd';
+import {Carousel} from 'antd';
 import {NavBar} from "antd-mobile";
 
 const listData = [];
@@ -99,12 +99,6 @@ class HomePage extends Component {
                         <List.Item>
                             <Link to="/CardPayment" style={{color: "black", fontSize: 20}}>
                                 CardPayment
-                            </Link>
-                        </List.Item>
-
-                        <List.Item>
-                            <Link to="/PaymentResultPage" style={{color: "black", fontSize: 20}}>
-                                Payment Result
                             </Link>
                         </List.Item>
 

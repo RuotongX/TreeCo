@@ -97,9 +97,9 @@ class CheckOut extends Component{
 
                     <Card className={"card"}>
                         {
-
-                            this.state.handOverMethod === "pickup"? this.getPickUpLocations() : this.getShippingAddress()
-
+                            <div>
+                                {this.state.handOverMethod === "pickup"? this.getPickUpLocations() : this.getShippingAddress()}
+                            </div>
 
                         }
                     </Card>
@@ -125,7 +125,9 @@ class CheckOut extends Component{
                         </Card.Body>
 
                         <Card.Body>
-                            <Button>Pay With Card</Button>
+                            <Link to = {"CardPayment"}>
+                                <Button>Pay With Card</Button>
+                            </Link>
                         </Card.Body>
                     </Card>
 
