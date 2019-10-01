@@ -4,11 +4,11 @@
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/CardPayment/CardPayment.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CardPayment/CardPayment.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/CardPayment/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CardPayment/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/CheckOut/CheckOut.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CheckOut/CheckOut.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/CheckOut/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductDetail/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/ShoppingCart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ShoppingCart/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569899894093</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add a logic which depend the current vip status of customer&#10;remove some unnecessary code&#10;fix price tag duplication problem">
+      <created>1569910991834</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1569910991835</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -306,6 +313,7 @@
     <MESSAGE value="1. add more promotion images to the homepage&#10;2. minor outlook fix on the payment page" />
     <MESSAGE value="fix sync problem" />
     <MESSAGE value="On behalf of Sam:&#10;Fix the pending process in the address filling page&#10;Fix the pending process in the card payment page&#10;Fix unnecessary pop-up window&#10;&#10;On behalf of dalton:&#10;Link two pages together, remove payment result page." />
-    <option name="LAST_COMMIT_MESSAGE" value="On behalf of Sam:&#10;Fix the pending process in the address filling page&#10;Fix the pending process in the card payment page&#10;Fix unnecessary pop-up window&#10;&#10;On behalf of dalton:&#10;Link two pages together, remove payment result page." />
+    <MESSAGE value="add a logic which depend the current vip status of customer&#10;remove some unnecessary code&#10;fix price tag duplication problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="add a logic which depend the current vip status of customer&#10;remove some unnecessary code&#10;fix price tag duplication problem" />
   </component>
 </project>

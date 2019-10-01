@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react";
 import './CardPayment.css'
 import {Link} from "react-router-dom";
 import {Form,Input,Select,Modal,Result} from "antd";
-import {NavBar, Card, WingBlank, Button} from "antd-mobile";
+import {NavBar, Card, WingBlank, Button, Toast} from "antd-mobile";
 import store from "../Store/index.js";
 const { Option } = Select;
 
@@ -47,11 +47,12 @@ class CardPayment extends Component{
             this.props.form.getFieldValue('CardNumber') !== undefined &&
             this.props.form.getFieldValue('CVV') !== undefined&&
             this.props.form.getFieldValue('CardNumber').length === 16 &&
-            this.props.form.getFieldValue('CVV').length === 3
-        ){
+            this.props.form.getFieldValue('CVV').length === 3){
             this.setState({
                 visible: true,
-            });
+            })
+        } else {
+            Toast.fail("Please Fill info before continue",1)
         }
     }
 

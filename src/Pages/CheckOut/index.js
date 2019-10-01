@@ -15,18 +15,25 @@ class CheckOut extends Component{
         this.handleStoreChange = this.handleStoreChange.bind(this);
         this.handleHandOverMethodChange = this.handleHandOverMethodChange.bind(this);
         this.handlePickupLocationChange = this.handlePickupLocationChange.bind(this);
-        this.hanleTotalPriceCalculation = this.hanleTotalPriceCalculation.bind(this);
+        this.handleSubTotalPriceCalculation = this.handleSubTotalPriceCalculation.bind(this);
+        this.handleTotalPrice = this.handleTotalPrice.bind(this);
+        this.handleShoppingCartCount = this.handleShoppingCartCount.bind(this);
         this.generatePassingInfo = this.generatePassingInfo.bind(this);
+        this.countVaildVIP = this.countVaildVIP.bind(this);
+        this.handleDiscountCount = this.handleDiscountCount.bind(this);
 
         this.state = {
             handOverMethod : 'Shipping',
             pickupLocation : 'NONE',
+            accountinfo : store.getState().accountInformation,
             shoopingCartElement : store.getState().accountInformation.shoppingCart,
             pickuper: this.props.location.pickuper,
             pickupPlace: this.props.location.pickupPlace,
             pickupPhone: this.props.location.pickupPhone,
             pickupEmail: this.props.location.pickupEmail,
-            totalPrice : 0
+            totalPrice : 0,
+            subtotalPrice : 0,
+            discountPrice : 0
         };
         store.subscribe(this.handleStoreChange)
     }
@@ -109,28 +116,32 @@ class CheckOut extends Component{
                     </Card>
 
                     <Card className = {"card"}>
-                        <Card.Header title={"Total Price"}
-                                     extra={this.hanleTotalPriceCalculation()}/>
+                        <Card.Header title={"Subtotal Price"}
+                                     extra={this.handleSubTotalPriceCalculation()}/>
                         <Card.Body>
                             {
                                 this.state.handOverMethod === "Shipping" || this.state.handOverMethod === "FastShipping"?
-                                    this.state.handOverMethod === "Shipping"? <div className={"discountNote"}>Include Shipping Fee: $9.99</div>
-                                        : <div className={"discountNote"}>Include Shipping Fee(Fast): $29.99</div>
-                                    : <div className={"discountNote"}>No Shipping Fee Included</div>
+                                    this.state.handOverMethod === "Shipping"? <div className={"shippingNote"}>Include Shipping Fee: $9.99</div>
+                                        : <div className={"shippingNote"}>Include Shipping Fee(Fast): $29.99</div>
+                                    : <div className={"shippingNote"}>No Shipping Fee Included</div>
                             }
                         </Card.Body>
 
-                        <Card.Header title={"Membership Discount"}
-                                     extra={String.prototype.concat("-$",10)}/>
+                        <Card.Header title={"Discounts"}
+                                     extra={this.handleDiscountCount()}/>
                         <Card.Body>
-
-                            <div className={"discountNote"}>Super Membership Plan</div>
-
+                            <div className={"dicountInfo"}>{this.state.accountinfo.type === 'Wholesale'? 'Wholesale Customer: 15% OFF' : 'No Available Account Discount Found'}</div>
+                            <div className={"dicountInfo"}>{this.countVaildVIP() >= 20? 'VIP Customer: 10% OFF' : 'No Available Membership Discount Found'}</div>
+                            <div className={"dicountInfo"}>{this.handleShoppingCartCount() > 10? 'More than 10 trees - Free Delivery' : 'No Available Shipping Discount Found'}</div>
                         </Card.Body>
+
+
+                        <Card.Header title={"Total Price"}
+                                     extra={this.handleTotalPrice()}/>
 
                         <Card.Body>
                             <Link to = {{
-                                pathname : "/",
+                                pathname : "/CardPayment",
                                 query: this.generatePassingInfo()
                             }}>
                                 <Button>Pay With Card</Button>
@@ -205,8 +216,57 @@ class CheckOut extends Component{
             </Fragment>
         )
     }
+    handleShoppingCartCount() {
+        let numberCount = 0;
 
-    hanleTotalPriceCalculation = () =>{
+        this.state.shoopingCartElement.map((tree) => {
+            numberCount += tree.quantity
+        })
+
+        return numberCount;
+    }
+
+    handleDiscountCount = () => {
+        let price = 0
+
+        console.log(price)
+
+        //shopping cart count
+        let numberCount = 0;
+
+        this.state.shoopingCartElement.map((tree) => {
+            numberCount += tree.quantity
+        })
+
+        if(this.state.handOverMethod === 'Shipping' && numberCount > 10){
+            price += 9.99
+        } else if (this.state.handOverMethod === 'FastShipping' && numberCount > 10){
+            price += 29.99
+        }
+
+        let vipCount = 0;
+
+        this.state.accountinfo.orderList.map((orders) => {
+            orders.shoopingCartElement.map((tree) => {
+                vipCount += tree.quantity
+            })
+        })
+
+        if(vipCount >= 20){
+            price += this.state.subtotalPrice * 0.1
+        }
+
+        if(this.state.accountinfo.type === 'Wholesale'){
+            price += this.state.subtotalPrice * 0.15
+        }
+
+        this.state.discountPrice = price
+        return String.prototype.concat("-$",price.toFixed(2));
+    }
+
+
+
+    handleSubTotalPriceCalculation = () =>{
         let price = 0;
 
         //get individual price added
@@ -221,7 +281,7 @@ class CheckOut extends Component{
             price += 29.99
         }
 
-        this.state.totalPrice = price;
+        this.state.subtotalPrice = price;
         return String.prototype.concat("$",price.toFixed(2));
     }
 
@@ -241,6 +301,20 @@ class CheckOut extends Component{
         this.setState(newState)
     }
 
+    countVaildVIP(){
+
+        let treeQuantity = 0;
+
+
+        this.state.accountinfo.orderList.map((orders) => {
+            orders.shoopingCartElement.map((tree) => {
+                treeQuantity += tree.quantity
+            })
+        })
+
+        return treeQuantity
+    }
+
     generatePassingInfo(){
         const purchasingDetails = {
             handOverMethod : this.state.handOverMethod,
@@ -253,6 +327,11 @@ class CheckOut extends Component{
         }
 
         return purchasingDetails;
+    }
+    handleTotalPrice(){
+        this.state.totalPrice =  this.state.subtotalPrice - this.state.discountPrice
+
+        return String.prototype.concat("$", this.state.totalPrice.toFixed(2))
     }
 
     handleStoreChange(){

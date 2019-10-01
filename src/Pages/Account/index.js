@@ -136,6 +136,8 @@ class Account extends Component{
             return('Housing Developers')
         } else if (this.state.accountInfo.type === 'Local'){
             return('Local Councils')
+        } else if (this.state.accountInfo.type === 'Wholesale'){
+            return('Wholesale')
         }
 
         return('General Public')
