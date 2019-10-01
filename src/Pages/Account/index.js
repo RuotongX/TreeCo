@@ -14,7 +14,7 @@ class Account extends Component{
 
         }
 
-        this.handleStoreUpdate = this.handleStoreUpdate.bind();
+        this.handleStoreUpdate = this.handleStoreUpdate.bind(this);
 
         store.subscribe(this.handleStoreUpdate)
     }
@@ -100,7 +100,6 @@ class Account extends Component{
                                 <Button>Health Check</Button>
                             </a>
                         </Card.Body>
-
 
                     </Card>
                 </WingBlank>

@@ -111,7 +111,7 @@ class AccountLogin extends Component{
             const accountInformation={
                 accountID: '123456',
                 password : 'admin',
-                type : 'Landscape',
+                type : 'Landscape Gardeners',
                 name : 'Basco',
                 orderList : [],
                 email : '123@autuni.ac.nz',
@@ -131,7 +131,6 @@ class AccountLogin extends Component{
     }
 
     handleAccountInputChange(value){
-        console.log(value)
 
         const newState = JSON.parse(JSON.stringify(this.state))
         newState.account = value
@@ -140,7 +139,6 @@ class AccountLogin extends Component{
     }
 
     handlePasswordInputChange(value){
-        console.log(value)
 
         const newState = JSON.parse(JSON.stringify(this.state))
         newState.password = value

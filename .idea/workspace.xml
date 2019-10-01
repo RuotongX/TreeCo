@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountRegisterPage/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -162,7 +163,7 @@
       <workItem from="1569215088499" duration="37258000" />
       <workItem from="1569813934506" duration="2506000" />
       <workItem from="1569825765779" duration="273000" />
-      <workItem from="1569893520961" duration="3063000" />
+      <workItem from="1569893520961" duration="8890000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
@@ -241,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569774063941</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Rebuild Account Login to Redux structure and transfer data from Login to reducer and account page.">
+      <created>1569896818095</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1569896818095</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +294,7 @@
     <MESSAGE value="Set the data structure for account login page, and create the frame of account register function" />
     <MESSAGE value="Finish the account type selecter funciton by using picker component in antd HTML. Solve the return value problems of picker function and set the onChange function of picker component." />
     <MESSAGE value="Finish the frame of Register page and account page, in next step will change the structor to Redux constructor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish the frame of Register page and account page, in next step will change the structor to Redux constructor." />
+    <MESSAGE value="Rebuild Account Login to Redux structure and transfer data from Login to reducer and account page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rebuild Account Login to Redux structure and transfer data from Login to reducer and account page." />
   </component>
 </project>

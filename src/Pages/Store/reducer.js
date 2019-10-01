@@ -28,7 +28,7 @@ const defaultState = {
     accountInformation:{
         accountID: '123456',
         password : 'admin',
-        type : 'Landscape',
+        type : 'Landscape Gardeners',
         name : 'Basco',
         orderList : [],
         email : '123@autuni.ac.nz',
@@ -243,15 +243,17 @@ export default (state = defaultState, action) => {
     } else if (action.type === "addToCartAction"){
         state.shoopingCartElement.push(action.value)
     } else if (action.type === "deleteItemFromCart"){
-        console.log(action.value)
 
         const newState = JSON.parse(JSON.stringify(state))
         newState.shoopingCartElement.splice(action.value, 1);
 
         return newState;
     } else if (action.type === 'accountLoginAction'){
-        const newState = JSON.parse(JSON.stringify(state))
-        newState.accountInformation = action.value
+        state.accountInformation = action.value
+
+    } else if(action.type === 'accountRegisterAction'){
+        state.accountInformation = action.value
+
     }
 
     return state;
