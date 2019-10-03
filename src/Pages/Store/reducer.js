@@ -29,13 +29,22 @@ const defaultState = {
         orderList : [
             {
             handOverMethod : 'Shipping',
-            pickupLocation : 'NONE',
+            pickupLocation : 'NONEA',
             shoopingCartElement : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:18, size:'Large',price: 999.99},
                 {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
             pickuper: 'Dalton',
             pickupPhone: 111111111,
             pickupEmail: 'dalton123',
             totalPrice: 999.99
+            }, {
+                handOverMethod : 'Shipping',
+                pickupLocation : 'NONE',
+                shoopingCartElement : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:18, size:'Large',price: 999.99},
+                    {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
+                pickuper: 'Dalton',
+                pickupPhone: 111111111,
+                pickupEmail: 'dalton123',
+                totalPrice: 999.99
             }
         ],
         email : '123@autuni.ac.nz',
@@ -93,10 +102,27 @@ export default (state = defaultState, action) => {
 
         // at this point, the cart information will be keeped, but all other information
         // will be reset and removed.
-        const prevState = JSON.parse(JSON.stringify(state))
-        const shoopingCartItem = prevState.accountInformation.shoppingCart
-        const newState = JSON.parse(JSON.stringify(defaultState))
-        newState.accountInformation.shoppingCart = shoopingCartItem
+        const newState = JSON.parse(JSON.stringify(state))
+
+        newState.SunFilter = 'Any'
+        newState.SoilFilter = 'Any'
+        newState.MaintenanceFilter = 'Any'
+        newState.MaxHeightFilter = 'Any'
+        newState.GrowthFilter = 'Any'
+        newState. treeFilter = 'Any'
+        newState.showDrawer = false
+        newState.searchContent = ''
+        newState.priceFilter = [0,100]
+        newState.treeList = [{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},
+            {id:2, productName : 'Apple Tree', drain : 'Fast', sun : 'Any', maintain : 'Medium', height : 5, rate : 'Fast', price: 23.99, img: 'apple_tree.jpg', type: 'Fruit Tree', filterRemove:false},
+            {id:3, productName : 'Pear Tree', drain : 'Medium', sun : 'Sunny', maintain : 'High', height : 5, rate : 'Slow', price: 42.99, img: 'pear_tree.jpg', type: 'Fruit Tree', filterRemove:false},
+            {id:4, productName : 'Hedge', drain : 'Slow', sun : 'Any', maintain : 'Low', height : 3, rate : 'Slow', price: 17.87, img: 'henge_tree.jpg', type: 'Hedge', filterRemove:false},
+            {id:5, productName : 'Evergreen', drain : 'Any', sun : 'Medium', maintain : 'Low', height : 18, rate : 'Fast', price: 42.99, img: 'evergreen.jpg', type: 'Evergreen', filterRemove:false},
+            {id:6, productName : 'Puriri', drain : 'Slow', sun : 'Any', maintain : 'Low', height : 20, rate : 'Fast', price: 69.99, img: 'nz_native_trees.jpg', type: 'NZ Native', filterRemove:false},
+            {id:7, productName : 'Gum Tree', drain : 'Slow', sun : 'Shade', maintain : 'Low', height : 15, rate : 'Fast', price: 32.99, img: 'gum_tree.jpg', type: 'Gum Tree', filterRemove:false},
+            {id:8, productName : 'Palm Tree', drain : 'Medium', sun : 'Shade', maintain : 'Medium', height : 30, rate : 'Slow', price: 22.99, img: 'palm_tree.jpg', type: 'Palm Tree', filterRemove:false},
+            {id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false}]
+
 
         return newState
 
@@ -257,10 +283,23 @@ export default (state = defaultState, action) => {
     } else if (action.type === 'accountLoginAction'){
         const newState = JSON.parse(JSON.stringify(state))
         newState.accountInformation = action.value
+
+        return newState
     } else if (action.type === 'paymentReceive'){
 
-        console.log(action.value)
-        state.accountInformation.orderList.push(action.value)
+        const newState = JSON.parse(JSON.stringify(state))
+
+        newState.accountInformation.orderList.push(action.value)
+        newState.accountInformation.shoppingCart = []
+
+        return newState
+
+    } else if (action.type === 'signOutAction'){
+
+        const newState = JSON.parse(JSON.stringify(state))
+        newState.accountInformation = null;
+
+        return newState;
     }
 
     return state;
