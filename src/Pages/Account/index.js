@@ -3,10 +3,22 @@ import {Button, Card, NavBar, WingBlank} from "antd-mobile";
 import {Link} from "react-router-dom";
 import {Icon, Progress, List} from "antd";
 import './Account.css'
+import store from "../Store/index.js"
 
 class Account extends Component{
     constructor(props){
         super(props)
+
+        this.state = {
+            accountInfo : store.getState().accountInformation
+
+        }
+
+        this.getAccountType = this.getAccountType.bind(this)
+        this.handleStoreUpdate = this.handleStoreUpdate.bind(this);
+        this.countTreeQuantity = this.countTreeQuantity.bind(this);
+
+        store.subscribe(this.handleStoreUpdate)
     }
 
     render() {
@@ -26,7 +38,12 @@ class Account extends Component{
                             <div className={"progressDashboard"}>
                                 <Progress type = "circle"
                                           width={150}
-                                          percent={75}/>
+                                          strokeColor={{
+                                              '0%': '#108ee9',
+                                              '100%': '#87d068',
+                                          }}
+                                          format={percent => percent >= 100? <Icon type="trophy"/>:`${percent.toFixed(2)} %`}
+                                          percent={(this.countTreeQuantity() / 20) * 100}/>
                             </div>
 
                             <List className={"accountProgressList"}
@@ -35,14 +52,14 @@ class Account extends Component{
                                     <List.Item.Meta
                                         title = {"Membership Class"}
                                     />
-                                    <div>VIP Customer</div>
+                                    <div>{this.countTreeQuantity() >= 20? "VIP Customer" : "Normal Customer"}</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Tree Purchased"}
                                     />
-                                    <div>35</div>
+                                    <div>{this.countTreeQuantity()}</div>
                                 </List.Item>
                             </List>
                         </Card.Body>
@@ -56,21 +73,21 @@ class Account extends Component{
                                     <List.Item.Meta
                                         title = {"Account ID"}
                                     />
-                                    <div>12354392</div>
+                                    <div>{this.state.accountInfo.accountID}</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Account Name"}
                                     />
-                                    <div>Basco_Wang</div>
+                                    <div>{this.state.accountInfo.name}</div>
                                 </List.Item>
 
                                 <List.Item>
                                     <List.Item.Meta
                                         title = {"Account Type"}
                                     />
-                                    <div>DIY User</div>
+                                    <div>{this.getAccountType()}</div>
                                 </List.Item>
                             </List>
                         </Card.Body>
@@ -96,6 +113,41 @@ class Account extends Component{
                 </WingBlank>
             </Fragment>
         )
+    }
+
+    countTreeQuantity(){
+
+        let treeQuantity = 0;
+
+
+        this.state.accountInfo.orderList.map((orders) => {
+            orders.shoopingCartElement.map((tree) => {
+                treeQuantity += tree.quantity
+            })
+        })
+
+        return treeQuantity
+    }
+
+    getAccountType(){
+        if(this.state.accountInfo.type === 'Landscape'){
+            return('Landscape Gardeners')
+        } else if (this.state.accountInfo.type === 'Housing'){
+            return('Housing Developers')
+        } else if (this.state.accountInfo.type === 'Local'){
+            return('Local Councils')
+        } else if (this.state.accountInfo.type === 'Wholesale'){
+            return('Wholesale')
+        }
+
+        return('General Public')
+    }
+
+    handleStoreUpdate(){
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.accountInfo = store.getState().accountInformation
+
+        this.setState(newState)
     }
 }
 

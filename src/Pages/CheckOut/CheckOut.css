@@ -8,6 +8,9 @@
 .cardHeader{
     font-size: 20px;
 }
-.discountNote{
+.shippingNote{
+    color: gray;
+}
+.dicountInfo{
     color: gray;
 }
