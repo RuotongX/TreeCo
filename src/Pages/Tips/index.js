@@ -35,16 +35,14 @@ class Tips extends Component{
 
                         <List className={"tipList"}>
                             {
-                                this.state.treeList.map((order) => (
-                                    order.shoopingCartElement.map((trees) => (
-                                        <List.Item>
-                                            <List.Item.Meta
+                                this.getUniqueArray().map((trees) =>(
+                                    <List.Item>
+                                        <List.Item.Meta
                                             avatar={<Avatar src={require('../ProductImage/' + trees.tree.img)} size='large'/>}
                                             title={trees.tree.productName}
                                             description= {this.getDescription(trees.tree.productName)}
-                                            />
-                                        </List.Item>
-                                    ))
+                                        />
+                                    </List.Item>
                                 ))
                             }
                         </List>
@@ -54,6 +52,33 @@ class Tips extends Component{
             </Fragment>
         );
     }
+
+    getUniqueArray(){
+        let list = []
+
+        this.state.treeList.map((order) => (
+            order.shoopingCartElement.map((trees) => (
+                list.push(trees)
+            ))
+        ))
+
+
+        var res = [];
+        for (var i = 0, arrayLen = list.length; i < arrayLen; i++) {
+            for (var j = 0, resLen = res.length; j < resLen; j++ ) {
+                if (list[i].tree.productName === res[j].tree.productName) {
+                    break;
+                }
+            }
+
+            if (j === resLen) {
+                res.push(list[i])
+            }
+        }
+        return res;
+
+    }
+
 
     getDescription(treeName){
 
