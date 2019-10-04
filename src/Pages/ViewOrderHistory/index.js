@@ -4,6 +4,12 @@ import {NavBar, WingBlank, Card, WhiteSpace} from "antd-mobile";
 import {Link} from "react-router-dom";
 import {Icon, List} from "antd";
 import store from "../Store/index.js";
+import {Map, GoogleApiWrapper,Marker} from 'google-maps-react';
+
+const mapStyles = {
+    width: '91%',
+    height: '91%',
+};
 
 
 class ViewOrderHistory extends Component{
@@ -16,6 +22,16 @@ class ViewOrderHistory extends Component{
             historyOrder : store.getState().accountInformation.orderList
         }
         store.subscribe(this.handleStoreChange)
+    }
+    MapDepender = (order) =>{
+        if(order === 'NONE'){
+            console.log(1);
+            return 70
+        }
+        else{
+            console.log(0);
+            return 250
+        }
     }
 
     render() {
@@ -89,12 +105,25 @@ class ViewOrderHistory extends Component{
                                             }
                                         </Card.Body>
 
-                                        <Card.Body>
+                                        <Card.Body style = {{height:this.MapDepender(order.pickupLocation)}}>
                                             {
                                                 order.pickupLocation === 'NONE'?
                                                     <div className={"Mapservice"}>Map Service is unavailable due to handover method</div> :
+                                                    <Fragment>
 
-                                                    <div style={{height:"200px"}}>Map</div>
+                                                        <Map
+                                                            className={"Mapservice"}
+                                                            google={this.props.google}
+                                                            zoom={8}
+                                                            style={mapStyles}
+                                                            initialCenter={{ lat: -36.7622221, lng: 174.7}}
+                                                        >
+                                                        <Marker position={{ lat: -36.692221, lng: 174.670541}}>
+                                                        </Marker>
+                                                        </Map>
+                                                    </Fragment>
+
+
                                             }
                                         </Card.Body>
                                     </Fragment>
@@ -120,4 +149,6 @@ class ViewOrderHistory extends Component{
 }
 
 
-export default ViewOrderHistory;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyCL-_fVLyqFXZti16xLnPoV51QDhrzSwsQ'
+})(ViewOrderHistory);
