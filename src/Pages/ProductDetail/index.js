@@ -13,6 +13,7 @@ class ProductDetail extends Component{
     constructor(props){
         super(props)
         this.state = {
+            accountInfo : store.getState().accountInformation,
             selectedTree : this.props.location.query,
             drawerStatus : false,
             quantity : 1,
@@ -24,7 +25,9 @@ class ProductDetail extends Component{
         this.handleDrawerChange = this.handleDrawerChange.bind(this)
         this.handleStepperChange = this.handleStepperChange.bind(this)
         this.handleSizeChange = this.handleSizeChange.bind(this)
+        this.handleStoreUpdate = this.handleStoreUpdate.bind(this)
 
+        store.subscribe(this.handleStoreUpdate);
     }
     UNSAFE_componentWillMount(){
 
@@ -36,8 +39,6 @@ class ProductDetail extends Component{
 
 
     render() {
-
-
 
         if(this.state.selectedTree){
             return(
@@ -116,7 +117,7 @@ class ProductDetail extends Component{
                                 </List.Item>
 
                                 <List.Item
-                                    extra={String.prototype.concat('$',this.state.totalPrice)}
+                                    extra={String.prototype.concat('$',(this.state.totalPrice).toFixed(2))}
                                 >
                                     Total Price
                                 </List.Item>
@@ -174,24 +175,25 @@ class ProductDetail extends Component{
 
     handleAddToCartAction(){
 
-        var treeSize = ''
-        if(this.state.sizeOfTree === 'a'){
-            treeSize = 'Small'
-        } else if (this.state.sizeOfTree === 'b'){
-            treeSize = 'Medium'
-        } else if (this.state.sizeOfTree === 'c'){
-            treeSize = 'Large'
+        if(this.state.accountInfo){
+            var treeSize = ''
+            if(this.state.sizeOfTree === 'a'){
+                treeSize = 'Small'
+            } else if (this.state.sizeOfTree === 'b'){
+                treeSize = 'Medium'
+            } else if (this.state.sizeOfTree === 'c'){
+                treeSize = 'Large'
+            }
+
+
+            const action = {
+                type: "addToCartAction",
+                value: {tree: this.state.selectedTree, quantity:this.state.quantity, size:treeSize, price: this.state.totalPrice}
+            }
+
+            store.dispatch(action)
+            Toast.success('Item added', 1);
         }
-
-        console.log(treeSize)
-
-        const action = {
-            type: "addToCartAction",
-            value: {tree: this.state.selectedTree, quantity:this.state.quantity, size:treeSize, price: this.state.totalPrice}
-        }
-
-        store.dispatch(action)
-        Toast.success('Item added', 1);
     }
 
 
@@ -210,7 +212,7 @@ class ProductDetail extends Component{
             multiplier = 5.6
         }
 
-        newState.totalPrice = (newState.selectedTree.price * newState.quantity * multiplier).toFixed(2)
+        newState.totalPrice = newState.selectedTree.price * newState.quantity * multiplier
 
         this.setState(newState)
     }
@@ -222,6 +224,13 @@ class ProductDetail extends Component{
         newState.drawerStatus = !newState.drawerStatus
 
         this.setState(newState)
+    }
+    handleStoreUpdate(){
+
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.accountInfo = store.getState().accountInformation
+
+        this.setState(newState);
     }
 
     handleSizeChange(e){
@@ -239,7 +248,7 @@ class ProductDetail extends Component{
             multiplier = 5.6
         }
 
-        newState.totalPrice = (newState.selectedTree.price * newState.quantity * multiplier).toFixed(2)
+        newState.totalPrice = newState.selectedTree.price * newState.quantity * multiplier
 
         this.setState(newState)
     }

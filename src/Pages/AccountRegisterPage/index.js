@@ -80,6 +80,7 @@ class AccountRegisterPage extends Component{
                                     <option value={"Housing"}>Housing Developers</option>
                                     <option value={"Local"}>Local Councils</option>
                                     <option value={"General"}>General Public</option>
+                                    <option value={"Wholesale"}>Wholesale</option>}
                                 </Select>
 
                             </List>
