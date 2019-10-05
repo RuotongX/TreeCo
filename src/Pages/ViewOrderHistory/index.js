@@ -17,21 +17,13 @@ class ViewOrderHistory extends Component{
         super(props)
 
         this.handleStoreChange = this.handleStoreChange.bind(this)
+        this.getCoordinatesForMap = this.getCoordinatesForMap.bind(this)
 
         this.state = {
             historyOrder : store.getState().accountInformation.orderList
+
         }
         store.subscribe(this.handleStoreChange)
-    }
-    MapDepender = (order) =>{
-        if(order === 'NONE'){
-            console.log(1);
-            return 70
-        }
-        else{
-            console.log(0);
-            return 250
-        }
     }
 
     render() {
@@ -99,29 +91,31 @@ class ViewOrderHistory extends Component{
                                                             />
                                                             {trees.quantity}
                                                         </List.Item>
-                                                        <WhiteSpace size={"15px"}/>
+                                                        <WhiteSpace size={"30px"}/>
                                                     </List>
                                                 )))
                                             }
                                         </Card.Body>
 
-                                        <Card.Body style = {{height:this.MapDepender(order.pickupLocation)}}>
+                                        <Card.Body>
                                             {
-                                                order.pickupLocation === 'NONE'?
-                                                    <div className={"Mapservice"}>Map Service is unavailable due to handover method</div> :
-                                                    <Fragment>
+                                                this.getCoordinatesForMap(order) === null ?
+                                                    <div className={"Mapservice"}>Map Service is unavailable due to handover method</div>
 
+                                                    :
+
+                                                    <div style={{height:'300px'}}>
                                                         <Map
                                                             className={"Mapservice"}
                                                             google={this.props.google}
-                                                            zoom={8}
+                                                            zoom={11}
                                                             style={mapStyles}
-                                                            initialCenter={{ lat: -36.7622221, lng: 174.7}}
+                                                            initialCenter={{ lat: this.getCoordinatesForMap(order).coor1, lng: this.getCoordinatesForMap(order).coor2}}
                                                         >
-                                                        <Marker position={{ lat: -36.692221, lng: 174.670541}}>
+                                                        <Marker position={{ lat: this.getCoordinatesForMap(order).coor1, lng: this.getCoordinatesForMap(order).coor2}}>
                                                         </Marker>
                                                         </Map>
-                                                    </Fragment>
+                                                    </div>
 
 
                                             }
@@ -137,6 +131,37 @@ class ViewOrderHistory extends Component{
         )
 
     }
+
+    getCoordinatesForMap(order){
+
+        if (order.pickupLocation === 'AKL_ALBANY'){
+            const Location = {
+                coor1 : -36.726026,
+                coor2 : 174.696439
+            }
+
+            return Location;
+        } else if (order.pickupLocation === 'AKL_EAST'){
+
+            const Location = {
+                coor1 : -36.945700,
+                coor2 : 174.883421
+            }
+
+            return Location;
+        } else if (order.pickupLocation === 'AKL_MTEDEN'){
+
+            const Location = {
+                coor1 : -36.882223,
+                coor2 : 174.762003
+            }
+
+            return Location;
+        }
+
+        return null;
+    }
+
 
     handleStoreChange(){
 

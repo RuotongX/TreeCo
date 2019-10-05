@@ -21,9 +21,10 @@ class CheckOut extends Component{
         this.generatePassingInfo = this.generatePassingInfo.bind(this);
         this.countVaildVIP = this.countVaildVIP.bind(this);
         this.handleDiscountCount = this.handleDiscountCount.bind(this);
+        this.getShippingFee = this.getShippingFee.bind(this);
 
         this.state = {
-            handOverMethod : 'Shipping',
+            handOverMethod : 'UrbanShipping',
             pickupLocation : 'NONE',
             accountinfo : store.getState().accountInformation,
             shoopingCartElement : store.getState().accountInformation.shoppingCart,
@@ -85,22 +86,28 @@ class CheckOut extends Component{
                                      className = {"handOver"}/>
                         <Card.Body>
                             <List split={false}>
-                                <RadioItem key = {"Shipping"}
-                                           checked={this.state.handOverMethod === "Shipping"}
-                                           onClick={() => (this.handleHandOverMethodChange("Shipping"))}>
-                                    By Shipping
+                                <RadioItem key = {"UrbanShipping"}
+                                           checked={this.state.handOverMethod === "UrbanShipping"}
+                                           onClick={() => (this.handleHandOverMethodChange("UrbanShipping"))}>
+                                    Shipping(Urban)
                                 </RadioItem>
 
-                                <RadioItem key = {"FastShipping"}
-                                           checked={this.state.handOverMethod === "FastShipping"}
-                                           onClick={() => (this.handleHandOverMethodChange("FastShipping"))}>
-                                    By Shipping(Fast)
+                                <RadioItem key = {"RuralShipping"}
+                                           checked={this.state.handOverMethod === "RuralShipping"}
+                                           onClick={() => (this.handleHandOverMethodChange("RuralShipping"))}>
+                                    Shipping(Rural)
+                                </RadioItem>
+
+                                <RadioItem key = {"OutAucklandShipping"}
+                                           checked={this.state.handOverMethod === "OutAucklandShipping"}
+                                           onClick={() => (this.handleHandOverMethodChange("OutAucklandShipping"))}>
+                                    Shipping(E. AKL)
                                 </RadioItem>
 
                                 <RadioItem key = {"pickup"}
                                            checked={this.state.handOverMethod === "pickup"}
                                            onClick={() => (this.handleHandOverMethodChange("pickup"))}>
-                                    Pick up
+                                    Pick Up
                                 </RadioItem>
                             </List>
                         </Card.Body>
@@ -120,19 +127,16 @@ class CheckOut extends Component{
                                      extra={this.handleSubTotalPriceCalculation()}/>
                         <Card.Body>
                             {
-                                this.state.handOverMethod === "Shipping" || this.state.handOverMethod === "FastShipping"?
-                                    this.state.handOverMethod === "Shipping"? <div className={"shippingNote"}>Include Shipping Fee: $9.99</div>
-                                        : <div className={"shippingNote"}>Include Shipping Fee(Fast): $29.99</div>
-                                    : <div className={"shippingNote"}>No Shipping Fee Included</div>
+                                <div>{this.getShippingFee()}</div>
                             }
                         </Card.Body>
 
                         <Card.Header title={"Discounts"}
                                      extra={this.handleDiscountCount()}/>
                         <Card.Body>
-                            <div className={"dicountInfo"}>{this.state.accountinfo.type === 'Wholesale'? 'Wholesale Customer: 15% OFF' : 'No Available Account Discount Found'}</div>
-                            <div className={"dicountInfo"}>{this.countVaildVIP() >= 20? 'VIP Customer: 10% OFF' : 'No Available Membership Discount Found'}</div>
-                            <div className={"dicountInfo"}>{this.handleShoppingCartCount() > 10? 'More than 10 trees - Free Delivery' : 'No Available Shipping Discount Found'}</div>
+                            <div className={"dicountInfo"}>{this.state.accountinfo.type === 'Wholesale'? 'Wholesale Customer: 15% OFF' : 'Account Discount - Not Available'}</div>
+                            <div className={"dicountInfo"}>{this.countVaildVIP() >= 20? 'VIP Customer: 10% OFF' : 'Membership Discount - Not Available'}</div>
+                            <div className={"dicountInfo"}>{this.handleShoppingCartCount() > 10? 'More than 10 trees - Free Delivery' : 'Shipping Discount - Not Available'}</div>
                         </Card.Body>
 
 
@@ -156,18 +160,25 @@ class CheckOut extends Component{
 
     }
 
+    getShippingFee(){
+
+        if(this.state.handOverMethod === 'UrbanShipping'){
+            return 'Include Shipping Fee(Urban): $10'
+        } else if (this.state.handOverMethod === 'RuralShipping'){
+            return 'Include Shipping Fee(Rural): $17'
+        } else if (this.state.handOverMethod === 'OutAucklandShipping'){
+            return 'Include Shipping Fee(E. AKL): $22'
+        }
+
+        return 'No Shipping Fee Included';
+    }
+
+
     getPickUpLocations(){
 
-        const pickLocations = [{key: 'AUCKLAND_NORTH', name: 'Auckland North Shore'},
-                                {key: 'AUCKLAND_SOUTH', name: 'Auckland South'},
-                                {key: 'AUCKLAND_WEST', name: 'Auckland West'},
-                                {key: 'HAMILTON', name: 'Hamilton'},
-                                {key: 'ROTORUA', name: 'Rotorua'},
-                                {key: 'TAURANGA', name: 'Tauranga'},
-                                {key: 'WELLINGTON', name: 'Wellington'},
-                                {key: 'CHRISTCHURCH', name: 'Christchurch'},
-                                {key: 'DUNEDIN', name: 'Dunedin'},
-                                {key: 'PALMERSTON_NORTH', name: 'Palmerston North'}]
+        const pickLocations = [{key: 'AKL_ALBANY', name: 'Albany Branch'},
+                                {key: 'AKL_EAST', name: 'East Tamaki Branch'},
+                                {key: 'AKL_MTEDEN', name: 'Mt Eden Branch'}]
 
 
         return(
@@ -238,10 +249,12 @@ class CheckOut extends Component{
             numberCount += tree.quantity
         })
 
-        if(this.state.handOverMethod === 'Shipping' && numberCount > 10){
-            price += 9.99
-        } else if (this.state.handOverMethod === 'FastShipping' && numberCount > 10){
-            price += 29.99
+        if(this.state.handOverMethod === 'UrbanShipping' && numberCount > 10){
+            price += 10
+        } else if (this.state.handOverMethod === 'RuralShipping' && numberCount > 10){
+            price += 17
+        } else if (this.state.handOverMethod === 'OutAucklandShipping' && numberCount > 10){
+            price += 22
         }
 
         let vipCount = 0;
@@ -275,10 +288,12 @@ class CheckOut extends Component{
         })
 
         //shipping fee
-        if(this.state.handOverMethod === 'Shipping'){
-            price += 9.99
-        } else if (this.state.handOverMethod === 'FastShipping'){
-            price += 29.99
+        if(this.state.handOverMethod === 'UrbanShipping'){
+            price += 10
+        } else if (this.state.handOverMethod === 'RuralShipping'){
+            price += 17
+        } else if (this.state.handOverMethod === 'OutAucklandShipping'){
+            price += 22
         }
 
         this.state.subtotalPrice = price;
@@ -295,7 +310,7 @@ class CheckOut extends Component{
         if(newState.handOverMethod !== 'pickup'){
             newState.pickupLocation = 'NONE'
         } else {
-            newState.pickupLocation = 'AUCKLAND_NORTH'
+            newState.pickupLocation = 'AKL_ALBANY'
         }
 
         this.setState(newState)

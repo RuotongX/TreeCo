@@ -29,7 +29,7 @@ const defaultState = {
         orderList : [
             {
             handOverMethod : 'Shipping',
-            pickupLocation : 'NONEA',
+            pickupLocation : 'AKL_ALBANY',
             shoopingCartElement : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:18, size:'Large',price: 999.99},
                 {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
             pickuper: 'Dalton',
