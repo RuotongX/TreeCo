@@ -77,28 +77,8 @@ class HomePage extends Component {
                             </Link>
                         </List.Item>
                         <List.Item>
-                            <Link to="/ProductDetail" style={{color: "black", fontSize: 20}}>
-                                Product Detail (for test)
-                            </Link>
-                        </List.Item>
-                        <List.Item>
-                            <Link to="/PurchaseProcessing" style={{color: "black", fontSize: 20}}>
-                                Purchase Processing (for test)
-                            </Link>
-                        </List.Item>
-                        <List.Item>
                             <Link to="/MapContainer" style={{color: "black", fontSize: 20}}>
                                 Map (for test)
-                            </Link>
-                        </List.Item>
-                        <List.Item>
-                            <Link to="/CheckOut" style={{color: "black", fontSize: 20}}>
-                                CheckOut
-                            </Link>
-                        </List.Item>
-                        <List.Item>
-                            <Link to="/CardPayment" style={{color: "black", fontSize: 20}}>
-                                CardPayment
                             </Link>
                         </List.Item>
 
