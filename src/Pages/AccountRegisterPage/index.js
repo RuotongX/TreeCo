@@ -5,12 +5,9 @@ import {List} from 'antd'
 import {Select} from "antd";
 import {Button} from "antd";
 import "./AccountRegisterList.css"
+import store from "../Store/index.js"
 
 const { Option } = Select;
-
-function onChange(Value){
-    console.log('Selected ${value}');
-}
 
 class AccountRegisterPage extends Component{
 
@@ -20,7 +17,18 @@ class AccountRegisterPage extends Component{
         this.state={
             name : '',
             email : '',
+            accountID : '',
+            password : '',
+            type : ''
         }
+
+        this.handleNameInputChange = this.handleNameInputChange.bind(this);
+        this.handleEmailInputChange = this.handleEmailInputChange.bind(this);
+        this.handleAccountIDInputChange = this.handleAccountIDInputChange.bind(this);
+        this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this);
+        this.handleTypeSelectChange = this.handleTypeSelectChange.bind(this);
+
+        this.handleRegisterClick = this.handleRegisterClick.bind(this);
     }
 
     render() {
@@ -47,12 +55,16 @@ class AccountRegisterPage extends Component{
                                     clear
                                     placeholder={"Input Your Name"}
                                     maxLength={15}
+
+                                    onChange={(value => (this.handleNameInputChange(value)))}
                                 >Name</InputItem>
 
                                 <InputItem
                                     clear
                                     placeholder={"Input Your Email Address"}
                                     type={"email"}
+
+                                    onChange={(value => (this.handleEmailInputChange(value)))}
                                 >Email</InputItem>
 
                             </List>
@@ -72,15 +84,15 @@ class AccountRegisterPage extends Component{
                                 <Select
                                     style={{ width: "100%"}}
                                     placeholder={"Select Account Type"}
-                                    optionFilterProp={onChange}
+                                    optionFilterProp={this.handleTypeSelectChange}
                                     filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) > 0}
 
+                                    onChange={(value => (this.handleTypeSelectChange(value)))}
                                 >
-                                    <option value={"Landscape"} >Landscape Gardeners</option>
-                                    <option value={"Housing"}>Housing Developers</option>
-                                    <option value={"Local"}>Local Councils</option>
-                                    <option value={"General"}>General Public</option>
-                                    <option value={"Wholesale"}>Wholesale</option>}
+                                    <option value={"Landscape Gardeners"} >Landscape Gardeners</option>
+                                    <option value={"Housing Developers"}>Housing Developers</option>
+                                    <option value={"Local Councils"}>Local Councils</option>
+                                    <option value={"General Public"}>General Public</option>
                                 </Select>
 
                             </List>
@@ -101,13 +113,16 @@ class AccountRegisterPage extends Component{
                                     clear
                                     placeholder={"Only Number Available"}
                                     type={"number"}
-                                    maxLength={15}
+
+                                    onChange={(value => (this.handleAccountIDInputChange(value)))}
                                 >Account</InputItem>
 
                                 <InputItem
                                     clear
                                     placeholder={"Input Password"}
                                     type={"password"}
+
+                                    onChange={(value => (this.handlePasswordInputChange(value)))}
                                 >Password</InputItem>
 
                             </List>
@@ -120,8 +135,17 @@ class AccountRegisterPage extends Component{
 
                             <List className={"RegisterButton"}>
 
-                                <Link to={"./Account"}>
-                                    <Button type={"primary"} style={{width: "100%", height: 40}} ghost>
+                                <Link to={((this.state.name.length !== 0) && (this.state.email.length !== 0)
+                                             && (this.state.type.length !== 0) && (this.state.accountID.length !== 0) && (this.state.password.length !== 0)) ? "/Account" : "/AccountRegisterPage"}>
+                                    <Button
+                                        type={"primary"}
+                                        style={{width: "100%", height: 40}}
+                                        ghost
+                                        disabled={((this.state.name.length !== 0) && (this.state.email.length !== 0)
+                                            && (this.state.type.length !== 0) && (this.state.accountID.length !== 0) && (this.state.password.length !== 0)) ? false : true}
+
+                                        onClick={this.handleRegisterClick}
+                                    >
                                         Register
                                     </Button>
                                 </Link>
@@ -130,6 +154,61 @@ class AccountRegisterPage extends Component{
                 </WingBlank>
             </Fragment>
         )
+    }
+
+    handleNameInputChange(value){
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.name = value
+
+        this.setState(newState)
+    }
+
+    handleEmailInputChange(value){
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.email = value
+
+        this.setState(newState)
+    }
+
+    handleAccountIDInputChange(value){
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.accountID = value
+
+        this.setState(newState)
+    }
+
+    handlePasswordInputChange(value){
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.password = value
+
+        this.setState(newState)
+    }
+
+    handleTypeSelectChange(value){
+
+        const newState = JSON.parse(JSON.stringify(this.state))
+        newState.type = value
+
+        this.setState(newState)
+    }
+
+    handleRegisterClick(){
+        const accountInformatoin = {
+            name : this.state.name,
+            email : this.state.email,
+            type : this.state.type,
+            orderList : [],
+            accountID : this.state.accountID,
+            password : this.state.password,
+            shoppingCart : []
+        }
+
+        const accountAction = {
+            type : 'accountRegisterAction',
+            value : accountInformatoin
+        }
+
+        store.dispatch(accountAction)
     }
 }
 
