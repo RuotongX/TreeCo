@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import {WingBlank, WhiteSpace, Icon, ListItem, NavBar, Card,InputItem} from "antd-mobile";
 import {Link} from "react-router-dom";
-import {List} from 'antd'
+import {Form, List, Input} from 'antd'
 import {Select} from "antd";
 import {Button} from "antd";
 import "./AccountRegisterList.css"
@@ -19,19 +19,44 @@ class AccountRegisterPage extends Component{
             email : '',
             accountID : '',
             password : '',
-            type : ''
+            type : '',
+            checkout: false
         }
 
-        this.handleNameInputChange = this.handleNameInputChange.bind(this);
-        this.handleEmailInputChange = this.handleEmailInputChange.bind(this);
-        this.handleAccountIDInputChange = this.handleAccountIDInputChange.bind(this);
-        this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this);
-        this.handleTypeSelectChange = this.handleTypeSelectChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleStateCheck = this.handleStateCheck.bind(this);
 
         this.handleRegisterClick = this.handleRegisterClick.bind(this);
     }
 
     render() {
+
+        const { getFieldDecorator } = this.props.form;
+
+        const formItemLayout = {
+            labelCol: {
+                xs: { span: 24 },
+                sm: { span: 4 },
+            },
+            wrapperCol: {
+                xs: { span: 24 },
+                sm: { span: 16 },
+            },
+        };
+
+        const tailFormItemLayout = {
+            wrapperCol: {
+                xs: {
+                    span: 24,
+                    offset: 0,
+                },
+                sm: {
+                    span: 16,
+                    offset: 8,
+                },
+            },
+        };
+
         return (
             <Fragment>
                 <NavBar
@@ -49,26 +74,36 @@ class AccountRegisterPage extends Component{
 
                         <Card.Body>
 
-                            <List className={"AccountInfo"}>
+                            <Form {...formItemLayout} onSubmit={e => {this.handleSubmit(); this.handleStateCheck()}}>
 
-                                <InputItem
-                                    clear
-                                    placeholder={"Input Your Name"}
-                                    maxLength={15}
+                                <Form.Item label={"Name"}>
+                                    {getFieldDecorator('name',{
+                                        rules: [
+                                            {
+                                                required: true,
+                                                message: 'Please input your name.', whiteSpace: true,
+                                            },
+                                        ],
+                                    })(<Input style={{ width: '100%'}} onChange={this.handleStateCheck}/>)}
 
-                                    onChange={(value => (this.handleNameInputChange(value)))}
-                                >Name</InputItem>
+                                </Form.Item>
 
-                                <InputItem
-                                    clear
-                                    placeholder={"Input Your Email Address"}
-                                    type={"email"}
+                                <Form.Item label="E-mail" >
+                                    {getFieldDecorator('email', {
+                                        rules: [
+                                            {
+                                                type: 'email',
+                                                message: 'The input is not valid E-mail!',
 
-                                    onChange={(value => (this.handleEmailInputChange(value)))}
-                                >Email</InputItem>
-
-                            </List>
-
+                                            },
+                                            {
+                                                required: true,
+                                                message: 'Please input your E-mail!',
+                                            },
+                                        ],
+                                    })(<Input style={{ width: '100%'}} onChange={this.handleStateCheck}/>)}
+                                </Form.Item>
+                            </Form>
                         </Card.Body>
                     </Card>
                 </WingBlank>
@@ -79,23 +114,34 @@ class AccountRegisterPage extends Component{
 
                         <Card.Body>
 
-                            <List className={"AccountInfo"}>
+                            <Form {...formItemLayout} onSubmit={e => {this.handleSubmit(); this.handleStateCheck()}}>
 
-                                <Select
-                                    style={{ width: "100%"}}
-                                    placeholder={"Select Account Type"}
-                                    optionFilterProp={this.handleTypeSelectChange}
-                                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) > 0}
+                                <Form.Item label={"Account Type"}>
+                                    {getFieldDecorator('accountType',{
+                                        rules: [
+                                            {
+                                                required: true,
+                                                message: 'Please input your account ID.', whiteSpace: true,
+                                            },
+                                        ],
+                                    })
+                                    (<Select
+                                        style={{ width: "100%"}}
+                                        placeholder={"Select Account Type"}
+                                        optionFilterProp={this.handleTypeSelectChange}
+                                        filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) > 0}
 
-                                    onChange={(value => (this.handleTypeSelectChange(value)))}
-                                >
-                                    <option value={"Landscape Gardeners"} >Landscape Gardeners</option>
-                                    <option value={"Housing Developers"}>Housing Developers</option>
-                                    <option value={"Local Councils"}>Local Councils</option>
-                                    <option value={"General Public"}>General Public</option>
-                                </Select>
+                                        onChange={this.handleStateCheck}
+                                    >
+                                        <option value={"Landscape Gardeners"} >Landscape Gardeners</option>
+                                        <option value={"Housing Developers"}>Housing Developers</option>
+                                        <option value={"Local Councils"}>Local Councils</option>
+                                        <option value={"General Public"}>General Public</option>
+                                    </Select>)}
 
-                            </List>
+                                </Form.Item>
+
+                            </Form>
 
                         </Card.Body>
                     </Card>
@@ -107,25 +153,31 @@ class AccountRegisterPage extends Component{
 
                         <Card.Body>
 
-                            <List className={"AccountInfo"}>
+                            <Form {...formItemLayout} onSubmit={e => {this.handleSubmit(); this.handleStateCheck()}}>
 
-                                <InputItem
-                                    clear
-                                    placeholder={"Only Number Available"}
-                                    type={"number"}
+                                <Form.Item label={"Account"} >
+                                    {getFieldDecorator('account',{
+                                        rules: [
+                                            {
+                                                required: true,
+                                                message: 'Please input your account ID.', whiteSpace: true,
+                                            },
+                                        ],
+                                    })(<Input style={{ width: '100%'}} onChange={this.handleStateCheck}/>)}
 
-                                    onChange={(value => (this.handleAccountIDInputChange(value)))}
-                                >Account</InputItem>
+                                </Form.Item>
 
-                                <InputItem
-                                    clear
-                                    placeholder={"Input Password"}
-                                    type={"password"}
-
-                                    onChange={(value => (this.handlePasswordInputChange(value)))}
-                                >Password</InputItem>
-
-                            </List>
+                                <Form.Item label="Password" hasFeedback>
+                                    {getFieldDecorator('password', {
+                                        rules: [
+                                            {
+                                                required: true,
+                                                message: 'The input is not valid password!',
+                                            },
+                                        ],
+                                    })(<Input.Password style={{ width: '100%'}} onChange={this.handleStateCheck}/>)}
+                                </Form.Item>
+                            </Form>
 
                         </Card.Body>
                     </Card>
@@ -135,14 +187,12 @@ class AccountRegisterPage extends Component{
 
                             <List className={"RegisterButton"}>
 
-                                <Link to={((this.state.name.length !== 0) && (this.state.email.length !== 0)
-                                             && (this.state.type.length !== 0) && (this.state.accountID.length !== 0) && (this.state.password.length !== 0)) ? "/Account" : "/AccountRegisterPage"}>
+                                <Link to={this.state.checkout ? "/Account" : "/AccountRegisterPage"}>
                                     <Button
                                         type={"primary"}
                                         style={{width: "100%", height: 40}}
                                         ghost
-                                        disabled={((this.state.name.length !== 0) && (this.state.email.length !== 0)
-                                            && (this.state.type.length !== 0) && (this.state.accountID.length !== 0) && (this.state.password.length !== 0)) ? false : true}
+                                        disabled={this.state.checkout ? false : true}
 
                                         onClick={this.handleRegisterClick}
                                     >
@@ -156,50 +206,35 @@ class AccountRegisterPage extends Component{
         )
     }
 
-    handleNameInputChange(value){
-        const newState = JSON.parse(JSON.stringify(this.state))
-        newState.name = value
+    handleStateCheck = e =>{
+        if(this.props.form.getFieldValue('name') !== undefined && this.props.form.getFieldValue('email') !== undefined &&
+            this.props.form.getFieldValue('account') !== undefined &&this.props.form.getFieldValue('password') !== undefined && this.props.form.getFieldValue('accountType')) {
 
-        this.setState(newState)
+            this.state.checkout = true;
+        }else {
+            this.state.checkout= false;
+
+        }
     }
 
-    handleEmailInputChange(value){
-        const newState = JSON.parse(JSON.stringify(this.state))
-        newState.email = value
-
-        this.setState(newState)
-    }
-
-    handleAccountIDInputChange(value){
-        const newState = JSON.parse(JSON.stringify(this.state))
-        newState.accountID = value
-
-        this.setState(newState)
-    }
-
-    handlePasswordInputChange(value){
-        const newState = JSON.parse(JSON.stringify(this.state))
-        newState.password = value
-
-        this.setState(newState)
-    }
-
-    handleTypeSelectChange(value){
-
-        const newState = JSON.parse(JSON.stringify(this.state))
-        newState.type = value
-
-        this.setState(newState)
-    }
+    //handleSubmit function which used to get changed value when the user input context
+    handleSubmit = e => {
+        e.preventDefault();
+        this.props.form.validateFieldsAndScroll((err, values) => {
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
+        });
+    };
 
     handleRegisterClick(){
         const accountInformatoin = {
-            name : this.state.name,
-            email : this.state.email,
-            type : this.state.type,
+            name : this.props.form.getFieldValue('name'),
+            email : this.props.form.getFieldValue('email'),
+            type : this.props.form.getFieldValue('accountType'),
             orderList : [],
-            accountID : this.state.accountID,
-            password : this.state.password,
+            accountID : this.props.form.getFieldValue('account'),
+            password : this.props.form.getFieldValue('password'),
             shoppingCart : []
         }
 
@@ -212,4 +247,4 @@ class AccountRegisterPage extends Component{
     }
 }
 
-export default AccountRegisterPage
+export default Form.create()(AccountRegisterPage);
