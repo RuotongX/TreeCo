@@ -133,10 +133,10 @@ class AccountRegisterPage extends Component{
 
                                         onChange={this.handleStateCheck}
                                     >
-                                        <option value={"Landscape Gardeners"} >Landscape Gardeners</option>
-                                        <option value={"Housing Developers"}>Housing Developers</option>
-                                        <option value={"Local Councils"}>Local Councils</option>
-                                        <option value={"General Public"}>General Public</option>
+                                        <option value={"Landscape"} >Landscape Gardeners</option>
+                                        <option value={"Housing"}>Housing Developers</option>
+                                        <option value={"Local"}>Local Councils</option>
+                                        <option value={"Wholesale"}>Wholesale</option>
                                     </Select>)}
 
                                 </Form.Item>
