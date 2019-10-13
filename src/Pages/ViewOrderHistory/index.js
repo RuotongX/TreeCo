@@ -166,7 +166,10 @@ class ViewOrderHistory extends Component{
     handleStoreChange(){
 
         const newState = JSON.parse(JSON.stringify(this.state))
-        newState.historyOrder = store.getState().accountInformation.orderList
+
+        if(store.getState().accountInformation){
+            newState.historyOrder = store.getState().accountInformation.orderList
+        }
 
         this.setState(newState)
 
