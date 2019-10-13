@@ -161,7 +161,9 @@ class AccountRegisterPage extends Component{
                                             {
                                                 required: true,
                                                 message: 'Please input your account ID.', whiteSpace: true,
-                                            },
+                                            },{
+                                                pattern: /^[0-9]+$/,
+                                                message:'You must input number'},
                                         ],
                                     })(<Input style={{ width: '100%'}} onChange={this.handleStateCheck}/>)}
 
@@ -175,7 +177,7 @@ class AccountRegisterPage extends Component{
                                                 message: 'The input is not valid password!',
                                             },
                                         ],
-                                    })(<Input.Password style={{ width: '100%'}} onChange={this.handleStateCheck}/>)}
+                                    })(<Input.Password style={{ width: '100%'}}  onChange={this.handleStateCheck}/>)}
                                 </Form.Item>
                             </Form>
 
