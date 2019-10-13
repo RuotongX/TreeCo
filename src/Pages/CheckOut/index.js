@@ -352,7 +352,12 @@ class CheckOut extends Component{
     handleStoreChange(){
 
         const newState = JSON.parse(JSON.stringify(this.state))
-        newState.shoopingCartElement = store.getState().accountInformation.shoppingCart
+
+        if(store.getState().accountInformation){
+            newState.shoopingCartElement = store.getState().accountInformation.shoppingCart
+
+        }
+
 
         this.setState(newState)
     }
