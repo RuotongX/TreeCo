@@ -39,6 +39,8 @@ class Account extends Component{
                     </NavBar>
 
                     <WingBlank size={"lg"}>
+
+
                         <Card className={"ProgessBoard"}>
                             <Card.Body>
                                 <div className={"progressDashboard"}>
@@ -114,7 +116,7 @@ class Account extends Component{
                                 <Link to={"/Tips"}>
                                     <Button className={"healthButton"}>Tips</Button>
                                 </Link>
-                                <a href="mailto:tnb5436@autuni.ac.nz?subject=customer%20health%20check%20on%20tree&amp;body=Please%20Attach%20Your%20Image%20Here">
+                                <a href="mailto:testemail@autuni.ac.nz?subject=customer%20health%20check%20on%20tree&amp;body=Please%20Attach%20Your%20Image%20Here">
                                     <Button className={"healthButton"}>Health Check</Button>
                                 </a>
                             </Card.Body>

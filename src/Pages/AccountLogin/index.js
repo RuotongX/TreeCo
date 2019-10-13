@@ -43,7 +43,18 @@ class AccountLogin extends Component{
                 </NavBar>
 
 
+
                 <WingBlank size={"lg"}>
+
+                    <Card className={"loginCard"}>
+                        <Card.Body>
+                            <div>Test Account <br/>Username: 123456<br/>Password: admin</div>
+                        </Card.Body>
+                    </Card>
+
+
+
+
                     <Card className={"loginCard"}>
                         <Card.Header title={"Sign in"}/>
 
@@ -111,12 +122,33 @@ class AccountLogin extends Component{
             const accountInformation={
                 accountID: '123456',
                 password : 'admin',
-                type : 'Landscape',
-                name : 'Basco',
-                orderList : [],
+                type : 'Wholesale',
+                name : 'test_account',
+                orderList : [
+                    {
+                        handOverMethod : 'pickup',
+                        pickupLocation : 'AKL_ALBANY',
+                        shoopingCartElement : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:18, size:'Large',price: 999.99},
+                            {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
+                        pickuper: 'Dalton',
+                        pickupPhone: 111111111,
+                        pickupEmail: 'dalton123',
+                        totalPrice: 999.99
+                    }, {
+                        handOverMethod : 'UrbanShipping',
+                        pickupLocation : 'NONE',
+                        shoopingCartElement : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:18, size:'Large',price: 999.99},
+                            {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}],
+                        pickuper: 'Dalton',
+                        pickupPhone: 111111111,
+                        pickupEmail: 'dalton123',
+                        totalPrice: 999.99
+                    }
+                ],
                 email : '123@autuni.ac.nz',
-                shoppingCart : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:6, size:'Large',price: 999.99},
+                shoppingCart : [{tree:{id:1, productName : 'Lemon Tree', drain : 'Fast', sun : 'Sunny', maintain : 'Low', height : 2, rate : 'Fast', price: 18.99, img: 'lemon_tree.jpg', type: 'Fruit Tree', filterRemove:false},quantity:8, size:'Large',price: 999.99},
                     {tree:{id:9, productName : 'Hardwood', drain : 'Any', sun : 'Shade', maintain : 'High', height : 7, rate : 'Medium', price: 84.59, img: 'hardwood.jpg', type: 'Hardwood', filterRemove:false},quantity:3, size:'Medium',price: 633.99}]
+
             }
 
             const accountAction={

@@ -76,11 +76,6 @@ class HomePage extends Component {
                                 Shopping Cart
                             </Link>
                         </List.Item>
-                        <List.Item>
-                            <Link to="/MapContainer" style={{color: "black", fontSize: 20}}>
-                                Map (for test)
-                            </Link>
-                        </List.Item>
 
                         <List.Item>
                             <Link to="/Account" style={{color: "black", fontSize: 20}}>
