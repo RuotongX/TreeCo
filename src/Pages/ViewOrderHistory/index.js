@@ -178,5 +178,5 @@ class ViewOrderHistory extends Component{
 
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyCL-_fVLyqFXZti16xLnPoV51QDhrzSwsQ'
+    apiKey: 'Your Api Value'
 })(ViewOrderHistory);
