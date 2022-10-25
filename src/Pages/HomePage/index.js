@@ -134,7 +134,7 @@ class HomePage extends Component {
                                 <img
                                     width={272}
                                     alt="logo"
-                                    src="https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/images/apple-tree.jpg?itok=yIKBkZnt"
+                                    src="https://www.almanac.com/sites/default/files/styles/max_2600x2600/public/images/apple-tree.jpg?itok=zGVBuIcZ"
                                 />
                             }
                         >

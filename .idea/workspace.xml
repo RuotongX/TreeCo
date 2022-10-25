@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e595ab81-2c22-4b12-8011-da6467e539a2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Account/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Account/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/AccountLogin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/MapContainer/MapContainer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/MapContainer/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Store/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Tips/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Tips/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/TreeCoPageRouter/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test/PurchaseProcessingTest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestComponent/ShoopingCartTesting.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Testing/ShoppingCartTesting.js" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +44,9 @@
       </map>
     </option>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
@@ -57,11 +54,17 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Pages/CompanyMaterials" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -73,6 +76,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="D:\software\WebStorm 2018.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -88,19 +92,7 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Node.js.index.js (6)">
+  <component name="RunManager" selected="Node.js.index.js (7)">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -125,6 +117,9 @@
     <configuration name="index.js (6)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/Pages/Tips/index.js" working-dir="$PROJECT_DIR$/src/Pages/Tips">
       <method v="2" />
     </configuration>
+    <configuration name="index.js (7)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/index.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/src/Pages/AccountLogin">
       <method v="2" />
     </configuration>
@@ -143,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.index.js (7)" />
         <item itemvalue="Node.js.index.js (6)" />
         <item itemvalue="Node.js.index.js (5)" />
         <item itemvalue="Node.js.reducer.js" />
@@ -159,6 +155,7 @@
       </serviceView>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -193,6 +190,7 @@
       <workItem from="1569791769725" duration="257000" />
       <workItem from="1570175661318" duration="2766000" />
       <workItem from="1570956143066" duration="1251000" />
+      <workItem from="1642578353293" duration="862000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commitments&#10;1. The product list UI is being designed">
       <created>1568274488774</created>
@@ -312,16 +310,14 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
